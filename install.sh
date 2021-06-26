@@ -8,11 +8,11 @@ if ! [ -f "$PWD"/install.sh ]; then
     exit
 fi
 
-$PACMAN bat exa fd fzf httpie ripgrep diff-so-fancy neovim neofetch man-db
+$PACMAN bat exa fd fzf ripgrep diff-so-fancy neovim neofetch man-db nvidia xorg-xinit \
+    alacritty dmenu mpv feh sxiv gcc patch make zathura-pdf-poppler zathura-cb alsa-utils
 
 mkdir "$HOME"/.config
 
-ln -s /mnt/archive/* "$HOME"
 ln -sf "$LINKHERE"/home/.* "$HOME"
 ln -sf "$LINKHERE"/config/* "$HOME"/.config/
 
