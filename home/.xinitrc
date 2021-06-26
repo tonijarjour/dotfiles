@@ -31,4 +31,5 @@ fi
 
 setxkbmap -option caps:super
 feh --bg-fill --no-fehbg --randomize "$HOME"/Images/Wallpapers/1.jpg
+sh "$HOME"/.date.sh &
 exec dwm

@@ -1,0 +1,44 @@
+# Volume Control
+XF86AudioRaiseVolume
+    amixer set Master unmute && amixer set Master 5%+
+
+XF86AudioLowerVolume
+    amixer set Master unmute && amixer set Master 5%-
+
+XF86AudioMute
+    amixer set Master toggle 
+
+# Programs
+super + n
+    alacritty -e nnn -e
+super + z
+    alacritty -e cmus
+super + r
+    chromium
+super + R
+    chromium --incognito
+super + v
+    zathura
+
+# make sxhkd reload its configuration files:
+super + Escape
+    pkill -USR1 -x sxhkd
+
+# Set a random wallpaper
+super + alt + w
+    feh --bg-fill --no-fehbg --randomize ~/Images/Wallpapers
+
+# Screenshot saved
+super + BackSpace
+    maim -u ~/Images/Captures/$(date +%s).jpg && dunstify "Screenshot Saved"
+
+# Selection saved
+super + shift + BackSpace
+    maim -su ~/Images/Captures/$(date +%s).jpg && dunstify "Selection Saved"
+
+# Brightness controls
+super + u
+    xrandr --output DVI-D-0 --brightness 0.7 && xrandr --output HDMI-0 --brightness 0.7
+
+super + y
+    xrandr --output DVI-D-0 --brightness 1.0 && xrandr --output HDMI-0 --brightness 1.0

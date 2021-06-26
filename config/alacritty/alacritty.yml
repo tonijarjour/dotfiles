@@ -10,18 +10,18 @@ scrolling:
 
 font:
   normal:
-    family: Monospace
+    family: Source Code Variable
     style: Regular
   bold:
-    family: Monospace
+    family: Source Code Variable
     style: Bold
   italic:
-    family: Monospace
+    family: Source Code Variable
     style: Italic
   bold_italic:
-    family: Monospace
+    family: Source Code Variable
     style: Bold Italic
-  size: 11.0
+  size: 10.0
 
 #background_opacity: 0.85
 
