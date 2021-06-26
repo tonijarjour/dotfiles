@@ -18,7 +18,17 @@ mkdir "$HOME"/.config
 ln -sf "$LINKHERE"/home/.* "$HOME"
 ln -sf "$LINKHERE"/config/* "$HOME"/.config/
 
+# Turn off mouse acceleration
 doas install -Dm 644 other/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
 
+# Install dwm
+git clone git://git.suckless.org/dwm "$HOME"/dwm
+cp "$LINKHERE"/other/dwm-statusallmons-6.2.diff "$HOME"/dwm
+ln -s "$LINKHERE"/other/config.h "$HOME"/dwm
+cd "$HOME"/dwm
+patch < dwm-statusallmons-6.2.diff
+doas make clean install
+
+# Vim Plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
