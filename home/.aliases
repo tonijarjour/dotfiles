@@ -7,7 +7,7 @@ alias ls='exa -F'
 alias lsa='exa -Fa'
 alias l='exa -Fhl --git'
 alias la='exa -Fhla --git'
-alias tree='exa -TFh --git -I .git'
+alias tree='exa -TFh --git -I ".git"'
 
 alias ga='git add'
 alias gb='git branch'
