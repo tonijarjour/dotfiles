@@ -9,10 +9,6 @@ XF86AudioMute
     amixer set Master toggle 
 
 # Programs
-super + n
-    alacritty -e nnn -e
-super + z
-    alacritty -e cmus
 super + r
     chromium
 super + R
@@ -38,7 +34,7 @@ super + shift + BackSpace
 
 # Brightness controls
 super + u
-    xrandr --output DVI-D-0 --brightness 0.7 && xrandr --output HDMI-0 --brightness 0.7
+    xrandr --output DVI-I-1 --brightness 0.7 && xrandr --output HDMI-0 --brightness 0.7
 
 super + y
-    xrandr --output DVI-D-0 --brightness 1.0 && xrandr --output HDMI-0 --brightness 1.0
+    xrandr --output DVI-I-1 --brightness 1.0 && xrandr --output HDMI-0 --brightness 1.0
