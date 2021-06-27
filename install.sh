@@ -12,11 +12,15 @@ $PACMAN bat exa fd fzf ripgrep diff-so-fancy neovim neofetch man-db \
     zathura-pdf-poppler zathura-cb nvidia sxhkd alacritty dmenu mpv \
     noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation xclip \
     xorg-xprop xorg-xrandr xorg-xinit xorg-xsetroot feh sxiv maim \
-    gcc patch make alsa-utils ttf-fantasque-sans-mono chromium git
+    gcc patch make alsa-utils ttf-fantasque-sans-mono chromium git \
+    nnn renameutils
 
-mkdir "$HOME"/.config
+mkdir -p "$HOME"/.config "$HOME"/.local/share
+
+ln -s /mnt/archive/* "$HOME"
 ln -sf "$LINKHERE"/home/.* "$HOME"
 ln -sf "$LINKHERE"/config/* "$HOME"/.config/
+ln -sf "$LINKHERE"/local/share/applications "$HOME"/.local/share
 
 # Turn off mouse acceleration
 doas install -Dm 644 other/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/

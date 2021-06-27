@@ -61,6 +61,9 @@ nmap <silent> <leader>/ :noh<cr>
 " Force quit nvim
 nmap <silent> <leader>Q :qa!<cr>
 
+" Open nnn file manager (nnn)
+nmap <silent> <leader>n :NnnPicker<cr>
+
 " Open an empty buffer
 nmap <silent> <leader>e :enew<cr>
 
@@ -103,5 +106,6 @@ nmap <silent> <leader>p :Helptags<cr>
 " vim-plug
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'junegunn/fzf.vim'
+Plug 'mcchrish/nnn.vim'
 Plug 'itchyny/lightline.vim'
 call plug#end()

@@ -9,6 +9,8 @@ XF86AudioMute
     amixer set Master toggle 
 
 # Programs
+super + n
+    alacritty -e nnn -e
 super + r
     chromium
 super + R
