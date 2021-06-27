@@ -52,6 +52,9 @@ let mapleader = ","
 " Quick save
 nmap <leader>w :w<cr>
 
+" Copy visual selection to clipboard
+vmap <silent> <leader>c :w !xclip -se c<cr><cr>
+
 " Clear search highlights
 nmap <silent> <leader>/ :noh<cr>
 
