@@ -12,7 +12,7 @@ $PACMAN bat exa fd fzf ripgrep diff-so-fancy neovim neofetch man-db \
     zathura-pdf-poppler zathura-cb nvidia sxhkd alacritty dmenu mpv \
     noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation xclip \
     xorg-xprop xorg-xrandr xorg-xinit xorg-xsetroot feh sxiv maim \
-    gcc patch make alsa-utils ttf-fantasque-sans-mono chromium
+    gcc patch make alsa-utils ttf-fantasque-sans-mono chromium git
 
 mkdir "$HOME"/.config
 ln -sf "$LINKHERE"/home/.* "$HOME"
