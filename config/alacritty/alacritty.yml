@@ -23,21 +23,16 @@ font:
     style: Bold Italic
   size: 11.0
 
-#background_opacity: 0.85
-
-# Colors (Tomorrow Night)
 colors:
   # Default colors
   primary:
     background: '#1d1f21'
     foreground: '#c5c8c6'
 
-  # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
     text: '#1d1f21'
     cursor: '#ffffff'
 
-  # Normal colors
   normal:
     black: '#2D2D2D'
     red: '#F2777A'
@@ -47,7 +42,7 @@ colors:
     magenta: '#E1A6F2'
     cyan: '#76D4D6'
     white: '#B3B9C5'
-  # Bright colors
+
   bright:
     black: '#777C85'
     red: '#F2777A'
