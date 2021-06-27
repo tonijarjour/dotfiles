@@ -13,7 +13,7 @@ $PACMAN bat exa fd fzf ripgrep diff-so-fancy neovim neofetch man-db \
     noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation xclip \
     xorg-xprop xorg-xrandr xorg-xinit xorg-xsetroot feh sxiv maim \
     gcc patch make alsa-utils ttf-fantasque-sans-mono chromium git \
-    nnn renameutils
+    nnn renameutils rsync
 
 mkdir -p "$HOME"/.config "$HOME"/.local/share
 
