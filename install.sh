@@ -12,7 +12,7 @@ $PACMAN bat exa fd fzf ripgrep diff-so-fancy neovim neofetch man-db \
     zathura-pdf-poppler zathura-cb nvidia sxhkd alacritty dmenu mpv \
     xorg-xprop xorg-xrandr xorg-xinit xorg-xsetroot feh sxiv maim \
     noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation \
-    gcc patch make alsa-utils xclip
+    gcc patch make alsa-utils xclip ttf-fantasque-sans-mono
 
 mkdir "$HOME"/.config
 ln -sf "$LINKHERE"/home/.* "$HOME"

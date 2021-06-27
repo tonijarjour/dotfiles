@@ -25,12 +25,12 @@ super + alt + w
     feh --bg-fill --no-fehbg --randomize ~/Images/Wallpapers
 
 # Screenshot saved
-super + BackSpace
-    maim -u ~/Images/Captures/$(date +%s).jpg && dunstify "Screenshot Saved"
+super + Print
+    maim -u ~/Images/Captures/$(date +%s).jpg
 
 # Selection saved
-super + shift + BackSpace
-    maim -su ~/Images/Captures/$(date +%s).jpg && dunstify "Selection Saved"
+super + shift + Print
+    maim -su ~/Images/Captures/$(date +%s).jpg
 
 # Brightness controls
 super + u
