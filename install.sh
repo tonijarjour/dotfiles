@@ -10,9 +10,9 @@ fi
 
 $PACMAN bat exa fd fzf ripgrep diff-so-fancy neovim neofetch man-db \
     zathura-pdf-poppler zathura-cb nvidia sxhkd alacritty dmenu mpv \
+    noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation xclip \
     xorg-xprop xorg-xrandr xorg-xinit xorg-xsetroot feh sxiv maim \
-    noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation \
-    gcc patch make alsa-utils xclip ttf-fantasque-sans-mono
+    gcc patch make alsa-utils ttf-fantasque-sans-mono chromium
 
 mkdir "$HOME"/.config
 ln -sf "$LINKHERE"/home/.* "$HOME"
