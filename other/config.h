@@ -27,6 +27,7 @@ static const Rule rules[] = {
     { "feh",       NULL,      NULL,      0,           1,           -1 },
     { "Thunar",    NULL,      NULL,      0,           1,           -1 },
     { "mpv",       NULL,      NULL,      0,           1,           -1 },
+    { "Steam",     NULL,      NULL,      0,           1,           -1 },
 };
 
 /* layout(s) */
