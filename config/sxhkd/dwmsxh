@@ -11,6 +11,8 @@ XF86AudioMute
 # Programs
 super + n
     alacritty -e nnn -e
+super + p
+    thunar
 super + r
     chromium
 super + R

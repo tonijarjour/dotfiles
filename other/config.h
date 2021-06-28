@@ -23,9 +23,10 @@ static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 //   class         instance   title      tags mask    float        monitor
-    { "Alacritty", NULL,      NULL,      0,           0,           -1 },
     { "Sxiv",      NULL,      NULL,      0,           1,           -1 },
+    { "feh",       NULL,      NULL,      0,           1,           -1 },
     { "Thunar",    NULL,      NULL,      0,           1,           -1 },
+    { "mpv",       NULL,      NULL,      0,           1,           -1 },
 };
 
 /* layout(s) */
@@ -73,7 +74,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_s,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_p,      setlayout,      {0} },
+	{ MODKEY,                       XK_x,      setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },

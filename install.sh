@@ -20,7 +20,6 @@ mkdir -p "$HOME"/.config "$HOME"/.local/share
 ln -s /mnt/archive/* "$HOME"
 ln -sf "$LINKHERE"/home/.* "$HOME"
 ln -sf "$LINKHERE"/config/* "$HOME"/.config/
-ln -sf "$LINKHERE"/local/share/applications "$HOME"/.local/share
 
 # Turn off mouse acceleration
 doas install -Dm 644 other/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
