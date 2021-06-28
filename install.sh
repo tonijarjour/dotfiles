@@ -15,7 +15,7 @@ $PACMAN bat exa fd fzf ripgrep diff-so-fancy neovim neofetch man-db \
     gcc patch make alsa-utils ttf-fantasque-sans-mono chromium git \
     nnn renameutils thunar tumbler
 
-mkdir -p "$HOME"/.config "$HOME"/.local/share
+mkdir -p "$HOME"/.config
 
 ln -s /mnt/archive/* "$HOME"
 ln -sf "$LINKHERE"/home/.* "$HOME"
