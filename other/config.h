@@ -22,7 +22,10 @@ static const char *colors[][3]      = {
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
-    { "Alacritty", NULL,      NULL,            0,       0,           -1 },
+//   class         instance   title      tags mask    float        monitor
+    { "Alacritty", NULL,      NULL,      0,           0,           -1 },
+    { "Sxiv",      NULL,      NULL,      0,           1,           -1 },
+    { "Thunar",    NULL,      NULL,      0,           1,           -1 },
 };
 
 /* layout(s) */
