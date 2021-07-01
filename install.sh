@@ -11,11 +11,11 @@ fi
 $PACMAN bat exa fd fzf ripgrep diff-so-fancy neovim neofetch man-db \
     zathura-pdf-poppler zathura-cb nvidia sxhkd alacritty dmenu mpv \
     noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation xclip \
-    xorg-xprop xorg-xrandr xorg-xinit xorg-xsetroot feh sxiv maim \
-    gcc patch make alsa-utils ttf-fantasque-sans-mono chromium git \
-    nnn renameutils thunar tumbler
+    gcc patch make alsa-utils ttf-fantasque-sans-mono chromium sxiv \
+    xorg-xprop xorg-xrandr xorg-xinit xorg-xsetroot feh maim git nnn \
+    renameutils thunar tumbler lilypond transmission-cli pkgstats
 
-mkdir -p "$HOME"/.config
+mkdir -p "$HOME"/.config/nnn/plugins
 
 ln -s /mnt/archive/* "$HOME"
 ln -sf "$LINKHERE"/home/.* "$HOME"
@@ -34,6 +34,9 @@ ln -s "$LINKHERE"/other/config.h "$HOME"/dwm
 cd "$HOME"/dwm
 patch < dwm-statusallmons-6.2.diff
 doas make clean install
+
+# nnn plugins
+curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 
 # Vim Plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \

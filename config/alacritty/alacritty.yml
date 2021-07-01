@@ -23,32 +23,35 @@ font:
     style: Bold Italic
   size: 11.0
 
+# Colors (Dracula)
 colors:
   # Default colors
   primary:
-    background: '#1d1f21'
-    foreground: '#c5c8c6'
+    background: '#282a36'
+    foreground: '#f8f8f2'
 
   cursor:
-    text: '#1d1f21'
-    cursor: '#ffffff'
+    text: '#f8f8f2'
+    cursor: '#282a36'
 
+  # Normal colors
   normal:
-    black: '#2D2D2D'
-    red: '#F2777A'
-    green: '#92D192'
-    yellow: '#FFD479'
-    blue: '#6AB0F3'
-    magenta: '#E1A6F2'
-    cyan: '#76D4D6'
-    white: '#B3B9C5'
+    black:   '#000000'
+    red:     '#ff5555'
+    green:   '#50fa7b'
+    yellow:  '#f1fa8c'
+    blue:    '#caa9fa'
+    magenta: '#ff79c6'
+    cyan:    '#8be9fd'
+    white:   '#bfbfbf'
 
+  # Bright colors
   bright:
-    black: '#777C85'
-    red: '#F2777A'
-    green: '#76D4D6'
-    yellow: '#FFEEA6'
-    blue: '#6AB0F3'
-    magenta: '#E1A6F2'
-    cyan: '#76D4D6'
-    white: '#FFFFFF'
+    black:   '#575b70'
+    red:     '#ff6e67'
+    green:   '#5af78e'
+    yellow:  '#f4f99d'
+    blue:    '#caa9fa'
+    magenta: '#ff92d0'
+    cyan:    '#9aedfe'
+    white:   '#e6e6e6'
