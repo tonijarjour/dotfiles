@@ -30,10 +30,6 @@ colors:
     background: '#282a36'
     foreground: '#f8f8f2'
 
-  cursor:
-    text: '#f8f8f2'
-    cursor: '#282a36'
-
   # Normal colors
   normal:
     black:   '#000000'

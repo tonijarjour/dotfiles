@@ -15,3 +15,7 @@ clean_bash_history() {
         /tmp/"$USER"_history/bash_history_cleaned
     tac /tmp/"$USER"_history/bash_history_cleaned > "$HOME"/.bash_history
 }
+
+recordscreen() {
+    ffmpeg -video_size 1920x1080 -framerate $1 -f x11grab -i :0.0+1920,0 $(date +"%y%m%d%H%M%S").mkv
+}

@@ -3,10 +3,10 @@ highlight LineNr ctermfg=darkgrey
 highlight CursorLineNr ctermfg=grey
 
 " Calmer search result colors
-highlight Search ctermfg=white ctermbg=darkgrey
+highlight Search ctermfg=darkgrey ctermbg=lightgrey
 
 " Calmer bracket match colors
-highlight MatchParen ctermfg=lightgrey ctermbg=darkgrey
+highlight MatchParen ctermfg=white ctermbg=black
 
 " Completely hide the window border
 highlight VertSplit cterm=NONE
