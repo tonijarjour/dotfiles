@@ -30,11 +30,11 @@ super + alt + w
 
 # Screenshot saved
 super + Print
-    maim -u ~/Images/Captures/$(date +%s).jpg
+    maim -u ~/Images/Captures/$(date +%s).png
 
 # Selection saved
 super + shift + Print
-    maim -su ~/Images/Captures/$(date +%s).jpg
+    maim -su ~/Images/Captures/$(date +%s).png
 
 # Brightness controls
 super + u
