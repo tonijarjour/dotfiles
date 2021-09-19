@@ -28,13 +28,21 @@ super + Escape
 super + alt + w
     feh --bg-fill --no-fehbg --randomize ~/Images/Wallpapers
 
+# Screenshot copied
+shift + Print
+    maim -u -m 10 | xclip -se c -t image/png
+
+# Selection copied
+Print
+    maim -su -m 10| xclip -se c -t image/png
+
 # Screenshot saved
-super + Print
-    maim -u ~/Images/Captures/$(date +%s).png
+super + shift + Print
+    maim -u -m 10 ~/Images/Captures/$(date +%s).png
 
 # Selection saved
-super + shift + Print
-    maim -su ~/Images/Captures/$(date +%s).png
+super + Print
+    maim -su -m 10 ~/Images/Captures/$(date +%s).png
 
 # Brightness controls
 super + u
