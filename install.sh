@@ -25,7 +25,7 @@ ln -sf "$LINKHERE"/config/* "$HOME"/.config/
 doas install -Dm 644 other/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
 
 # systemd-resolvd dns
-doas ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+#doas ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
 # Install dwm
 git clone git://git.suckless.org/dwm "$HOME"/dwm
