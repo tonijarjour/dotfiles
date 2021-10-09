@@ -8,10 +8,6 @@ highlight Search ctermfg=darkgrey ctermbg=lightgrey
 " Calmer bracket match colors
 highlight MatchParen ctermfg=white ctermbg=black
 
-" Completely hide the window border
-highlight VertSplit cterm=NONE
-set fillchars+=vert:\ 
-
 " Line numbers
 set number
 set relativenumber
@@ -105,7 +101,23 @@ nmap <silent> <leader>p :Helptags<cr>
 
 " vim-plug
 call plug#begin(stdpath('data') . '/plugged')
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'junegunn/fzf.vim'
 Plug 'mcchrish/nnn.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'mhinz/vim-startify'
 call plug#end()
+
+" Colorscheme to dracula
+colorscheme dracula
+
+" Lighline colorscheme
+let g:lightline = { 'colorscheme': 'darcula' }
+
+" Completely hide the window border
+highlight VertSplit cterm=NONE
+set fillchars+=vert:\ 
+
+" Disable startify header and new buffer/quit button display
+let g:startify_custom_header = 0
+let g:startify_enable_special = 0
