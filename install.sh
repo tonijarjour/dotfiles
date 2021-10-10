@@ -11,10 +11,10 @@ fi
 $PACMAN bat exa fd fzf ripgrep diff-so-fancy neovim neofetch man-db \
     zathura-pdf-poppler zathura-cb nvidia sxhkd alacritty dmenu mpv \
     noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation xclip \
-    gcc patch make alsa-utils ttf-fantasque-sans-mono chromium sxiv \
+    gcc patch make alsa-utils ttc-iosevka chromium sxiv nodejs npm \
     xorg-xprop xorg-xrandr xorg-xinit xorg-xsetroot feh maim git nnn \
     renameutils thunar tumbler lilypond pkgstats ffmpegthumbnailer \
-    nodejs npm typescript texlive-most texlive-lang 
+    typescript texlive-most texlive-lang 
 
 mkdir -p "$HOME"/.config/nnn/plugins
 
