@@ -18,11 +18,11 @@ set noshowmode
 " Tabs and Indents will be spaces
 set expandtab
 
-" <Tab> places 4 spaces
-set tabstop=4
+" <Tab> places 2 spaces
+set tabstop=2
 
-" Indent places 4 spaces
-set shiftwidth=4
+" Indent places 2 spaces
+set shiftwidth=2
 
 " Allows you to open another buffer without saving the current
 set hidden
@@ -54,9 +54,6 @@ vmap <silent> <leader>c :w !xclip -se c<cr><cr>
 " Clear search highlights
 nmap <silent> <leader>/ :noh<cr>
 
-" Force quit nvim
-nmap <silent> <leader>Q :qa!<cr>
-
 " Open nnn file manager (nnn)
 nmap <silent> <leader>n :NnnPicker<cr>
 
@@ -65,6 +62,9 @@ nmap <silent> <leader>e :enew<cr>
 
 " Quit the current buffer
 nmap <silent> <leader>q :bd<cr>
+
+" Force quit the current buffer
+nmap <silent> <leader>Q :bd!<cr>
 
 " Search all open buffers and choose one to open (fzf)
 nmap <silent> <leader>g :Buffers<cr>

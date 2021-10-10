@@ -10,16 +10,16 @@ scrolling:
 
 font:
   normal:
-    family: Fantasque Sans Mono
+    family: Iosevka
     style: Regular
   bold:
-    family: Fantasque Sans Mono
+    family: Iosevka
     style: Bold
   italic:
-    family: Fantasque Sans Mono
+    family: Iosevka
     style: Italic
   bold_italic:
-    family: Fantasque Sans Mono
+    family: Iosevka
     style: Bold Italic
   size: 16.0
 
