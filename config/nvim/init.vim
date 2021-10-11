@@ -109,10 +109,9 @@ Plug 'mhinz/vim-startify'
 call plug#end()
 
 " Colorscheme to dracula
+let g:dracula_colorterm = 0
 colorscheme dracula
-
-" Lighline colorscheme
-let g:lightline = { 'colorscheme': 'darcula' }
+let g:lightline = { 'colorscheme': 'dracula' }
 
 " Completely hide the window border
 highlight VertSplit cterm=NONE
