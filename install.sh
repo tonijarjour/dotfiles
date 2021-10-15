@@ -9,7 +9,7 @@ if ! [ -f "$PWD"/install.sh ]; then
 fi
 
 $PACMAN bat exa fd fzf ripgrep diff-so-fancy neovim neofetch man-db \
-    zathura-pdf-poppler zathura-cb nvidia sxhkd alacritty dmenu mpv \
+    zathura-pdf-poppler zathura-cb nvidia-dkms sxhkd alacritty dmenu mpv \
     noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation xclip \
     gcc patch make alsa-utils ttc-iosevka chromium sxiv nodejs npm \
     xorg-xprop xorg-xrandr xorg-xinit xorg-xsetroot feh maim git nnn \
