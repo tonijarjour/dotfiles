@@ -15,6 +15,7 @@ shopt -s autocd
 
 [[ -f "$HOME"/.variables ]] && . "$HOME"/.variables
 [[ -f "$HOME"/.aliases ]] && . "$HOME"/.aliases
+[[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
 
 [[ -f /usr/share/fzf/key-bindings.bash ]] && \
 	. /usr/share/fzf/key-bindings.bash
