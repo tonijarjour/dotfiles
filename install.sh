@@ -14,7 +14,7 @@ $PACMAN bat exa fd fzf ripgrep diff-so-fancy neovim neofetch man-db \
     gcc patch make alsa-utils ttc-iosevka chromium sxiv nodejs npm \
     xorg-xprop xorg-xrandr xorg-xinit xorg-xsetroot feh maim git nnn \
     renameutils thunar tumbler lilypond pkgstats ffmpegthumbnailer \
-    typescript texlive-most
+    typescript
 
 mkdir -p "$HOME"/.config/nnn/plugins
 
