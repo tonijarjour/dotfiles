@@ -8,13 +8,13 @@ if ! [ -f "$PWD"/install.sh ]; then
     exit
 fi
 
-$PACMAN bat exa fd fzf ripgrep diff-so-fancy neovim neofetch man-db \
+$PACMAN bat exa fd fzf ripgrep diff-so-fancy neovim neofetch man-db code \
     zathura-pdf-poppler zathura-cb nvidia-dkms sxhkd alacritty dmenu mpv \
-    noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation xclip \
-    gcc patch make alsa-utils ttc-iosevka chromium sxiv nodejs npm \
-    xorg-xprop xorg-xrandr xorg-xinit xorg-xsetroot feh maim git nnn \
-    renameutils thunar tumbler lilypond pkgstats ffmpegthumbnailer \
-    typescript
+    xorg-xprop xorg-xrandr xorg-xinit xorg-xsetroot feh maim git nnn gcc \
+    noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation xclip npm \
+    patch make alsa-utils ttc-iosevka chromium sxiv nodejs renameutils \
+    thunar tumbler lilypond pkgstats ffmpegthumbnailer
+    
 
 mkdir -p "$HOME"/.config/nnn/plugins
 

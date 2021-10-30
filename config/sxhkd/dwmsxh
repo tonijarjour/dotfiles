@@ -19,6 +19,8 @@ super + R
     chromium --incognito --force-dark-mode
 super + v
     zathura
+super + c
+    code
 
 # make sxhkd reload its configuration files:
 super + Escape
