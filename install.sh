@@ -12,8 +12,8 @@ $PACMAN bat exa fd fzf ripgrep diff-so-fancy neovim neofetch man-db sxiv \
     zathura-pdf-poppler zathura-cb nvidia-dkms sxhkd alacritty dmenu mpv \
     patch make alsa-utils ttc-iosevka chromium nodejs renameutils thunar \
     xorg-xprop xorg-xrandr xorg-xinit xorg-xsetroot feh maim git nnn gcc \
-    noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation xclip npm \
-    tumbler lilypond pkgstats ffmpegthumbnailer
+    noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation lilypond \
+    tumbler pkgstats ffmpegthumbnailer npm 
     
 
 mkdir -p "$HOME"/.config/nnn/plugins
