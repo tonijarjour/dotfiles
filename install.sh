@@ -40,8 +40,12 @@ patch < dwm-statusallmons-6.2.diff
 doas make clean install
 
 # nnn plugins
+# Remember to fix imgview and sxiv.desktop
 curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 
 # Vim Plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+# Spacevim
+curl -sLf https://spacevim.org/install.sh | bash
