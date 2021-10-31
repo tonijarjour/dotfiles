@@ -14,9 +14,9 @@ super + n
 super + q
     thunar
 super + r
-    chromium --force-dark-mode
+    chromium
 super + R
-    chromium --incognito --force-dark-mode
+    chromium --incognito
 super + v
     zathura
 super + c
