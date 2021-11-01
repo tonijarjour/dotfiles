@@ -20,7 +20,7 @@ super + R
 super + v
     zathura
 super + c
-    code
+    emacs
 
 # make sxhkd reload its configuration files:
 super + Escape
