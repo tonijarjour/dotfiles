@@ -8,13 +8,12 @@ if ! [ -f "$PWD"/install.sh ]; then
     exit
 fi
 
-$PACMAN exa fd ripgrep diff-so-fancy neovim neofetch man-db sxiv npm gcc \
-    zathura-pdf-poppler zathura-cb nvidia-dkms sxhkd alacritty dmenu mpv \
-    patch make alsa-utils ttc-iosevka chromium nodejs renameutils thunar \
-    xorg-xprop xorg-xrandr xorg-xinit xorg-xsetroot feh maim git nnn \
-    noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation lilypond \
-    tumbler pkgstats ffmpegthumbnailer
-    
+$PACMAN ttc-iosevka-etoile ttc-iosevka ttc-iosevka-slab ttc-iosevka-aile \
+    noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation feh mpv npm \
+    xorg-xprop xorg-xrandr xorg-xinit xorg-xsetroot nvidia-dkms zathura-cb \
+    nodejs patch git diff-so-fancy alsa-utils pkgstats zathura-pdf-poppler \
+    thunar tumbler ffmpegthumbnailer chromium maim lilypond sxhkd dmenu gcc \
+    exa fd ripgrep neovim neofetch man-db nnn alacritty renameutils make sxiv
 
 mkdir -p "$HOME"/.config/nnn/plugins
 
