@@ -17,8 +17,8 @@ set shiftwidth=4
 " Allows you to open another buffer without saving the current
 set hidden
 
-" When wrapping long lines, do not break words
-set linebreak
+" Long lines do not wrap
+set nowrap
 
 " View scrolls at 2 lines from the edges
 set scrolloff=2
