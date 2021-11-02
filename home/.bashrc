@@ -4,7 +4,7 @@
 
 [[ "$-" != *i* ]] && return
 
-PS1='\[\e[31m\]\u\[\e[37m\]@\[\e[31m\]\h \[\e[33m\]\W \[\e[90m\]λ \[\e[39m\]'
+PS1='\[\e[31m\]\u\[\e[38;5;252m\]@\[\e[31m\]\h \[\e[33m\]\W \[\e[90m\]λ \[\e[39m\]'
 
 HISTFILESIZE=10000
 HISTCONTROL='erasedups'
