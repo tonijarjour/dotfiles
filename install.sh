@@ -9,11 +9,12 @@ if ! [ -f "$PWD"/install.sh ]; then
 fi
 
 $manager ttc-iosevka-etoile ttc-iosevka ttc-iosevka-slab ttc-iosevka-aile \
-    noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation feh mpv npm \
+    noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation feh mpv sxiv \
     xorg-xprop xorg-xrandr xorg-xinit xorg-xsetroot nvidia-dkms zathura-cb \
     nodejs patch git diff-so-fancy alsa-utils pkgstats zathura-pdf-poppler \
     thunar tumbler ffmpegthumbnailer chromium maim lilypond sxhkd dmenu gcc \
-    exa fd ripgrep neovim neofetch man-db nnn alacritty renameutils make sxiv
+    exa ripgrep neovim neofetch man-db nnn alacritty renameutils make xclip \
+    npm fd 
 
 mkdir -p "$HOME"/.config/nnn/plugins
 

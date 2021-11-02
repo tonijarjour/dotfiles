@@ -21,7 +21,7 @@ font:
   bold_italic:
     family: Iosevka Fixed
     style: Bold Italic
-  size: 16.0
+  size: 15.5
 
 colors:
   primary:

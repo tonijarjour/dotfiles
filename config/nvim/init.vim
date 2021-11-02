@@ -17,8 +17,8 @@ set shiftwidth=4
 " Allows you to open another buffer without saving the current
 set hidden
 
-" Long lines do not wrap
-set nowrap
+" When wrapping long lines, do not break words
+set linebreak
 
 " View scrolls at 2 lines from the edges
 set scrolloff=2
@@ -49,6 +49,9 @@ nmap <silent> <leader>q :bd<cr>
 
 " Force quit the current buffer
 nmap <silent> <leader>Q :bd!<cr>
+
+" Yank to clipboard
+vmap <silent> <leader>y "+y
 
 " vim-plug
 call plug#begin(stdpath('data') . '/plugged')
