@@ -1,14 +1,14 @@
 #!/bin/sh
 
-PACMAN='doas pacman -S'
-LINKHERE="$PWD"
+manager='doas pacman -S'
+linkhere="$PWD"
 
 if ! [ -f "$PWD"/install.sh ]; then
     echo 'Must run in the directory of this script!'
     exit
 fi
 
-$PACMAN ttc-iosevka-etoile ttc-iosevka ttc-iosevka-slab ttc-iosevka-aile \
+$manager ttc-iosevka-etoile ttc-iosevka ttc-iosevka-slab ttc-iosevka-aile \
     noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation feh mpv npm \
     xorg-xprop xorg-xrandr xorg-xinit xorg-xsetroot nvidia-dkms zathura-cb \
     nodejs patch git diff-so-fancy alsa-utils pkgstats zathura-pdf-poppler \
@@ -18,8 +18,8 @@ $PACMAN ttc-iosevka-etoile ttc-iosevka ttc-iosevka-slab ttc-iosevka-aile \
 mkdir -p "$HOME"/.config/nnn/plugins
 
 ln -s /mnt/archive/* "$HOME"
-ln -sf "$LINKHERE"/home/.* "$HOME"
-ln -sf "$LINKHERE"/config/* "$HOME"/.config/
+ln -sf "$linkhere"/home/.* "$HOME"
+ln -sf "$linkhere"/config/* "$HOME"/.config/
 
 # Turn off mouse acceleration
 doas install -Dm 644 other/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
@@ -32,8 +32,8 @@ cp "/mnt/archive/Other/Data Files/git-credentials" "$HOME/.git-credentials"
 
 # Install dwm
 git clone git://git.suckless.org/dwm "$HOME"/dwm
-cp "$LINKHERE"/other/dwm-statusallmons-6.2.diff "$HOME"/dwm
-ln -s "$LINKHERE"/other/config.h "$HOME"/dwm
+cp "$linkhere"/other/dwm-statusallmons-6.2.diff "$HOME"/dwm
+ln -s "$linkhere"/other/config.h "$HOME"/dwm
 cd "$HOME"/dwm
 patch < dwm-statusallmons-6.2.diff
 doas make clean install
