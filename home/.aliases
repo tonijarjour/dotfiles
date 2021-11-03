@@ -11,26 +11,27 @@ alias la='exa -Fhla --git'
 alias tree='exa -TFh --git -I ".git"'
 
 g() {
-    local arg="$1"
-    shift
-    case "$arg" in 
-        a) git add "$@" ;;
-        b) git branch "$@" ;;
-        c) git commit "$@" ;;
-        d) git diff "$@" ;;
-        h) git stash "$@" ;;
-        i) git init "$@" ;;
-        k) git checkout "$@" ;;
-        l) git pull "$@" ;;
-        m) git merge "$@" ;;
-        n) git clone "$@" ;;
-        o) git log --oneline -n 20 --graph "$@" ;;
-        p) git push "$@" ;;
-        r) git reset "$@" ;;
-        s) git status -s "$@" ;;
-        t) git remote "$@" ;;
-        v) git revert "$@" ;;
-        w) git show "$@" ;;
+    case "$1" in 
+        a) git add "${@:2}" ;;
+        b) git branch "${@:2}" ;;
+        c) git commit "${@:2}" ;;
+        d) case "$2" in 
+            s) git diff --staged "${@:3}" ;; 
+            *) git diff "${@:2}"
+        esac ;;
+        h) git stash "${@:2}" ;;
+        i) git init "${@:2}" ;;
+        k) git checkout "${@:2}" ;;
+        l) git pull "${@:2}" ;;
+        m) git merge "${@:2}" ;;
+        n) git clone "${@:2}" ;;
+        o) git log --oneline -n 20 --graph "${@:2}" ;;
+        p) git push "${@:2}" ;;
+        r) git reset "${@:2}" ;;
+        s) git status -s "${@:2}" ;;
+        t) git remote "${@:2}" ;;
+        v) git revert "${@:2}" ;;
+        w) git show "${@:2}" ;;
         *) git "$@"
     esac
 }

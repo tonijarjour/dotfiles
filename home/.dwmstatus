@@ -1,0 +1,8 @@
+dt() {
+    echo $(date +"  %a %b %d | %R  ")
+}
+
+while true; do
+    xsetroot -name "$(dt)"
+	sleep 12 
+done

@@ -33,6 +33,6 @@ xrandr --output DVI-I-1 --right-of HDMI-0
 setxkbmap -layout us -variant altgr-intl -option nodeadkeys
 setxkbmap -option caps:super
 feh --bg-fill --no-fehbg --randomize "$HOME"/Images/Wallpapers/1.png
-sh "$HOME"/.date.sh &
+sh "$HOME"/.dwmstatus &
 pgrep -x sxhkd > /dev/null || sxhkd -c "$HOME"/.config/sxhkd/dwmsxh &
 exec dwm
