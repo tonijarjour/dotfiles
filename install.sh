@@ -25,7 +25,7 @@ ln -sf "$linkhere"/config/* "$HOME"/.config/
 # Turn off mouse acceleration
 doas install -Dm 644 other/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
 
-# Set larger console font
+# Terminus console font
 doas install -Dm 644 other/ter-132n.psf.gz /usr/share/kbd/consolefonts/
 doas install -Dm 644 other/vconsole.conf /etc/
 
