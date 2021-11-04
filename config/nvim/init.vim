@@ -44,14 +44,20 @@ nmap <silent> <leader>/ :noh<cr>
 " Open an empty buffer
 nmap <silent> <leader>e :enew<cr>
 
+" Go to next buffer
+nmap <silent> <leader>n :bn<cr>
+
+" Go to previous buffer
+nmap <silent> <leader>p :bp<cr>
+
 " Quit the current buffer
-nmap <silent> <leader>q :bd<cr>
+nmap <silent> <leader>d :bd<cr>
 
 " Force quit the current buffer
-nmap <silent> <leader>Q :bd!<cr>
+nmap <silent> <leader>D :bd!<cr>
 
 " Yank to clipboard
-vmap <silent> <leader>y "+y
+vmap <leader>y "+y
 
 " vim-plug
 call plug#begin(stdpath('data') . '/plugged')

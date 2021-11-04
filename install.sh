@@ -1,52 +1,50 @@
 #!/bin/sh
 
-manager='doas pacman -S'
-linkhere="$PWD"
+here="$PWD"
 
-if ! [ -f "$PWD"/install.sh ]; then
-    echo 'Must run in the directory of this script!'
-    exit
-fi
+! [ -f "$here/install.sh" ] && return
 
-$manager ttc-iosevka-etoile ttc-iosevka ttc-iosevka-slab ttc-iosevka-aile \
-    noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation feh mpv sxiv \
-    xorg-xprop xorg-xrandr xorg-xinit xorg-xsetroot nvidia-dkms zathura-cb \
-    nodejs patch git diff-so-fancy alsa-utils pkgstats zathura-pdf-poppler \
-    thunar tumbler ffmpegthumbnailer chromium maim lilypond sxhkd dmenu gcc \
-    exa ripgrep neovim neofetch man-db nnn alacritty renameutils make xclip \
-    npm fd 
+doas pacman -S git neovim man-db diff-so-fancy nvidia-dkms linux-zen-headers \
+    xorg-xinit xorg-xsetroot xorg-xrandr alacritty xclip sxhkd patch neofetch \
+    alsa-utils dmenu gcc make feh ttc-iosevka-etoile ttc-iosevka noto-fonts \
+    noto-fonts-cjk noto-fonts-emoji ttf-liberation chromium thunar tumbler \
+    ffmpegthumbnailer mpv sxiv maim zathura-pdf-poppler zathura-cb nodejs \
+    npm pkgstats lilypond ripgrep fd renameutils nnn exa
 
-mkdir -p "$HOME"/.config/nnn/plugins
+# Make the .config directory if it isn't already there
+mkdir -p "$HOME/.config"
 
-ln -s /mnt/archive/* "$HOME"
-ln -sf "$linkhere"/home/.* "$HOME"
-ln -sf "$linkhere"/config/* "$HOME"/.config/
+# Symlink all the stuff
+ln -s "/mnt/archive/"* "$HOME/"
+ln -sf "$here/home/."* "$HOME/"
+ln -sf "$here/config/"* "$HOME/.config/"
 
 # Turn off mouse acceleration
-doas install -Dm 644 other/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/
+doas install -Dm 644 "$here/system/50-mouse-acceleration.conf" "/etc/X11/xorg.conf.d/"
 
-# Terminus console font
-doas install -Dm 644 other/ter-132n.psf.gz /usr/share/kbd/consolefonts/
-doas install -Dm 644 other/vconsole.conf /etc/
+# terminus console font
+doas install -Dm 644 "$here/system/vconsole.conf" "/etc/"
+doas install -Dm 644 "$here/system/ter-132n.psf.gz" "/usr/share/kbd/consolefonts/"
 
 # systemd-resolvd dns
-doas ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+doas ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"
 
 # git credentials
 cp "/mnt/archive/Other/Data Files/git-credentials" "$HOME/.git-credentials"
 
 # Install dwm
-git clone git://git.suckless.org/dwm "$HOME"/dwm
-cp "$linkhere"/other/dwm-statusallmons-6.2.diff "$HOME"/dwm
-ln -s "$linkhere"/other/config.h "$HOME"/dwm
-cd "$HOME"/dwm
-patch < dwm-statusallmons-6.2.diff
+git clone "git://git.suckless.org/dwm" "$HOME/dwm"
+cp "$here/system/dwm-statusallmons-6.2.diff" "$HOME/dwm"
+ln -sf "$here/system/config.h" "$HOME/dwm"
+cd "$HOME/dwm" || return
+patch < "dwm-statusallmons-6.2.diff"
 doas make clean install
 
-# nnn plugins
 # Remember to fix imgview and sxiv.desktop
 curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 
 # Vim Plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+echo "DONE"

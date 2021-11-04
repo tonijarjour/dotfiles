@@ -1,8 +1,11 @@
+#!/bin/sh
+# ~/.dwmstatus
+
 dt() {
-    echo $(date +"  %a %b %d | %R  ")
+    echo $(date +" %a %b %d | %R ")
 }
 
 while true; do
-    xsetroot -name "$(dt)"
+    xsetroot -name " $(dt) "
 	sleep 12 
 done

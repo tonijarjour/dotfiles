@@ -1,3 +1,5 @@
+# ~/.Xresources
+
 Xcursor.size: 48
 *font: Iosevka:size=12
 *.foreground: #F8F8F2
