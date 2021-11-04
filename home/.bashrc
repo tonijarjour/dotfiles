@@ -14,6 +14,7 @@ shopt -s autocd
 
 alias vi='nvim'
 alias bat='nvim -R'
+alias n='nnn -e'
 alias ls='exa -F'
 alias lsa='exa -Fa'
 alias l='exa -Fhl --git'

@@ -11,8 +11,7 @@ doas pacman -S git neovim man-db diff-so-fancy nvidia-dkms linux-zen-headers \
     ffmpegthumbnailer mpv sxiv maim zathura-pdf-poppler zathura-cb nodejs \
     npm pkgstats lilypond ripgrep fd renameutils nnn exa
 
-# Make the .config directory if it isn't already there
-mkdir -p "$HOME/.config"
+mkdir -p "$HOME/.config/nnn/plugins"
 
 # Symlink all the stuff
 ln -s "/mnt/archive/"* "$HOME/"
@@ -40,6 +39,7 @@ cd "$HOME/dwm" || return
 patch < "dwm-statusallmons-6.2.diff"
 doas make clean install
 
+# nnn
 # Remember to fix imgview and sxiv.desktop
 curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 
