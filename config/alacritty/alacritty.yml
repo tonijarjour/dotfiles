@@ -10,18 +10,18 @@ scrolling:
 
 font:
   normal:
-    family: Iosevka Fixed
+    family: Source Code Pro
     style: Regular
   bold:
-    family: Iosevka Fixed
+    family: Source Code Pro
     style: Bold
   italic:
-    family: Iosevka Fixed
+    family: Source Code Pro
     style: Italic
   bold_italic:
-    family: Iosevka Fixed
+    family: Source Code Pro
     style: Bold Italic
-  size: 15.5
+  size: 13
 
 colors:
   primary:

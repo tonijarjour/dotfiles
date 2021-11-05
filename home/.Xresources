@@ -1,7 +1,7 @@
 # ~/.Xresources
 
 Xcursor.size: 48
-*font: Iosevka:size=12
+*font: Noto Sans:size=13
 *.foreground: #F8F8F2
 *.background: #282A36
 *.color0:     #000000

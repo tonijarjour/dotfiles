@@ -6,10 +6,10 @@ here="$PWD"
 
 doas pacman -S git neovim man-db diff-so-fancy nvidia-dkms linux-zen-headers \
     xorg-xinit xorg-xsetroot xorg-xrandr alacritty xclip sxhkd patch neofetch \
-    alsa-utils dmenu gcc make feh ttc-iosevka-etoile ttc-iosevka noto-fonts \
-    noto-fonts-cjk noto-fonts-emoji ttf-liberation chromium thunar tumbler \
-    ffmpegthumbnailer mpv sxiv maim zathura-pdf-poppler zathura-cb nodejs \
-    npm pkgstats lilypond ripgrep fd renameutils nnn exa
+    ttf-liberation chromium thunar tumbler ffmpegthumbnailer mpv sxiv maim nnn \
+    zathura-pdf-poppler zathura-cb nodejs npm pkgstats lilypond ripgrep fd exa \
+    alsa-utils dmenu gcc make feh noto-fonts noto-fonts-cjk noto-fonts-emoji \
+    renameutils
 
 mkdir -p "$HOME/.config/nnn/plugins"
 
