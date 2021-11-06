@@ -27,11 +27,11 @@ set notification-bg             "#282a36" # Background
 set notification-fg             "#f8f8f2" # Foreground
 
 set completion-bg               "#282a36" # Background
-set completion-fg               "#8c92a3" # Comment
+set completion-fg               "#f8f8f2" # Comment
 set completion-group-bg         "#282a36" # Background
 set completion-group-fg         "#282a36" # Comment
-set completion-highlight-bg     "#44475a" # Selection
-set completion-highlight-fg     "#f8f8f2" # Foreground
+set completion-highlight-bg     "#f8f8f2" # Selection
+set completion-highlight-fg     "#282a36" # Foreground
 
 set index-bg                    "#282a36" # Background
 set index-fg                    "#f8f8f2" # Foreground
