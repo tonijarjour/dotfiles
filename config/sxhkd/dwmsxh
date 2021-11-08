@@ -15,12 +15,8 @@ super + q
     thunar
 super + r
     chromium
-super + R
-    chromium --incognito
 super + v
     zathura
-super + c
-    emacs
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -30,17 +26,14 @@ super + Escape
 super + alt + w
     feh --bg-fill --no-fehbg --randomize ~/Images/Wallpapers
 
-# Selection copied
+# Screenshot
 super + Print
     maim -su -m 10| xclip -se c -t image/png
-
-# Selection saved
 super + shift + Print
     maim -su -m 10 ~/Images/Captures/$(date +%s).png
 
-# Brightness controls
+# Screen Brightness
 super + u
     xrandr --output DVI-I-1 --brightness 0.7 && xrandr --output HDMI-0 --brightness 0.7
-
 super + y
     xrandr --output DVI-I-1 --brightness 1.0 && xrandr --output HDMI-0 --brightness 1.0

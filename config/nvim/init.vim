@@ -79,7 +79,7 @@ nmap <silent> <leader>Q :qa<cr>
 
 " Session management (startify)
 nmap <leader>sl :SLoad 
-nmap <leader>ss :SSave! 
+nmap <leader>ss :SSave!<cr>
 nmap <leader>sd :SDelete!<cr>
 nmap <leader>sc :SClose<cr>
 

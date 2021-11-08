@@ -4,12 +4,12 @@ here="$PWD"
 
 ! [ -f "$here/install.sh" ] && return
 
-doas pacman -S git neovim man-db diff-so-fancy nvidia-dkms linux-zen-headers \
-    xorg-xinit xorg-xsetroot xorg-xrandr alacritty xclip sxhkd patch neofetch \
-    ttf-liberation chromium thunar tumbler ffmpegthumbnailer mpv sxiv maim nnn \
-    zathura-pdf-poppler zathura-cb nodejs npm pkgstats lilypond ripgrep fd exa \
-    alsa-utils dmenu gcc make feh noto-fonts noto-fonts-cjk noto-fonts-emoji \
-    renameutils
+doas pacman -S exa ripgrep fd nnn renameutils diff-so-fancy git gcc patch make \
+    noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation ttf-iosevka-nerd \
+    xclip sxhkd sxiv feh dmenu thunar tumbler ffmpegthumbnailer alacritty maim \
+    linux-zen-headers nvidia-dkms xorg-xinit xorg-xrandr xorg-xsetroot mpv npm \
+    alsa-utils chromium zathura-cb zathura-pdf-poppler man-db neofetch neovim \
+    nodejs pkgstats 
 
 mkdir -p "$HOME/.config/nnn/plugins"
 
