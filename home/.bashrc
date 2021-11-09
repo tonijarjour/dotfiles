@@ -14,12 +14,6 @@ shopt -s autocd
 
 alias vi='nvim'
 alias bat='nvim -R'
-alias n='nnn -e'
-alias ls='exa -F'
-alias lsa='exa -Fa'
-alias l='exa -Fhl --git'
-alias la='exa -Fhla --git'
-alias tree='exa -TFh --git -I ".git"'
 
 g() {
     case "$1" in 
@@ -47,9 +41,8 @@ g() {
     esac
 }
 
-[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
-
 bash_history_file=$(mktemp "$USER"_bash_historyXXXXXX)
-tac "$HOME/.bash_history" | awk '!visited[$0]++' | tac > "$bash_history_file"
+awk 'NR == FNR { a[$0]++; next; }; ++b[$0] == a[$0]' \
+    "$HOME/.bash_history" "$HOME/.bash_history" > "$bash_history_file"
 mv "$bash_history_file" "$HOME/.bash_history"
 unset bash_history_file
