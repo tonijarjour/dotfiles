@@ -14,6 +14,7 @@ shopt -s autocd
 
 alias vi='nvim'
 alias bat='nvim -R'
+alias ls='ls --color=auto'
 
 g() {
     case "$1" in 
