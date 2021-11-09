@@ -31,5 +31,14 @@ fi
 
 setxkbmap -layout us -variant altgr-intl -option nodeadkeys
 setxkbmap -option caps:super
-sh "$HOME/.dwmstatus" &
+
+dt() {
+    echo $(date +" %a %b %d | %R ")
+}
+
+while true; do
+    xsetroot -name " $(dt) "
+	sleep 12 
+done &
+
 exec dwm
