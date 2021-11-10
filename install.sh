@@ -25,10 +25,14 @@ cd "$HOME/dwm" || return
 patch < "dwm-statusallmons-6.2.diff"
 doas make clean install
 
+git clone "git://git.suckless.org/dmenu" "$HOME/dmenu"
+cd "$HOME/dmenu" || return
+doas make clean install
+
 mkdir -p "$HOME/.config"
 ln -sf "$here/home/."* "$HOME/"
 ln -sf "$here/config/"* "$HOME/.config/"
-cp "/mnt/archive/Other/Data Files/git-credentials" \
+cp "/mnt/archive/Other/git-credentials" \
     "$HOME/.git-credentials"
 
 echo "DONE"
