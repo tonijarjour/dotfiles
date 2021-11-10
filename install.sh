@@ -19,10 +19,7 @@ doas ln -sf "/run/systemd/resolve/stub-resolv.conf" \
     "/etc/resolv.conf"
 
 git clone "git://git.suckless.org/dwm" "$HOME/dwm"
-cp "$here/system/dwm-statusallmons-6.2.diff" "$HOME/dwm"
-ln -sf "$here/system/config.h" "$HOME/dwm"
 cd "$HOME/dwm" || return
-patch < "dwm-statusallmons-6.2.diff"
 doas make clean install
 
 git clone "git://git.suckless.org/dmenu" "$HOME/dmenu"
