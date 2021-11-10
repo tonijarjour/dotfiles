@@ -15,6 +15,7 @@ shopt -s autocd
 alias vi='nvim'
 alias bat='nvim -R'
 alias ls='ls --color=auto'
+alias lsa='ls -a'
 
 g() {
     case "$1" in 
@@ -41,6 +42,8 @@ g() {
         *) git "$@"
     esac
 }
+
+source /usr/share/nnn/quitcd/quitcd.bash_zsh
 
 bash_history_file=$(mktemp "$USER"_bash_historyXXXXXX)
 awk 'NR == FNR { a[$0]++; next; }; ++b[$0] == a[$0]' \
