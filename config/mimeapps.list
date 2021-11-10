@@ -1,0 +1,6 @@
+[Default Applications]
+image/png=feh.desktop
+image/jpeg=feh.desktop
+image/gif=feh.desktop
+application/pdf=org.pwmt.zathura-pdf-poppler.desktop
+inode/directory=thunar.desktop
