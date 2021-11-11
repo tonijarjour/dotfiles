@@ -9,7 +9,7 @@ doas pacman -S git gcc patch make neovim man-db fd ripgrep \
     noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation \
     ttf-iosevka-nerd chromium alsa-utils pkgstats feh mpv nnn \
     zathura-pdf-poppler zathura-cb xclip maim renameutils \
-    ffmpegthumbnailer xdotool
+    ffmpegthumbnailer xdotool pkg-config
 
 doas install -Dm 644 "$here/system/vconsole.conf" \
     "/etc/"
@@ -20,8 +20,12 @@ doas install -Dm 644 "$here/system/50-mouse-acceleration.conf" \
 doas ln -sf "/run/systemd/resolve/stub-resolv.conf" \
     "/etc/resolv.conf"
 
-git clone "git://git.suckless.org/dwm" "$HOME/dwm"
+git clone "https://github.com/tonijarjour/dwm" "$HOME/dwm"
 cd "$HOME/dwm" || return
+doas make clean install
+
+git clone "https://github.com/tonijarjour/st" "$HOME/st"
+cd "$HOME/st" || return
 doas make clean install
 
 git clone "git://git.suckless.org/dmenu" "$HOME/dmenu"
@@ -32,8 +36,8 @@ git clone "git://git.suckless.org/tabbed" "$HOME/tabbed"
 cd "$HOME/tabbed" || return
 doas make clean install
 
-git clone "git://git.suckless.org/st" "$HOME/st"
-cd "$HOME/st" || return
+git clone "https://github.com/nsxiv/nsxiv" "$HOME/nsxiv"
+cd "$HOME/nsxiv" || return
 doas make clean install
 
 # fix quit on cd
