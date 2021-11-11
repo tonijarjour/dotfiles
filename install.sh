@@ -22,24 +22,25 @@ doas install -Dm 644 "$here/system/50-mouse-acceleration.conf" \
 doas ln -sf "/run/systemd/resolve/stub-resolv.conf" \
     "/etc/resolv.conf"
 
-git clone "https://github.com/tonijarjour/dwm" "$HOME/dwm"
-cd "$HOME/dwm" || return
+mkdir "$HOME/suckless"
+git clone "https://github.com/tonijarjour/dwm" "$HOME/suckless/dwm"
+cd "$HOME/suckless/dwm" || return
 doas make clean install
 
-git clone "https://github.com/tonijarjour/st" "$HOME/st"
-cd "$HOME/st" || return
+git clone "https://github.com/tonijarjour/st" "$HOME/suckless/st"
+cd "$HOME/suckless/st" || return
 doas make clean install
 
-git clone "git://git.suckless.org/dmenu" "$HOME/dmenu"
-cd "$HOME/dmenu" || return
+git clone "git://git.suckless.org/dmenu" "$HOME/suckless/dmenu"
+cd "$HOME/suckless/dmenu" || return
 doas make clean install
 
-git clone "git://git.suckless.org/tabbed" "$HOME/tabbed"
-cd "$HOME/tabbed" || return
+git clone "git://git.suckless.org/tabbed" "$HOME/suckless/tabbed"
+cd "$HOME/suckless/tabbed" || return
 doas make clean install
 
-git clone "https://github.com/nsxiv/nsxiv" "$HOME/nsxiv"
-cd "$HOME/nsxiv" || return
+git clone "https://github.com/nsxiv/nsxiv" "$HOME/suckless/nsxiv"
+cd "$HOME/suckless/nsxiv" || return
 doas make clean install
 doas make install-desktop
 
@@ -49,6 +50,7 @@ curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | s
 
 ln -sf "$here/home/."* "$HOME/"
 ln -sf "$here/config/"* "$HOME/.config/"
+ln -s "/mnt/archive/"* "$HOME"
 cp "/mnt/archive/Other/git-credentials" \
     "$HOME/.git-credentials"
 
