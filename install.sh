@@ -40,7 +40,7 @@ git clone "https://github.com/nsxiv/nsxiv" "$HOME/nsxiv"
 cd "$HOME/nsxiv" || return
 doas make clean install
 
-# fix quit on cd
+# fix quitoncd and nsxiv.desktop
 mkdir -p "$HOME/.config/nnn/plugins"
 curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 

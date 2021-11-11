@@ -43,7 +43,9 @@ g() {
     esac
 }
 
-source /usr/share/nnn/quitcd/quitcd.bash_zsh
+if [ -f /usr/share/nnn/quitcd/quitcd.bash_zsh ]; then
+    source /usr/share/nnn/quitcd/quitcd.bash_zsh
+fi
 
 bash_history_file=$(mktemp "$USER"_bash_historyXXXXXX)
 awk 'NR == FNR { a[$0]++; next; }; ++b[$0] == a[$0]' \
