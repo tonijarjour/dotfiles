@@ -11,6 +11,8 @@ doas pacman -S git gcc patch make neovim man-db fd ripgrep \
     zathura-pdf-poppler zathura-cb xclip maim renameutils \
     ffmpegthumbnailer xdotool pkg-config
 
+doas install -Dm 655 "$here/system/dwm_run" \
+    "/usr/local/bin/"
 doas install -Dm 644 "$here/system/vconsole.conf" \
     "/etc/"
 doas install -Dm 644 "$here/system/ter-132n.psf.gz" \
@@ -39,8 +41,9 @@ doas make clean install
 git clone "https://github.com/nsxiv/nsxiv" "$HOME/nsxiv"
 cd "$HOME/nsxiv" || return
 doas make clean install
+doas make install-desktop
 
-# fix quitoncd and nsxiv.desktop
+# fix quitoncd, nsxiv.desktop, and tabbed nsxiv call with -a
 mkdir -p "$HOME/.config/nnn/plugins"
 curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 
