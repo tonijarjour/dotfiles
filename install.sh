@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 here="$PWD"
 
@@ -6,11 +6,12 @@ here="$PWD"
 
 doas pacman -S git gcc patch make automake autoconf pkg-config fakeroot
 
-git clone https://aur.archlinux.org/libxft-bgra-git.git "$HOME/libxft-bgra"
+mkdir "$HOME/suckless"
+git clone https://aur.archlinux.org/libxft-bgra-git.git "$HOME/suckless/libxft-bgra"
 cd "$HOME/libxft-bgra" || return
 makepkg -si
 
-git clone https://aur.archlinux.org/nsxiv.git "$HOME/nsxiv"
+git clone https://aur.archlinux.org/nsxiv.git "$HOME/suckless/nsxiv"
 cd "$HOME/nsxiv" || return
 makepkg -si
 
@@ -20,8 +21,6 @@ doas pacman -S neovim man-db fd ripgrep nnn renameutils feh npm \
     linux-zen-headers nvidia-dkms xorg-xsetroot xorg-xinit mpv \
     zathura-pdf-poppler zathura-cb xclip maim ffmpegthumbnailer
     
-npm config set prefix "$HOME/.npm-global"
-
 doas install -Dm 655 "$here/system/dwm_run" \
     "/usr/local/bin/"
 doas install -Dm 644 "$here/system/vconsole.conf" \
@@ -33,7 +32,6 @@ doas install -Dm 644 "$here/system/50-mouse-acceleration.conf" \
 doas ln -sf "/run/systemd/resolve/stub-resolv.conf" \
     "/etc/resolv.conf"
 
-mkdir "$HOME/suckless"
 git clone "https://github.com/tonijarjour/dwm" "$HOME/suckless/dwm"
 cd "$HOME/suckless/dwm" || return
 doas make clean install
@@ -58,7 +56,5 @@ ln -sf "$here/config/"* "$HOME/.config/"
 ln -s "/mnt/archive/"* "$HOME"
 cp "/mnt/archive/Other/git-credentials" \
     "$HOME/.git-credentials"
-
-bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 
 echo "DONE"
