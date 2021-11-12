@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 here="$PWD"
 
@@ -7,11 +7,11 @@ here="$PWD"
 doas pacman -S git gcc patch make automake autoconf pkg-config fakeroot
 
 git clone https://aur.archlinux.org/libxft-bgra-git.git "$HOME/libxft-bgra"
-cd "$HOME/libxft-bgra"
+cd "$HOME/libxft-bgra" || return
 makepkg -si
 
 git clone https://aur.archlinux.org/nsxiv.git "$HOME/nsxiv"
-cd "$HOME/nsxiv"
+cd "$HOME/nsxiv" || return
 makepkg -si
 
 doas pacman -S neovim man-db fd ripgrep nnn renameutils feh npm \
@@ -20,6 +20,7 @@ doas pacman -S neovim man-db fd ripgrep nnn renameutils feh npm \
     linux-zen-headers nvidia-dkms xorg-xsetroot xorg-xinit mpv \
     zathura-pdf-poppler zathura-cb xclip maim ffmpegthumbnailer
     
+npm config set prefix "$HOME/.npm-global"
 
 doas install -Dm 655 "$here/system/dwm_run" \
     "/usr/local/bin/"
@@ -31,8 +32,6 @@ doas install -Dm 644 "$here/system/50-mouse-acceleration.conf" \
     "/etc/X11/xorg.conf.d/"
 doas ln -sf "/run/systemd/resolve/stub-resolv.conf" \
     "/etc/resolv.conf"
-
-npm config set prefix "$HOME/.npm-global"
 
 mkdir "$HOME/suckless"
 git clone "https://github.com/tonijarjour/dwm" "$HOME/suckless/dwm"
@@ -53,12 +52,13 @@ doas make clean install
 mkdir -p "$HOME/.config/nnn/plugins"
 curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 
 ln -sf "$here/home/."* "$HOME/"
 ln -sf "$here/config/"* "$HOME/.config/"
 ln -s "/mnt/archive/"* "$HOME"
 cp "/mnt/archive/Other/git-credentials" \
     "$HOME/.git-credentials"
+
+bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 
 echo "DONE"

@@ -13,8 +13,8 @@ PATH="$HOME/.npm-global/bin${PATH:+:${PATH}}"
 shopt -s histappend
 shopt -s autocd
 
-alias vi='nvim'
-alias bat='nvim -R'
+alias vi='$HOME/.local/bin/lvim'
+alias bat='vi -R'
 alias ls='ls --color=auto'
 alias lsa='ls -a'
 
@@ -44,7 +44,8 @@ g() {
     esac
 }
 
-if [ -f /usr/share/nnn/quitcd/quitcd.bash_zsh ]; then
+[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
+if [[ -f /usr/share/nnn/quitcd/quitcd.bash_zsh ]]; then
     source /usr/share/nnn/quitcd/quitcd.bash_zsh
 fi
 
