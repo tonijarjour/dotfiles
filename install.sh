@@ -4,12 +4,22 @@ here="$PWD"
 
 ! [ -f "$here/install.sh" ] && return
 
-doas pacman -S git gcc patch make neovim man-db fd ripgrep \
-    linux-zen-headers nvidia-dkms xorg-xsetroot xorg-xinit \
+doas pacman -S git gcc patch make automake autoconf pkg-config fakeroot
+
+git clone https://aur.archlinux.org/libxft-bgra-git.git "$HOME/libxft-bgra"
+cd "$HOME/libxft-bgra"
+makepkg -si
+
+git clone https://aur.archlinux.org/nsxiv.git "$HOME/nsxiv"
+cd "$HOME/nsxiv"
+makepkg -si
+
+doas pacman -S neovim man-db fd ripgrep nnn renameutils feh npm \
+    ttf-iosevka-nerd chromium alsa-utils pkgstats dmenu xdotool \
     noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation \
-    ttf-iosevka-nerd chromium alsa-utils pkgstats feh mpv nnn \
-    zathura-pdf-poppler zathura-cb xclip maim renameutils \
-    ffmpegthumbnailer xdotool pkg-config dmenu
+    linux-zen-headers nvidia-dkms xorg-xsetroot xorg-xinit mpv \
+    zathura-pdf-poppler zathura-cb xclip maim ffmpegthumbnailer
+    
 
 doas install -Dm 655 "$here/system/dwm_run" \
     "/usr/local/bin/"
@@ -21,6 +31,8 @@ doas install -Dm 644 "$here/system/50-mouse-acceleration.conf" \
     "/etc/X11/xorg.conf.d/"
 doas ln -sf "/run/systemd/resolve/stub-resolv.conf" \
     "/etc/resolv.conf"
+
+npm config set prefix "$HOME/.npm-global"
 
 mkdir "$HOME/suckless"
 git clone "https://github.com/tonijarjour/dwm" "$HOME/suckless/dwm"
@@ -36,11 +48,6 @@ cd "$HOME/suckless/tabbed" || return
 curl https://tools.suckless.org/tabbed/patches/autohide/tabbed-autohide-20201222-dabf6a2.diff > autohide.diff
 patch < autohide.diff
 doas make clean install
-
-git clone "https://github.com/nsxiv/nsxiv" "$HOME/suckless/nsxiv"
-cd "$HOME/suckless/nsxiv" || return
-doas make clean install
-doas make install-desktop
 
 # fix quitoncd, nsxiv.desktop, and tabbed nsxiv call with -a
 mkdir -p "$HOME/.config/nnn/plugins"

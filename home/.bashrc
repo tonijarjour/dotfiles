@@ -8,6 +8,7 @@ PS1='\[\e[31m\]\u\[\e[37m\]@\[\e[31m\]\h \[\e[33m\]\W \[\e[90m\]λ \[\e[39m\]'
 HISTFILESIZE=10000
 HISTCONTROL='erasedups'
 PROMPT_COMMAND='history -a'
+PATH="$HOME/.npm-global/bin:$PATH"
 
 shopt -s histappend
 shopt -s autocd
