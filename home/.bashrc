@@ -12,7 +12,7 @@ PROMPT_COMMAND='history -a'
 shopt -s histappend
 shopt -s autocd
 
-alias vi='$HOME/.local/bin/lvim'
+alias vi='nvim'
 alias bat='vi -R'
 alias ls='ls --color=auto'
 alias lsa='ls -a'

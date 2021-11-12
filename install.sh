@@ -8,11 +8,11 @@ doas pacman -S git gcc patch make automake autoconf pkg-config fakeroot
 
 mkdir "$HOME/suckless"
 git clone https://aur.archlinux.org/libxft-bgra-git.git "$HOME/suckless/libxft-bgra"
-cd "$HOME/libxft-bgra" || return
+cd "$HOME/suckless/libxft-bgra" || return
 makepkg -si
 
 git clone https://aur.archlinux.org/nsxiv.git "$HOME/suckless/nsxiv"
-cd "$HOME/nsxiv" || return
+cd "$HOME/suckless/nsxiv" || return
 makepkg -si
 
 doas pacman -S neovim man-db fd ripgrep nnn renameutils feh npm \
@@ -20,7 +20,7 @@ doas pacman -S neovim man-db fd ripgrep nnn renameutils feh npm \
     noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation \
     linux-zen-headers nvidia-dkms xorg-xsetroot xorg-xinit mpv \
     zathura-pdf-poppler zathura-cb xclip maim ffmpegthumbnailer
-    
+   
 doas install -Dm 655 "$here/system/dwm_run" \
     "/usr/local/bin/"
 doas install -Dm 644 "$here/system/vconsole.conf" \
