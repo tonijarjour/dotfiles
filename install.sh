@@ -4,22 +4,33 @@ here="$PWD"
 
 ! [ -f "$here/install.sh" ] && return
 
-doas pacman -S git gcc patch make automake autoconf pkg-config fakeroot
+doas pacman -S git gcc patch make automake autoconf pkgconf fakeroot
 
 mkdir "$HOME/suckless"
-git clone https://aur.archlinux.org/libxft-bgra-git.git "$HOME/suckless/libxft-bgra"
+git clone "https://aur.archlinux.org/libxft-bgra-git.git" \
+    "$HOME/suckless/libxft-bgra"
 cd "$HOME/suckless/libxft-bgra" || return
 makepkg -si
 
-git clone https://aur.archlinux.org/nsxiv.git "$HOME/suckless/nsxiv"
+git clone "https://aur.archlinux.org/nsxiv.git" "$HOME/suckless/nsxiv"
 cd "$HOME/suckless/nsxiv" || return
 makepkg -si
 
-doas pacman -S neovim man-db fd ripgrep nnn renameutils feh npm \
-    ttf-iosevka-nerd chromium alsa-utils pkgstats dmenu xdotool \
+git clone "https://aur.archlinux.org/neovim-nightly-bin.git" \
+    "$HOME/suckless/neovim"
+cd "$HOME/suckless/neovim" || return
+makepkg -si
+
+git clone "https://aur.archlinux.org/nvim-packer-git.git" \
+    "$HOME/suckless/packer"
+cd "$HOME/suckless/packer" || return
+makepkg -si
+
+doas pacman -S man-db fd ripgrep nnn renameutils feh npm dmenu \
+    ttf-iosevka-nerd chromium alsa-utils pkgstats xdotool maim \
     noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation \
     linux-zen-headers nvidia-dkms xorg-xsetroot xorg-xinit mpv \
-    zathura-pdf-poppler zathura-cb xclip maim ffmpegthumbnailer
+    zathura-pdf-poppler zathura-cb xclip ffmpegthumbnailer
    
 doas install -Dm 655 "$here/system/dwm_run" \
     "/usr/local/bin/"
@@ -42,14 +53,14 @@ doas make clean install
 
 git clone "git://git.suckless.org/tabbed" "$HOME/suckless/tabbed"
 cd "$HOME/suckless/tabbed" || return
-curl https://tools.suckless.org/tabbed/patches/autohide/tabbed-autohide-20201222-dabf6a2.diff > autohide.diff
-patch < autohide.diff
+curl "https://tools.suckless.org/tabbed/patches/autohide/tabbed-autohide-20201222-dabf6a2.diff" > "autohide.diff"
+patch < "autohide.diff"
 doas make clean install
 
-# fix quitoncd, nsxiv.desktop, and tabbed nsxiv call with -a
+# fix quitoncd, nsxiv.desktop, and tabbed nsxiv call with -a (and replace sxiv)
 mkdir -p "$HOME/.config/nnn/plugins"
-curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl -Ls "https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs" | sh
+curl --proto '=https' --tlsv1.2 -sSf "https://sh.rustup.rs" | sh
 
 ln -sf "$here/home/."* "$HOME/"
 ln -sf "$here/config/"* "$HOME/.config/"
