@@ -1,20 +1,26 @@
 local keymap = vim.api.nvim_set_keymap
-local silent = {noremap=true, silent=true}
 vim.g.mapleader = ' '
 keymap('n', 'Q', 'q', {noremap=true})
+-- Remove search highlights
+keymap('n', '<Leader>/', '<cmd>noh<cr>', {})
+-- Yank to clipboard
+keymap('v', '<Leader>y', '"+y<cr>', {})
 -- Session management
 keymap('n', '<Leader>hs', '<cmd>SessionSave<cr>', {})
 keymap('n', '<Leader>hl', '<cmd>SessionLoad<cr>', {})
 -- Navigate buffers
-keymap('n', '<Leader>fl', '<cmd>BufferLinePick<cr>', {})
-keymap('n', '<Leader>fn', '<cmd>BufferLineCycleNext<cr>', {})
-keymap('n', '<Leader>fp', '<cmd>BufferLineCyclePrev<cr>', {})
--- Save this buffer
-keymap('n', '<Leader>fw', '<cmd>w<cr>', {})
-keymap('n', '<Leader>fW', '<cmd>wa<cr>', {})
--- Close this buffer
-keymap('n', '<Leader>fd', '<cmd>bd<cr>', {})
-keymap('n', '<Leader>fD', '<cmd>bd!<cr>', {})
--- Quit nvim
+keymap('n', '<Leader>l', '<cmd>BufferLinePick<cr>', {})
+keymap('n', '<Leader>n', '<cmd>BufferLineCycleNext<cr>', {})
+keymap('n', '<Leader>p', '<cmd>BufferLineCyclePrev<cr>', {})
+-- New buffer, open file
+keymap('n', '<Leader>e', '<cmd>enew<cr>', {})
+keymap('n', '<Leader>o', ':e ~/', {})
+-- Save buffer, all
+keymap('n', '<Leader>w', '<cmd>w<cr>', {})
+keymap('n', '<Leader>W', '<cmd>wa<cr>', {})
+-- Close buffer, forcefully
+keymap('n', '<Leader>d', '<cmd>bd<cr>', {})
+keymap('n', '<Leader>D', '<cmd>bd!<cr>', {})
+-- Quit nvim, forcefully
 keymap('n', '<Leader>ql', '<cmd>qa<cr>', {})
 keymap('n', '<Leader>qL', '<cmd>qa!<cr>', {})
