@@ -12,6 +12,7 @@ fi
 
 setxkbmap -layout us -variant altgr-intl -option nodeadkeys
 setxkbmap -option caps:super
+feh --bg-fill --no-fehbg --randomize "$HOME/Images/Wallpapers/"
 
 dt() { echo "$(date +" %a %b %d | %R ")"; }
 
