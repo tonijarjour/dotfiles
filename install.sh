@@ -57,7 +57,7 @@ curl "https://tools.suckless.org/tabbed/patches/autohide/tabbed-autohide-2020122
 patch < "autohide.diff"
 doas make clean install
 
-# fix quitoncd, nsxiv.desktop, and tabbed nsxiv call with -a (and replace sxiv)
+# quitoncd -ea (remove export), nsxiv.desktop -a, tabbed/imgview nsxiv -a
 mkdir -p "$HOME/.config/nnn/plugins"
 curl -Ls "https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs" | sh
 curl --proto '=https' --tlsv1.2 -sSf "https://sh.rustup.rs" | sh

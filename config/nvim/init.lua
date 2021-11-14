@@ -10,7 +10,8 @@ require('telescope').load_extension('fzf')
 require('bufferline').setup {
     options = {show_close_icon  = false, show_buffer_close_icons  = false}}
 require('nvim-treesitter.configs').setup {
-    ensure_installed = {'lua'}, highlight = {enable = true}}
+    ensure_installed = {'lua', 'bash', 'rust', 'latex', 'c', 'comment',
+    'javascript', 'typescript', 'tsx'}, highlight = {enable = true}}
 vim.g.dashboard_custom_header = {[[]], [[]], [[]], [[]], [[NEOVIM]]}
 vim.g.dashboard_custom_footer = {}
 vim.g.dashboard_custom_section =  {
