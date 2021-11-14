@@ -1,7 +1,7 @@
 return require('packer').startup(function()
     use 'folke/tokyonight.nvim'
     use 'windwp/nvim-autopairs'
-    use 'terrortylor/nvim-comment'
+    use 'numToStr/Comment.nvim'
     use {'nvim-lualine/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt = true}}
     use {'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim'}

@@ -4,7 +4,7 @@ require('keymaps')
 
 vim.cmd[[colorscheme tokyonight]]
 require('nvim-autopairs').setup()
-require('nvim_comment').setup()
+require('Comment').setup()
 require('lualine').setup()
 require('telescope').load_extension('fzf')
 require('bufferline').setup {
