@@ -5,15 +5,26 @@ here="$PWD"
 doas pacman -S autoconf automake gcc make pkgconf patch git fd ripgrep man-db \
     noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-iosevka-nerd ttf-liberation \
     neovim alacritty npm pkgstats alsa-utils chromium xclip dmenu maim feh \
-    linux-zen-headers nvidia-dkms xorg-xinit xorg-xsetroot sxiv zathura-cb \
-    zathura-pdf-poppler mpv
+    linux-zen-headers nvidia-dkms xorg-xinit xorg-xsetroot mpv zathura-cb \
+    zathura-pdf-poppler 
 
 git clone "git://git.suckless.org/dwm" "$HOME/dwm"
+mkdir "$HOME/dwm/patches"
+cd "$HOME/dwm/patches" || return
+curl --remote-name-all "https://dwm.suckless.org/patches/{statusallmons/dwm-statusallmons-6.2.diff,attachbottom/dwm-attachbottom-6.2.diff,scratchpad/dwm-scratchpad-6.2.diff,alwayscenter/dwm-alwayscenter-20200625-f04cac6.diff,functionalgaps/dwm-functionalgaps-6.2.diff}"
 cd "$HOME/dwm" || return
+for i in "$HOME/dwm/patches/"*.diff;
+    do patch < $i;
+done
+cp "$here/system/config.h" "$HOME/dwm"
 doas make clean install
 
 git clone "https://aur.archlinux.org/nvim-packer-git.git" "$HOME/packer"
 cd "$HOME/packer" || return
+makepkg -si
+
+git clone "https://aur.archlinux.org/nsxiv.git" "$HOME/nsxiv"
+cd "$HOME/nsxiv" || return
 makepkg -si
 
 doas install -Dm 655 "$here/system/dwm_run" \
