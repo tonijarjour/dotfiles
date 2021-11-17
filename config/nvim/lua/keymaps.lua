@@ -5,9 +5,6 @@ keymap('n', 'Q', 'q', {noremap=true})
 keymap('n', '<Leader>/', '<cmd>noh<cr>', {})
 -- Yank to clipboard
 keymap('v', '<Leader>y', '"+y<cr>', {})
--- Session management
-keymap('n', '<Leader>hs', '<cmd>SessionSave<cr>', {})
-keymap('n', '<Leader>hl', '<cmd>SessionLoad<cr>', {})
 -- Navigate buffers
 keymap('n', '<Leader>l', '<cmd>BufferLinePick<cr>', {})
 keymap('n', '<Leader>n', '<cmd>BufferLineCycleNext<cr>', {})

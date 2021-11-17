@@ -1,37 +1,21 @@
 #!/bin/sh
-
 here="$PWD"
-
 ! [ -f "$here/install.sh" ] && return
 
-doas pacman -S git gcc patch make automake autoconf pkgconf fakeroot
+doas pacman -S autoconf automake gcc make pkgconf patch git fd ripgrep man-db \
+    noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-iosevka-nerd ttf-liberation \
+    neovim alacritty npm pkgstats alsa-utils chromium xclip dmenu maim feh \
+    linux-zen-headers nvidia-dkms xorg-xinit xorg-xsetroot sxiv zathura-cb \
+    zathura-pdf-poppler mpv
 
-mkdir "$HOME/suckless"
-git clone "https://aur.archlinux.org/libxft-bgra-git.git" \
-    "$HOME/suckless/libxft-bgra"
-cd "$HOME/suckless/libxft-bgra" || return
+git clone "git://git.suckless.org/dwm" "$HOME/dwm"
+cd "$HOME/dwm" || return
+doas make clean install
+
+git clone "https://aur.archlinux.org/nvim-packer-git.git" "$HOME/packer"
+cd "$HOME/packer" || return
 makepkg -si
 
-git clone "https://aur.archlinux.org/nsxiv.git" "$HOME/suckless/nsxiv"
-cd "$HOME/suckless/nsxiv" || return
-makepkg -si
-
-git clone "https://aur.archlinux.org/neovim-nightly-bin.git" \
-    "$HOME/suckless/neovim"
-cd "$HOME/suckless/neovim" || return
-makepkg -si
-
-git clone "https://aur.archlinux.org/nvim-packer-git.git" \
-    "$HOME/suckless/packer"
-cd "$HOME/suckless/packer" || return
-makepkg -si
-
-doas pacman -S man-db fd ripgrep nnn renameutils feh npm dmenu \
-    ttf-iosevka-nerd chromium alsa-utils pkgstats xdotool maim \
-    noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation \
-    linux-zen-headers nvidia-dkms xorg-xsetroot xorg-xinit mpv \
-    zathura-pdf-poppler zathura-cb xclip ffmpegthumbnailer
-   
 doas install -Dm 655 "$here/system/dwm_run" \
     "/usr/local/bin/"
 doas install -Dm 644 "$here/system/vconsole.conf" \
@@ -43,25 +27,9 @@ doas install -Dm 644 "$here/system/50-mouse-acceleration.conf" \
 doas ln -sf "/run/systemd/resolve/stub-resolv.conf" \
     "/etc/resolv.conf"
 
-git clone "https://github.com/tonijarjour/dwm" "$HOME/suckless/dwm"
-cd "$HOME/suckless/dwm" || return
-doas make clean install
-
-git clone "https://github.com/tonijarjour/st" "$HOME/suckless/st"
-cd "$HOME/suckless/st" || return
-doas make clean install
-
-git clone "git://git.suckless.org/tabbed" "$HOME/suckless/tabbed"
-cd "$HOME/suckless/tabbed" || return
-curl "https://tools.suckless.org/tabbed/patches/autohide/tabbed-autohide-20201222-dabf6a2.diff" > "autohide.diff"
-patch < "autohide.diff"
-doas make clean install
-
-# quitoncd -ea (remove export), nsxiv.desktop -a, tabbed/imgview nsxiv -a
-mkdir -p "$HOME/.config/nnn/plugins"
-curl -Ls "https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs" | sh
 curl --proto '=https' --tlsv1.2 -sSf "https://sh.rustup.rs" | sh
 
+mkdir "$HOME/.config"
 ln -sf "$here/home/."* "$HOME/"
 ln -sf "$here/config/"* "$HOME/.config/"
 ln -s "/mnt/archive/"* "$HOME"
