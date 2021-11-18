@@ -2,6 +2,9 @@ window:
   dimensions:
     columns: 86
     lines: 27
+  padding:
+    x: 4
+    y: 2
 scrolling:
   multiplier: 1
 
