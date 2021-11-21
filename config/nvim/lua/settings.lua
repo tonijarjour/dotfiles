@@ -1,6 +1,6 @@
 local opt = vim.opt
-opt.tabstop = 4 -- <tab>
-opt.shiftwidth = 4 -- indent
+opt.tabstop = 2 -- <tab>
+opt.shiftwidth = 2 -- indent
 opt.expandtab = true -- only spaces
 opt.number = true -- Line numbers
 opt.relativenumber = true -- Line delta

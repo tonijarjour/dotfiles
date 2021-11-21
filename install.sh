@@ -27,6 +27,9 @@ git clone "https://aur.archlinux.org/nsxiv.git" "$HOME/nsxiv"
 cd "$HOME/nsxiv" || return
 makepkg -si
 
+doas mkdir -p "/usr/share/fonts/helvetica-neue/"
+doas install "/mnt/archive/Other/helvetica-neue/"*.otf \
+    "/usr/share/fonts/helvetica-neue/"
 doas install -Dm 655 "$here/system/dwm_run" \
     "/usr/local/bin/"
 doas install -Dm 644 "$here/system/vconsole.conf" \
