@@ -6,7 +6,7 @@ doas pacman -S autoconf automake gcc make pkgconf patch fakeroot git fd ripgrep 
     noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-iosevka-nerd ttf-liberation \
     neovim alacritty npm pkgstats alsa-utils chromium xclip dmenu maim feh \
     linux-zen-headers nvidia-dkms xorg-xinit xorg-xsetroot mpv zathura-cb \
-    zathura-pdf-poppler man-db
+    zathura-pdf-poppler man-db xorg-xrandr
 
 git clone "git://git.suckless.org/dwm" "$HOME/dwm"
 mkdir "$HOME/dwm/patches"
