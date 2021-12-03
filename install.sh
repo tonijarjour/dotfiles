@@ -11,7 +11,7 @@ doas pacman -S autoconf automake gcc make pkgconf patch fakeroot git fd ripgrep 
 git clone "git://git.suckless.org/dwm" "$HOME/dwm"
 mkdir "$HOME/dwm/patches"
 cd "$HOME/dwm/patches" || return
-curl --remote-name-all "https://dwm.suckless.org/patches/{statusallmons/dwm-statusallmons-6.2.diff,attachbottom/dwm-attachbottom-6.2.diff,scratchpad/dwm-scratchpad-6.2.diff,alwayscenter/dwm-alwayscenter-20200625-f04cac6.diff,functionalgaps/dwm-functionalgaps-6.2.diff}"
+curl --remote-name-all "https://dwm.suckless.org/patches/{statusallmons/dwm-statusallmons-6.2.diff,attachbottom/dwm-attachbottom-6.2.diff,scratchpad/dwm-scratchpad-6.2.diff,alwayscenter/dwm-alwayscenter-20200625-f04cac6.diff}"
 cd "$HOME/dwm" || return
 for i in "$HOME/dwm/patches/"*.diff;
     do patch < $i;
