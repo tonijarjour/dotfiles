@@ -3,10 +3,9 @@ here="$PWD"
 ! [ -f "$here/install.sh" ] && return
 
 doas pacman -S autoconf automake gcc make pkgconf patch fakeroot git fd ripgrep \
-    noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-iosevka-nerd ttf-liberation \
     neovim alacritty npm pkgstats alsa-utils chromium xclip dmenu maim feh \
     linux-zen-headers nvidia-dkms xorg-xinit xorg-xsetroot mpv zathura-cb \
-    zathura-pdf-poppler man-db xorg-xrandr
+    zathura-pdf-poppler man-db xorg-xrandr ttf-iosevka-nerd ttf-croscore
 
 git clone "git://git.suckless.org/dwm" "$HOME/dwm"
 mkdir "$HOME/dwm/patches"
@@ -27,9 +26,6 @@ git clone "https://aur.archlinux.org/nsxiv.git" "$HOME/nsxiv"
 cd "$HOME/nsxiv" || return
 makepkg -si
 
-doas mkdir -p "/usr/share/fonts/helvetica-neue/"
-doas install "/mnt/archive/Other/helvetica-neue/"*.otf \
-    "/usr/share/fonts/helvetica-neue/"
 doas install -Dm 655 "$here/system/dwm_run" \
     "/usr/local/bin/"
 doas install -Dm 644 "$here/system/vconsole.conf" \
