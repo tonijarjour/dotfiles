@@ -5,7 +5,7 @@ here="$PWD"
 doas pacman -S autoconf automake gcc make pkgconf patch fakeroot git fd ripgrep \
     neovim alacritty npm pkgstats alsa-utils chromium xclip dmenu maim feh \
     linux-zen-headers nvidia-dkms xorg-xinit xorg-xsetroot mpv zathura-cb \
-    zathura-pdf-poppler man-db xorg-xrandr ttf-iosevka-nerd ttf-croscore
+    zathura-pdf-poppler man-db xorg-xrandr ttf-iosevka-nerd ttf-liberation
 
 git clone "git://git.suckless.org/dwm" "$HOME/dwm"
 mkdir "$HOME/dwm/patches"
