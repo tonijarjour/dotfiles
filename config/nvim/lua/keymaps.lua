@@ -1,8 +1,6 @@
 local keymap = vim.api.nvim_set_keymap
 vim.g.mapleader = ' '
 keymap('n', 'Q', 'q', {noremap=true})
--- Remove search highlights
-keymap('n', '<Leader>/', '<cmd>noh<cr>', {})
 -- Yank to clipboard
 keymap('v', '<Leader>y', '"+y<cr>', {})
 -- Navigate buffers
