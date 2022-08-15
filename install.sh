@@ -1,48 +1,48 @@
-#!/bin/sh
+#!/bin/bash
+set -euo pipefail
+
 here="$PWD"
-! [ -f "$here/install.sh" ] && return
+[[ ! -f "$here/install.sh" ]] && exit 1
 
-doas pacman -S autoconf automake gcc make pkgconf patch fakeroot git fd ripgrep \
-    neovim alacritty npm pkgstats alsa-utils chromium xclip dmenu maim feh \
-    linux-zen-headers nvidia-dkms xorg-xinit xorg-xsetroot mpv zathura-cb \
-    zathura-pdf-poppler man-db xorg-xrandr ttf-iosevka-nerd ttf-liberation
+doas ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"
 
-git clone "git://git.suckless.org/dwm" "$HOME/dwm"
-mkdir "$HOME/dwm/patches"
-cd "$HOME/dwm/patches" || return
-curl --remote-name-all "https://dwm.suckless.org/patches/{statusallmons/dwm-statusallmons-6.2.diff,attachbottom/dwm-attachbottom-6.2.diff,scratchpad/dwm-scratchpad-6.2.diff,alwayscenter/dwm-alwayscenter-20200625-f04cac6.diff}"
-cd "$HOME/dwm" || return
-for i in "$HOME/dwm/patches/"*.diff;
-    do patch < $i;
-done
-cp "$here/system/config.h" "$HOME/dwm"
-doas make clean install
+doas pacman -S base-devel man-db git neovim fd ripgrep alacritty mpv npm \
+    pkgstats bemenu-wayland swaybg zathura-pdf-mupdf zathura-cb wl-clipboard \
+    ttf-iosevka-nerd ttf-liberation noto-fonts noto-fonts-cjk noto-fonts-emoji \
+    imv slurp grim thunar tumbler pipewire-pulse
 
 git clone "https://aur.archlinux.org/nvim-packer-git.git" "$HOME/packer"
-cd "$HOME/packer" || return
+cd "$HOME/packer" || exit 1
 makepkg -si
 
-git clone "https://aur.archlinux.org/nsxiv.git" "$HOME/nsxiv"
-cd "$HOME/nsxiv" || return
+git clone "https://aur.archlinux.org/google-chrome.git" "$HOME/chrome"
+cd "$HOME/chrome" || exit 1
 makepkg -si
 
-doas install -Dm 655 "$here/system/dwm_run" \
-    "/usr/local/bin/"
-doas install -Dm 644 "$here/system/vconsole.conf" \
-    "/etc/"
-doas install -Dm 644 "$here/system/ter-132n.psf.gz" \
-    "/usr/share/kbd/consolefonts/"
-doas install -Dm 644 "$here/system/50-mouse-acceleration.conf" \
-    "/etc/X11/xorg.conf.d/"
-doas ln -sf "/run/systemd/resolve/stub-resolv.conf" \
-    "/etc/resolv.conf"
+git clone "https://github.com/djpohly/dwl.git" "$HOME/dwl"
+curl --create-dirs --output-dir "$HOME/dwl/patches" --remote-name-all "https://github.com/djpohly/dwl/compare/main...{guidocella:alwayscenter.patch,AurelWeinhold:attachbottom.patch}"
+cp "$here/dwl-config.patch" "$HOME/dwl/patches"
+cp "$HOME/dwl/config.def.h" "$HOME/dwl/config.h"
+cd "$HOME/dwl" || exit 1
+for p in "$HOME/dwl/patches/"*.patch;
+  do patch < $p
+done
+doas make clean install
+
+doas usermod -aG seat $USER
+doas systemctl enable seatd.service
 
 curl --proto '=https' --tlsv1.2 -sSf "https://sh.rustup.rs" | sh
 
-mkdir "$HOME/.config"
-ln -sf "$here/home/."* "$HOME/"
+for f in "$here/home/"*
+do
+    ln -sf "$f" "$HOME/.${f##*/}"
+done
+
+mkdir -p "$HOME/.config"
 ln -sf "$here/config/"* "$HOME/.config/"
-ln -s "/mnt/archive/"* "$HOME"
+
+ln -s "/mnt/archive/"* "$HOME/"
 cp "/mnt/archive/Other/git-credentials" \
     "$HOME/.git-credentials"
 
