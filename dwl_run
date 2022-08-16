@@ -1,0 +1,6 @@
+#!/bin/sh
+
+case $1 in
+  s) grim -g "$(slurp)" "$HOME/Images/Captures/$(date +%s).png" ;;
+  c) grim -g "$(slurp)" - | wl-copy
+esac
