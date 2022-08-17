@@ -16,6 +16,7 @@ alias vi='nvim'
 alias bat='nvim -R'
 alias ls='ls --color=auto'
 alias lsa='ls -a'
+alias imv='nsxiv'
 
 [[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 

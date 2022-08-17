@@ -2,11 +2,14 @@ require('settings')
 require('plugins')
 require('keymaps')
 
-vim.cmd[[colorscheme tokyonight]]
+vim.g.catppuccin_flavour = "mocha"
+require("catppuccin").setup()
+vim.cmd [[colorscheme catppuccin]]
+
 require('nvim-autopairs').setup()
 require('lualine').setup()
 require('bufferline').setup {
     options = {show_close_icon  = false, show_buffer_close_icons  = false}}
 require('nvim-treesitter.configs').setup {
-    ensure_installed = {'rust', 'javascript', 'typescript', 'tsx', 'latex'},
+    ensure_installed = {'c', 'cpp', 'bash', 'rust', 'javascript', 'typescript', 'tsx', 'latex'},
     highlight = {enable = true}}
