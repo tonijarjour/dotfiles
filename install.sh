@@ -5,7 +5,6 @@ here="$PWD"
 [[ ! -f "$here/install.sh" ]] && exit 1
 
 doas ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"
-doas install -Dm 644 "$here/50-mouse-acceleration.conf" "/etc/X11/xorg.conf.d/"
 
 doas pacman -S base-devel man-db fd ripgrep neovim alacritty mpv npm maim feh \
     ttf-iosevka-nerd ttf-liberation noto-fonts noto-fonts-cjk noto-fonts-emoji \
@@ -26,17 +25,20 @@ makepkg -si
 
 git clone "https://aur.archlinux.org/librewolf-bin.git" "$HOME/librewolf"
 cd "$HOME/librewolf" || exit 1
+gpg --keyserver hkp://keyserver.ubuntu.com --search-keys 031F7104E932F7BD7416E7F6D2845E1305D6E801
 makepkg -si
 
+doas install -Dm 644 "$here/50-mouse-acceleration.conf" "/etc/X11/xorg.conf.d/"
+
 curl --proto '=https' --tlsv1.2 -sSf "https://sh.rustup.rs" | sh
+
+mkdir -p "$HOME/.config"
+ln -sf "$here/config/"* "$HOME/.config/"
 
 for f in "$here/home/"*
 do
     ln -sf "$f" "$HOME/.${f##*/}"
 done
-
-mkdir -p "$HOME/.config"
-ln -sf "$here/config/"* "$HOME/.config/"
 
 ln -s "/mnt/archive/"* "$HOME/"
 cp "/mnt/archive/Other/git-credentials" \
