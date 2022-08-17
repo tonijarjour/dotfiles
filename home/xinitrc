@@ -13,8 +13,8 @@ fi
 setxkbmap -option caps:super
 feh --bg-fill --no-fehbg --randomize "$HOME/Images/Wallpapers/"
 
-dt() { echo -e "^c#11111b^^b#74c7ec^ $(date +"%b %d") ^b#1e1e2e^"; }
-tm() { echo -e "^c#11111b^^b#b4befe^ $(date +"%a, %I:%M %p") ^b#1e1e2e^"; }
+dt() { echo -e "$(date +"%b %d")"; }
+tm() { echo -e "^c#11111b^^b#f5e0dc^  $(date +"%a, %I:%M %p")  ^d^"; }
 
 while true; do
     xsetroot -name "$(dt)  $(tm)"

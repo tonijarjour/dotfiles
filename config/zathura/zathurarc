@@ -7,7 +7,7 @@ map r reload
 map R rotate
 map i recolor
 
-set font "Liberation Sans 12"
+set font "Noto Sans 12"
 set statusbar-h-padding 8
 set statusbar-v-padding 8
 set render-loading false

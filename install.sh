@@ -23,9 +23,8 @@ git clone "https://aur.archlinux.org/nsxiv.git" "$HOME/nsxiv"
 cd "$HOME/nsxiv" || exit 1
 makepkg -si
 
-git clone "https://aur.archlinux.org/librewolf-bin.git" "$HOME/librewolf"
-cd "$HOME/librewolf" || exit 1
-gpg --keyserver hkp://keyserver.ubuntu.com --search-keys 031F7104E932F7BD7416E7F6D2845E1305D6E801
+git clone "https://aur.archlinux.org/google-chrome.git" "$HOME/chrome"
+cd "$HOME/chrome" || exit 1
 makepkg -si
 
 doas install -Dm 644 "$here/50-mouse-acceleration.conf" "/etc/X11/xorg.conf.d/"
