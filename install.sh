@@ -1,6 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
+here="$PWD"
+[[ ! -f "$here/install.sh" ]] && exit 1
+
 doas ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"
 
 doas pacman -S base-devel man-db fd ripgrep neovim alacritty mpv npm maim feh \
@@ -23,8 +26,6 @@ makepkg -si
 git clone "https://aur.archlinux.org/google-chrome.git" "$HOME/chrome"
 cd "$HOME/chrome" || exit 1
 makepkg -si
-
-here="$(dirname -- "$(realpath -- "${BASH_SOURCE[0]}")")"
 
 doas install -Dm 644 "$here/50-mouse-acceleration.conf" "/etc/X11/xorg.conf.d/"
 
