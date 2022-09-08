@@ -19,3 +19,6 @@ keymap('n', '<Leader>D', '<cmd>bd!<cr>', {})
 -- Quit nvim, forcefully
 keymap('n', '<Leader>ql', '<cmd>qa<cr>', {})
 keymap('n', '<Leader>qL', '<cmd>qa!<cr>', {})
+-- Rebind C-d and C-u
+keymap('n', '<C-d>', '12j', {})
+keymap('n', '<C-u>', '12k', {})

@@ -11,5 +11,5 @@ require('lualine').setup()
 require('bufferline').setup {
     options = {show_close_icon  = false, show_buffer_close_icons  = false}}
 require('nvim-treesitter.configs').setup {
-    ensure_installed = {'bash', 'rust', 'javascript', 'typescript', 'tsx', 'latex', 'python'},
+    ensure_installed = {'rust', 'html', 'css', 'bash'},
     highlight = {enable = true}}
