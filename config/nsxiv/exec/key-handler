@@ -13,6 +13,7 @@ do
   "C-I") mv "$file" "$HOME/Images/Illustrations/hx";;
   "C-g") mv "$file" "$HOME/Images/Graphics";;
   "C-G") mv "$file" "$HOME/Images/Graphics/hx";;
-  "C-w") mv "$file" "$HOME/Images/Wallpapers";;
+  "C-h") mv "$file" "$HOME/Images/Wallpapers";;
+  "C-m") mv "$file" "$HOME/Images/Memes";;
   esac
 done
