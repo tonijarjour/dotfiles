@@ -7,7 +7,7 @@ PS1='\[\e[31m\]\u\[\e[37m\]@\[\e[31m\]\h \[\e[33m\]\W \[\e[90m\]λ \[\e[39m\]'
 
 HISTFILESIZE=10000
 HISTCONTROL='erasedups'
-HISTIGNORE=' *:..:ls:history:exit:doas reboot:clear:fg:fg *:g:g *'
+HISTIGNORE=' *:..:~:ls:history:exit:doas reboot:clear:fg:fg *:g:g *'
 PROMPT_COMMAND='history -a'
 
 shopt -s histappend
