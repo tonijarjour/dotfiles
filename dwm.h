@@ -208,8 +208,6 @@ static const char *brwcmd[] = { "google-chrome-stable", "--enable-features=WebUI
 static const char *upvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
 static const char *dovol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
 static const char *muvol[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
-static const char *lobri[] = { "xrandr", "--output", "HDMI-1", "--brightness", "0.7", NULL };
-static const char *hibri[] = { "xrandr", "--output", "HDMI-1", "--brightness", "1.0", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *pdfcmd[] = { "zathura", NULL };
 
@@ -226,8 +224,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Return,     spawn,                  {.v = termcmd } },
 	{ MODKEY,                       XK_r,          spawn,                  {.v = brwcmd } },
 	{ MODKEY,                       XK_v,          spawn,                  {.v = pdfcmd } },
-	{ MODKEY,                       XK_y,          spawn,                  {.v = hibri } },
-	{ MODKEY,                       XK_u,          spawn,                  {.v = lobri } },
 	{ MODKEY,                       XK_f,          togglebar,              {0} },
 	{ MODKEY,                       XK_j,          focusstack,             {.i = +1 } },
 	{ MODKEY,                       XK_k,          focusstack,             {.i = -1 } },

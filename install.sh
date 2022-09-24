@@ -12,7 +12,7 @@ doas pacman -S base-devel man-db fd ripgrep neovim alacritty mpv maim feh \
     pipewire-pulse pipewire-jack xclip redshift pkgstats
 
 git clone "https://github.com/tonijarjour/dwm.git" "$HOME/dwm"
-ln -s "$here/config.h" "$HOME/dwm"
+ln -s "$here/dwm.h" "$HOME/dwm/config.h"
 cd "$HOME/dwm" || exit 1
 doas make clean install
 
