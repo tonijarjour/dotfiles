@@ -9,7 +9,7 @@ doas ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"
 doas pacman -S base-devel man-db fd ripgrep neovim alacritty mpv maim feh \
     ttf-iosevka-nerd ttf-liberation noto-fonts noto-fonts-cjk noto-fonts-emoji \
     xorg-server xorg-xinit xorg-xsetroot dmenu zathura-pdf-mupdf zathura-cb \
-    pipewire-pulse pipewire-jack xclip pkgstats
+    pipewire-pulse pipewire-jack xclip redshift pkgstats
 
 git clone "https://github.com/tonijarjour/dwm.git" "$HOME/dwm"
 ln -s "$here/config.h" "$HOME/dwm"
