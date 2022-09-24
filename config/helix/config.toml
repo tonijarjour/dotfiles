@@ -13,8 +13,6 @@ insert = "bar"
 [keys.normal.space.e]
 n = ":new"
 w = ":write"
-j = ":buffer-next"
-k = ":buffer-previous"
 l = ":buffer-close"
 L = ":buffer-close!"
 
