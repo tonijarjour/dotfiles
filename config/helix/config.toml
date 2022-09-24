@@ -1,0 +1,23 @@
+theme = "catppuccin_mocha"
+
+[editor]
+gutters = ["diagnostics"]
+line-number = "relative"
+color-modes = true
+cursorline = true
+scrolloff = 0
+
+[editor.cursor-shape]
+insert = "bar"
+
+[keys.normal.space.e]
+n = ":new"
+w = ":write"
+j = ":buffer-next"
+k = ":buffer-previous"
+l = ":buffer-close"
+L = ":buffer-close!"
+
+[keys.normal.space.q]
+l = ":quit-all"
+L = ":quit-all!"
