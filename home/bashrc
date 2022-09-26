@@ -18,6 +18,7 @@ alias bat='helix'
 alias ls='ls --color=auto'
 alias lsa='ls -A'
 alias imv='nsxiv -a'
+alias hc='bash $HOME/.bash_logout'
 
 g() {
     case "$1" in 
