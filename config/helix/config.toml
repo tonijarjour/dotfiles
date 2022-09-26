@@ -7,6 +7,10 @@ color-modes = true
 cursorline = true
 scrolloff = 0
 
+[editor.whitespace]
+render = { newline = "all"}
+characters = { newline = "•" }
+
 [editor.cursor-shape]
 insert = "bar"
 
