@@ -6,7 +6,7 @@ here="$PWD"
 
 doas ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"
 
-doas pacman -S base-devel man-db fd ripgrep helix alacritty mpv maim feh \
+doas pacman -S base-devel man-db fd ripgrep neovim alacritty mpv maim feh \
     ttf-iosevka-nerd ttf-liberation noto-fonts noto-fonts-cjk noto-fonts-emoji \
     xorg-server xorg-xinit xorg-xsetroot dmenu zathura-pdf-mupdf zathura-cb \
     pipewire-pulse pipewire-jack xclip redshift pkgstats npm
@@ -15,6 +15,10 @@ git clone "https://github.com/tonijarjour/dwm.git" "$HOME/dwm"
 ln -s "$here/dwm.h" "$HOME/dwm/config.h"
 cd "$HOME/dwm" || exit 1
 doas make clean install
+
+git clone "https://aur.archlinux.org/nvim-packer-git.git" "$HOME/packer"
+cd "$HOME/packer" || exit 1
+makepkg -si
 
 git clone "https://aur.archlinux.org/nsxiv.git" "$HOME/nsxiv"
 cd "$HOME/nsxiv" || exit 1

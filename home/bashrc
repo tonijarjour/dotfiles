@@ -13,8 +13,8 @@ PROMPT_COMMAND='history -a'
 shopt -s histappend
 shopt -s autocd
 
-alias vi='helix'
-alias bat='helix'
+alias vi='nvim'
+alias bat='nvim -R'
 alias ls='ls --color=auto'
 alias lsa='ls -A'
 alias imv='nsxiv -a'
