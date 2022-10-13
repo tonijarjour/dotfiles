@@ -11,7 +11,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 xrandr --rate 144.00
-setxkbmap -option caps:super
 feh --bg-fill --no-fehbg "$HOME/Images/Wallpapers/bridge.jpg"
 
 dt() { echo -e "$(date +"%b %d")"; }
