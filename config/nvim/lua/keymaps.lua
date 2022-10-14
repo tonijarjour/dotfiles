@@ -7,6 +7,8 @@ keymap('v', '<Leader>y', '"+y<cr>', {})
 keymap('n', '<Leader>l', '<cmd>BufferLinePick<cr>', {})
 keymap('n', '<Leader>n', '<cmd>BufferLineCycleNext<cr>', {})
 keymap('n', '<Leader>p', '<cmd>BufferLineCyclePrev<cr>', {})
+-- Prettier format current file
+keymap('n', '<Leader>xf', '<cmd>!npx prettier --write %<cr>', {})
 -- New buffer, open file
 keymap('n', '<Leader>en', '<cmd>enew<cr>', {})
 keymap('n', '<Leader>e.', ':e ', {})
