@@ -194,8 +194,10 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
+static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
 	"dmenu_run",
+	"-m", dmenumon,
 	"-fn", dmenufont,
 	"-nb", normbgcolor,
 	"-nf", normfgcolor,
@@ -204,7 +206,7 @@ static const char *dmenucmd[] = {
 	NULL
 };
 
-static const char *brwcmd[] = { "google-chrome-stable", "--enable-features=WebUIDarkMode", "--force-dark-mode", NULL };
+static const char *brwcmd[] = { "chromium", "--enable-features=WebUIDarkMode", "--force-dark-mode", NULL };
 static const char *upvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
 static const char *dovol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
 static const char *muvol[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
