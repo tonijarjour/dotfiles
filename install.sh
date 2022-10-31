@@ -9,7 +9,7 @@ doas ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"
 doas pacman -S base-devel man-db fd ripgrep neovim alacritty mpv maim feh \
     ttf-iosevka-nerd ttf-liberation noto-fonts noto-fonts-cjk noto-fonts-emoji \
     xorg-server xorg-xinit xorg-xsetroot dmenu zathura-pdf-mupdf zathura-cb \
-    pipewire-pulse pipewire-jack xclip redshift pkgstats npm
+    pipewire-pulse pipewire-jack xclip redshift pkgstats npm chromium
 
 git clone "https://github.com/tonijarjour/dwm.git" "$HOME/dwm"
 ln -s "$here/dwm.h" "$HOME/dwm/config.h"
@@ -22,10 +22,6 @@ makepkg -si
 
 git clone "https://aur.archlinux.org/nsxiv.git" "$HOME/nsxiv"
 cd "$HOME/nsxiv" || exit 1
-makepkg -si
-
-git clone "https://aur.archlinux.org/google-chrome.git" "$HOME/chrome"
-cd "$HOME/chrome" || exit 1
 makepkg -si
 
 doas install -Dm 644 "$here/50-mouse-acceleration.conf" "/etc/X11/xorg.conf.d/"
