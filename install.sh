@@ -9,7 +9,7 @@ doas ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"
 doas pacman -S base-devel man-db fd ripgrep neovim alacritty mpv maim feh \
     ttf-iosevka-nerd ttf-liberation noto-fonts noto-fonts-cjk noto-fonts-emoji \
     xorg-server xorg-xinit xorg-xsetroot dmenu zathura-pdf-mupdf zathura-cb \
-    pipewire-pulse pipewire-jack xclip redshift pkgstats npm chromium
+    pipewire-pulse pipewire-jack xclip redshift pkgstats npm chromium openssh
 
 git clone "https://github.com/tonijarjour/dwm.git" "$HOME/dwm"
 ln -s "$here/dwm.h" "$HOME/dwm/config.h"
@@ -37,7 +37,7 @@ do
 done
 
 ln -s "/mnt/archive/"* "$HOME/"
-cp "/mnt/archive/Other/git-credentials" \
-    "$HOME/.git-credentials"
+cp "/mnt/archive/Other/ssh" \
+    "$HOME/.ssh"
 
 echo "DONE"
