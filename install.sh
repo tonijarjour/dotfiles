@@ -9,7 +9,8 @@ doas ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"
 doas pacman -S base-devel man-db fd ripgrep neovim alacritty mpv maim feh \
     ttf-iosevka-nerd ttf-liberation noto-fonts noto-fonts-cjk noto-fonts-emoji \
     xorg-server xorg-xinit xorg-xsetroot dmenu zathura-pdf-mupdf zathura-cb \
-    pipewire-pulse pipewire-jack xclip redshift pkgstats npm chromium
+    pipewire-pulse pipewire-jack xclip redshift pkgstats npm chromium thunar \
+    tumbler ffmpegthumbnailer imagemagick lxappearance
 
 git clone "https://github.com/tonijarjour/dwm.git" "$HOME/dwm"
 ln -s "$here/dwm.h" "$HOME/dwm/config.h"
@@ -25,6 +26,7 @@ cd "$HOME/nsxiv" || exit 1
 makepkg -si
 
 doas install -Dm 644 "$here/50-mouse-acceleration.conf" "/etc/X11/xorg.conf.d/"
+doas install -Dm 644 "$here/arabic.conf" "/etc/fonts/local.conf"
 
 curl --proto '=https' --tlsv1.2 -sSf "https://sh.rustup.rs" | sh
 
