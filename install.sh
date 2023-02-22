@@ -9,7 +9,8 @@ doas ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"
 doas pacman -S man-db fd ripgrep neovim alacritty mpv maim feh npm pkgstats \
     ttf-iosevka-nerd ttf-liberation noto-fonts noto-fonts-cjk noto-fonts-emoji \
     xorg-server xorg-xinit xorg-xsetroot dmenu zathura-pdf-mupdf zathura-cb \
-    pipewire-pulse pipewire-jack xclip redshift chromium sxiv
+    pipewire-pulse pipewire-jack xclip redshift chromium sxiv \
+    arc-solid-gtk-theme
 
 git clone "https://github.com/tonijarjour/dwm.git" "$HOME/dwm"
 ln -s "$here/dwm.h" "$HOME/dwm/config.h"

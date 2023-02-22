@@ -11,7 +11,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 xrandr --rate 144.00
-feh --bg-fill --no-fehbg "$HOME/Images/Wallpapers/bridge.jpg"
+feh --bg-fill --no-fehbg "$HOME/Images/Wallpapers/1615238829511.jpg"
 
 dt() { echo -e "$(date +"%b %d")"; }
 tm() { echo -e "^c#11111b^^b#f5e0dc^  $(date +"%a, %I:%M %p")  ^d^"; }
