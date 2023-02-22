@@ -3,10 +3,10 @@
 while read file
 do
   case "$1" in
-  "C-c")  xclip -se c -t image/png "$file" ;;
-  "C-x")  echo -n "$file" | xclip -se c ;;
-  "C-w")  feh --bg-fill --no-fehbg "$file" ;;
-  "C-D")  rm "$file" ; echo "deleted $file" ;;
+  "C-c") xclip -se c -t image/png "$file" ;;
+  "C-x") echo -n "$file" | xclip -se c ;;
+  "C-w") feh --bg-fill --no-fehbg "$file" ;;
+  "C-D") rm "$file" ; echo "deleted $file" ;;
   "C-p") mv "$file" "$HOME/Images/Photographs";;
   "C-P") mv "$file" "$HOME/Images/Photographs/hx";;
   "C-i") mv "$file" "$HOME/Images/Illustrations";;

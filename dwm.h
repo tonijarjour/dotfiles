@@ -138,7 +138,7 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
 	RULE(.title = "spterm", .tags = SPTAG(0), .isfloating = 1)
 	RULE(.class = "Thunar", .isfloating = 1)
-	RULE(.class = "Nsxiv", .isfloating = 1)
+	RULE(.class = "Sxiv", .isfloating = 1)
 	RULE(.class = "Steam", .isfloating = 1)
 	RULE(.class = "obs", .isfloating = 1)
 };
@@ -222,7 +222,7 @@ static const Key keys[] = {
   { 0,                  XF86XK_AudioMute,        spawn,                  {.v = muvol } },
 	{ MODKEY,                       XK_Print,      spawn,                  SHCMD("maim -su -m 10 | xclip -se c -t image/png") },
 	{ MODKEY|ShiftMask,             XK_Print,      spawn,                  SHCMD("maim -su -m 10 $HOME/Images/Captures/$(date +%s).png") },
-	{ MODKEY|ControlMask,           XK_w,          spawn,                  SHCMD("nsxiv -t $HOME/Images/Wallpapers") },
+	{ MODKEY|ControlMask,           XK_w,          spawn,                  SHCMD("sxiv -t $HOME/Images/Wallpapers") },
 	{ MODKEY,                       XK_space,      spawn,                  {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return,     spawn,                  {.v = termcmd } },
 	{ MODKEY,                       XK_r,          spawn,                  {.v = brwcmd } },
