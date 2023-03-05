@@ -7,7 +7,7 @@ PS1='\[\e[31m\]\u\[\e[37m\]@\[\e[31m\]\h \[\e[33m\]\W \[\e[90m\]λ \[\e[39m\]'
 
 HISTFILESIZE=10000
 HISTCONTROL='erasedups'
-HISTIGNORE=' *:..:~:ls:history:exit:doas reboot:clear:fg:fg *'
+HISTIGNORE=' *:..:~:ls:history:exit:clear:fg:fg *:s reboot:s poweroff'
 PROMPT_COMMAND='history -a'
 
 shopt -s histappend
@@ -18,34 +18,41 @@ alias bat='nvim -R'
 alias ls='ls --color=auto'
 alias lsa='ls -A'
 alias imv='sxiv -a'
-alias hc='source $HOME/.bash_logout; history -c; history -r'
+
+s() {
+  C=''
+  for i in "$@"; do 
+      i="${i//\\/\\\\}"
+      C="$C \"${i//\"/\\\"}\""
+  done
+  su -c bash -c "$C"
+}
 
 g() {
-    case "$1" in 
-        a) git add "${@:2}" ;;
-        b) git branch "${@:2}" ;;
-        c) git commit "${@:2}" ;;
-        d) case "$2" in 
-            s) git diff --staged "${@:3}" ;; 
-            *) git diff "${@:2}"
-        esac ;;
-        h) git stash "${@:2}" ;;
-        i) git init "${@:2}" ;;
-        k) git checkout "${@:2}" ;;
-        l) git pull "${@:2}" ;;
-        m) git merge "${@:2}" ;;
-        n) git clone "${@:2}" ;;
-        o) git log --oneline -n 20 --graph "${@:2}" ;;
-        p) git push "${@:2}" ;;
-        r) git reset "${@:2}" ;;
-        s) git status -s "${@:2}" ;;
-        t) git remote "${@:2}" ;;
-        v) git revert "${@:2}" ;;
-        w) git show "${@:2}" ;;
-        *) git "$@"
-    esac
+  case "$1" in 
+    a) git add "${@:2}" ;;
+    b) git branch "${@:2}" ;;
+    c) git commit "${@:2}" ;;
+    d) case "$2" in 
+      s) git diff --staged "${@:3}" ;; 
+      *) git diff "${@:2}"
+    esac ;;
+    h) git stash "${@:2}" ;;
+    i) git init "${@:2}" ;;
+    k) git checkout "${@:2}" ;;
+    l) git pull "${@:2}" ;;
+    m) git merge "${@:2}" ;;
+    n) git clone "${@:2}" ;;
+    o) git log --oneline -n 20 --graph "${@:2}" ;;
+    p) git push "${@:2}" ;;
+    r) git reset "${@:2}" ;;
+    s) git status -s "${@:2}" ;;
+    t) git remote "${@:2}" ;;
+    v) git revert "${@:2}" ;;
+    w) git show "${@:2}" ;;
+    *) git "$@"
+  esac
 }
 
 [[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
-
-source "$HOME/.bash_logout"
+[[ -f "$HOME/.bash_logout" ]] && source "$HOME/.bash_logout"
