@@ -22,7 +22,7 @@ s pacman -S man-db fd ripgrep neovim alacritty mpv maim feh sxiv xclip dmenu \
   pipewire-pulse pipewire-jack arc-solid-gtk-theme
 
 git clone "https://github.com/tonijarjour/dwm.git" "$HOME/dwm"
-ln -s "$here/dwm.h" "$HOME/dwm/config.h"
+ln -s "$here/system/dwm.h" "$HOME/dwm/config.h"
 cd "$HOME/dwm" || exit 1
 echo 'compile and install dwm'
 s make clean install
@@ -36,8 +36,8 @@ git clone "https://aur.archlinux.org/librewolf-bin.git" "$HOME/librewolf"
 cd "$HOME/librewolf" || exit 1
 makepkg -si
 
-echo 'install -Dm 644 "$here/50-mouse-acceleration.conf" "/etc/X11/xorg.conf.d/"'
-s install -Dm 644 "$here/50-mouse-acceleration.conf" "/etc/X11/xorg.conf.d/"
+echo 'install -Dm 644 "$here/system/50-mouse-acceleration.conf" "/etc/X11/xorg.conf.d/"'
+s install -Dm 644 "$here/system/50-mouse-acceleration.conf" "/etc/X11/xorg.conf.d/"
 
 echo 'install -Dm 644 "$here/arabic.conf" "/etc/fonts/local.conf"'
 s install -Dm 644 "$here/arabic.conf" "/etc/fonts/local.conf"
