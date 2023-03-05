@@ -16,12 +16,6 @@ s() {
 echo 'ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"'
 s ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"
 
-echo 'install -Dm 644 "$here/50-mouse-acceleration.conf" "/etc/X11/xorg.conf.d/"'
-s install -Dm 644 "$here/50-mouse-acceleration.conf" "/etc/X11/xorg.conf.d/"
-
-echo 'install -Dm 644 "$here/arabic.conf" "/etc/fonts/local.conf"'
-s install -Dm 644 "$here/arabic.conf" "/etc/fonts/local.conf"
-
 s pacman -S man-db fd ripgrep neovim alacritty mpv maim feh sxiv xclip dmenu \
   ttf-iosevka-nerd ttf-liberation noto-fonts noto-fonts-cjk noto-fonts-emoji \
   xorg-server xorg-xinit xorg-xsetroot zathura-pdf-mupdf zathura-cb redshift \
@@ -36,6 +30,12 @@ s make clean install
 git clone "https://aur.archlinux.org/nvim-packer-git.git" "$HOME/packer"
 cd "$HOME/packer" || exit 1
 makepkg -si
+
+echo 'install -Dm 644 "$here/50-mouse-acceleration.conf" "/etc/X11/xorg.conf.d/"'
+s install -Dm 644 "$here/50-mouse-acceleration.conf" "/etc/X11/xorg.conf.d/"
+
+echo 'install -Dm 644 "$here/arabic.conf" "/etc/fonts/local.conf"'
+s install -Dm 644 "$here/arabic.conf" "/etc/fonts/local.conf"
 
 curl --proto '=https' --tlsv1.2 -sSf "https://sh.rustup.rs" | sh
 
