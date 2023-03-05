@@ -207,7 +207,7 @@ static const char *dmenucmd[] = {
 	NULL
 };
 
-static const char *brwcmd[] = { "chromium", "--enable-features=WebUIDarkMode", "--force-dark-mode", NULL };
+static const char *brwcmd[] = { "librewolf", NULL };
 static const char *upvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
 static const char *dovol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
 static const char *muvol[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
