@@ -7,13 +7,13 @@ do
   "C-x") echo -n "$file" | xclip -se c ;;
   "C-w") feh --bg-fill --no-fehbg "$file" ;;
   "C-D") rm "$file" ; echo "deleted $file" ;;
-  "C-p") mv "$file" "$HOME/Images/Photographs";;
-  "C-P") mv "$file" "$HOME/Images/Photographs/hx";;
-  "C-i") mv "$file" "$HOME/Images/Illustrations";;
-  "C-I") mv "$file" "$HOME/Images/Illustrations/hx";;
-  "C-g") mv "$file" "$HOME/Images/Graphics";;
-  "C-G") mv "$file" "$HOME/Images/Graphics/hx";;
-  "C-h") mv "$file" "$HOME/Images/Wallpapers";;
-  "C-m") mv "$file" "$HOME/Images/Memes";;
+  "C-p") mv -n "$file" "$HOME/Images/Photographs";;
+  "C-P") mv -n "$file" "$HOME/Images/Photographs/hx";;
+  "C-i") mv -n "$file" "$HOME/Images/Illustrations";;
+  "C-I") mv -n "$file" "$HOME/Images/Illustrations/hx";;
+  "C-g") mv -n "$file" "$HOME/Images/Graphics";;
+  "C-G") mv -n "$file" "$HOME/Images/Graphics/hx";;
+  "C-h") mv -n "$file" "$HOME/Images/Wallpapers";;
+  "C-m") mv -n "$file" "$HOME/Images/Memes";;
   esac
 done
