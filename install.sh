@@ -16,10 +16,11 @@ s() {
 echo 'ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"'
 s ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"
 
-s pacman -S man-db fd ripgrep neovim alacritty mpv maim feh sxiv xclip dmenu \
-  ttf-iosevka-nerd ttf-liberation noto-fonts noto-fonts-cjk noto-fonts-emoji \
+s pacman -S fd ripgrep neovim alacritty mpv maim feh sxiv xclip dmenu which \
+  ttf-iosevka-nerd ttf-croscore noto-fonts noto-fonts-cjk noto-fonts-emoji \
   xorg-server xorg-xinit xorg-xsetroot zathura-pdf-mupdf zathura-cb redshift \
-  pipewire-pulse pipewire-jack arc-solid-gtk-theme
+  pipewire-pulse pipewire-jack arc-solid-gtk-theme man-db texinfo fakeroot \
+  gcc autoconf automake pkgconf make patch
 
 git clone "https://github.com/tonijarjour/dwm.git" "$HOME/dwm"
 ln -s "$here/system/dwm.h" "$HOME/dwm/config.h"
