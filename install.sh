@@ -16,6 +16,7 @@ s() {
 echo 'ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"'
 s ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"
 
+echo 'install programs with pacman'
 s pacman -S fd ripgrep neovim alacritty mpv maim feh sxiv xclip dmenu which \
   ttf-iosevka-nerd ttf-croscore noto-fonts noto-fonts-cjk noto-fonts-emoji \
   xorg-server xorg-xinit xorg-xsetroot zathura-pdf-mupdf zathura-cb redshift \
@@ -35,8 +36,8 @@ makepkg -si
 echo 'install -Dm 644 "$here/system/50-mouse-acceleration.conf" "/etc/X11/xorg.conf.d/"'
 s install -Dm 644 "$here/system/50-mouse-acceleration.conf" "/etc/X11/xorg.conf.d/"
 
-echo 'install -Dm 644 "$here/arabic.conf" "/etc/fonts/local.conf"'
-s install -Dm 644 "$here/arabic.conf" "/etc/fonts/local.conf"
+echo 'install -Dm 644 "$here/system/arabic.conf" "/etc/fonts/local.conf"'
+s install -Dm 644 "$here/system/arabic.conf" "/etc/fonts/local.conf"
 
 curl --proto '=https' --tlsv1.2 -sSf "https://sh.rustup.rs" | sh
 
