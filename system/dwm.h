@@ -207,12 +207,12 @@ static const char *dmenucmd[] = {
 	NULL
 };
 
-//static const char *brwcmd[] = { "librewolf", NULL };
 static const char *upvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
 static const char *dovol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
 static const char *muvol[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *pdfcmd[] = { "zathura", NULL };
+static const char *brwcmd[] = { "librewolf", NULL };
 
 
 static const Key keys[] = {
@@ -225,7 +225,7 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask,           XK_w,          spawn,                  SHCMD("sxiv -t $HOME/Images/Wallpapers") },
 	{ MODKEY,                       XK_space,      spawn,                  {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return,     spawn,                  {.v = termcmd } },
-//	{ MODKEY,                       XK_r,          spawn,                  {.v = brwcmd } },
+	{ MODKEY,                       XK_r,          spawn,                  {.v = brwcmd } },
 	{ MODKEY,                       XK_v,          spawn,                  {.v = pdfcmd } },
 	{ MODKEY,                       XK_f,          togglebar,              {0} },
 	{ MODKEY,                       XK_j,          focusstack,             {.i = +1 } },
