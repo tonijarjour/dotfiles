@@ -18,6 +18,7 @@ alias bat='nvim -R'
 alias ls='ls --color=auto'
 alias lsa='ls -A'
 alias imv='sxiv -a'
+alias hc='source $HOME/.bash_logout; history -c; history -r'
 
 s() {
   C=''
