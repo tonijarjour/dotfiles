@@ -33,6 +33,15 @@ git clone "https://aur.archlinux.org/nvim-packer-git.git" "$HOME/packer"
 cd "$HOME/packer" || exit 1
 makepkg -si
 
+git clone "https://aur.archlinux.org/nvm.git" "$HOME/nvm"
+cd "$HOME/nvm" || exit 1
+makepkg -si
+
+gpg --keyserver "hkp://keyserver.ubuntu.com" --search-keys "031F7104E932F7BD7416E7F6D2845E1305D6E801"
+git clone "https://aur.archlinux.org/librewolf-bin.git" "$HOME/librewolf"
+cd "$HOME/librewolf" || exit 1
+makepkg -si
+
 echo 'install -Dm 644 "$here/system/50-mouse-acceleration.conf" "/etc/X11/xorg.conf.d/"'
 s install -Dm 644 "$here/system/50-mouse-acceleration.conf" "/etc/X11/xorg.conf.d/"
 
