@@ -99,13 +99,13 @@
 (use-package markdown-mode)
 (use-package rust-mode)
 (use-package typescript-mode
-  :mode "\\.js\\'")
+  :mode ("\\.js\\'" "\\.jsx\\'"))
 
 (use-package general
   :config
   (general-evil-setup t))
 
-(nvmap :keymaps 'override :prefix "SPC"
+(general-nmap :keymaps 'override :prefix "SPC"
   "f e"   'counsel-M-x
 
   "q l"   'save-buffers-kill-terminal
