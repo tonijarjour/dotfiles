@@ -71,6 +71,7 @@
 
 (use-package ivy
   :config
+  (setq ivy-initial-inputs-alist nil)
   (ivy-mode 1))
 
 (use-package counsel
@@ -90,25 +91,31 @@
   (setq dashboard-banner-logo-title "Dark Wizard")
   (setq dashboard-startup-banner "~/.emacs.d/alice.jpg")
   (setq dashboard-center-content t)
-  (setq dashboard-items '((recents . 5)))
+  (setq dashboard-items '((recents . 10)))
   :config
   (dashboard-setup-startup-hook)
   (dashboard-modify-heading-icons '((recents . "file-text"))))
+
+(use-package markdown-mode)
+(use-package rust-mode)
+(use-package typescript-mode
+  :mode "\\.js\\'")
 
 (use-package general
   :config
   (general-evil-setup t))
 
 (nvmap :keymaps 'override :prefix "SPC"
+  "f e"   'counsel-M-x
+
   "q l"   'save-buffers-kill-terminal
   "q L"   'kill-emacs
 
   "e l"   'kill-current-buffer
   "e L"   'kill-buffer-and-window
+
   "e ."   'find-file
-  "e n"   'switch-to-buffer
   "e w"   'save-buffer
 
-  "f e"   'counsel-M-x
-  "f n"   'next-buffer
-  "f p"   'previous-buffer)
+  "e n"   'next-buffer
+  "e p"   'previous-buffer)
