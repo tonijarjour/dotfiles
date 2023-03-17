@@ -19,10 +19,6 @@ keymap('n', '<Leader>eL', '<cmd>bd!<cr>', {})
 -- Quit nvim, forcefully
 keymap('n', '<Leader>ql', '<cmd>qa<cr>', {})
 keymap('n', '<Leader>qL', '<cmd>qa!<cr>', {})
--- Telescope
-keymap('n', '<Leader>ff', '<cmd>Telescope find_files<cr>', {})
-keymap('n', '<Leader>fl', '<cmd>Telescope live_grep<cr>', {})
-keymap('n', '<Leader>fo', '<cmd>Telescope oldfiles<cr>', {})
 -- Make C-d and C-u more consistent
 keymap('n', '<C-d>', '12j', {})
 keymap('n', '<C-u>', '12k', {})
