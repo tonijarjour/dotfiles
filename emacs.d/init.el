@@ -28,7 +28,7 @@
 ; set default font and size
 (add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font-15"))
 
-; escape to quit a partial command 
+; escape to quit a partial command
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 ; melpa
@@ -45,8 +45,6 @@
 
 (use-package doom-themes
   :config
-  (setq doom-themes-enable-bold t
-        doom-themes-enable-italic t)
   (load-theme 'doom-one t))
 
 (use-package doom-modeline
@@ -61,6 +59,7 @@
 (use-package evil
   :init
   (setq evil-want-keybinding nil)
+  (setq evil-want-C-u-scroll t)
   :config
   (evil-set-undo-system 'undo-redo)
   (evil-mode 1))
@@ -106,14 +105,13 @@
 
   "e l"   'kill-current-buffer
   "e L"   'kill-buffer-and-window
-
   "e ."   'find-file
   "e n"   'switch-to-buffer
   "e w"   'save-buffer
 
-  "f"   'counsel-M-x
-  "n"   'next-buffer
-  "p"   'previous-buffer)
+  "f e"   'counsel-M-x
+  "f n"   'next-buffer
+  "f p"   'previous-buffer)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

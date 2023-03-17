@@ -4,9 +4,9 @@ keymap('n', 'Q', 'q', {noremap=true})
 -- Yank to clipboard
 keymap('v', '<Leader>y', '"+y<cr>', {})
 -- Navigate buffers
-keymap('n', '<Leader>l', '<cmd>BufferLinePick<cr>', {})
-keymap('n', '<Leader>n', '<cmd>BufferLineCycleNext<cr>', {})
-keymap('n', '<Leader>p', '<cmd>BufferLineCyclePrev<cr>', {})
+keymap('n', '<Leader>fl', '<cmd>BufferLinePick<cr>', {})
+keymap('n', '<Leader>fn', '<cmd>BufferLineCycleNext<cr>', {})
+keymap('n', '<Leader>fp', '<cmd>BufferLineCyclePrev<cr>', {})
 -- New buffer, open file
 keymap('n', '<Leader>en', '<cmd>enew<cr>', {})
 keymap('n', '<Leader>e.', ':e ', {})
