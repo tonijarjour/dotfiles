@@ -49,6 +49,8 @@ echo 'install -Dm 644 "$here/system/arabic.conf" "/etc/fonts/local.conf"'
 s install -Dm 644 "$here/system/arabic.conf" "/etc/fonts/local.conf"
 
 curl --proto '=https' --tlsv1.2 -sSf "https://sh.rustup.rs" | sh
+rustup component add rust-src rust-analyzer
+ln -s "$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer" "$HOME/.cargo/bin/"
 
 mkdir -p "$HOME/.config"
 ln -sf "$here/config/"* "$HOME/.config/"

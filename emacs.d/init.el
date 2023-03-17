@@ -5,14 +5,7 @@
 (setq-default message-log-max nil)
 (kill-buffer "*Messages*")
 
-; disable scratch buffer
-(setq initial-scratch-message "")
-(defun remove-scratch-buffer ()
-  (if (get-buffer "*scratch*")
-      (kill-buffer "*scratch*")))
-(add-hook 'after-change-major-mode-hook 'remove-scratch-buffer)
-
-; y and n instead yes and no
+; y and n instead of yes and no
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ; display line and column numbers
@@ -53,9 +46,6 @@
 ; M-x all-the-icons-install-fonts
 (use-package all-the-icons)
 
-(use-package rainbow-delimiters
-  :hook (prog-mode . rainbow-delimiters-mode))
-
 (use-package evil
   :init
   (setq evil-want-keybinding nil)
@@ -95,6 +85,15 @@
   :config
   (dashboard-setup-startup-hook)
   (dashboard-modify-heading-icons '((recents . "file-text"))))
+
+(use-package company
+  :config (global-company-mode))
+
+(use-package lsp-mode
+  :commands (lsp lsp-deferred)
+  :hook
+  (typescript-mode . lsp-deferred)
+  (rust-mode . lsp-deferred))
 
 (use-package markdown-mode)
 (use-package rust-mode)
