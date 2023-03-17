@@ -6,7 +6,6 @@
 (kill-buffer "*Messages*")
 
 ; disable scratch buffer
-(setq initial-scratch-message "")
 (defun remove-scratch-buffer ()
   (if (get-buffer "*scratch*")
       (kill-buffer "*scratch*")))
@@ -81,6 +80,9 @@
   :config
   (ivy-rich-mode 1))
 
+(use-package smex)
+(smex-initialize)
+
 (use-package dashboard
   :init
   (setq dashboard-set-heading-icons t)
@@ -93,19 +95,19 @@
   (dashboard-setup-startup-hook)
   (dashboard-modify-heading-icons '((recents . "file-text"))))
 
-(use-package company
-  :config (global-company-mode))
-
 (use-package lsp-mode
   :commands (lsp lsp-deferred)
   :hook
   (typescript-mode . lsp-deferred)
   (rust-mode . lsp-deferred))
-
+(use-package lsp-ivy)
+(use-package lsp-ui)
 (use-package markdown-mode)
 (use-package rust-mode)
 (use-package typescript-mode
   :mode ("\\.js\\'" "\\.jsx\\'"))
+(use-package company
+  :hook (prog-mode . company-mode))
 
 (use-package general
   :config
