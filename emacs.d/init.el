@@ -5,6 +5,13 @@
 (setq-default message-log-max nil)
 (kill-buffer "*Messages*")
 
+; disable scratch buffer
+(setq initial-scratch-message "")
+(defun remove-scratch-buffer ()
+  (if (get-buffer "*scratch*")
+      (kill-buffer "*scratch*")))
+(add-hook 'after-change-major-mode-hook 'remove-scratch-buffer)
+
 ; y and n instead of yes and no
 (fset 'yes-or-no-p 'y-or-n-p)
 
