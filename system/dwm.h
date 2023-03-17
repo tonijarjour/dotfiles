@@ -223,7 +223,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Print,      spawn,                  SHCMD("maim -su -m 10 | xclip -se c -t image/png") },
 	{ MODKEY|ShiftMask,             XK_Print,      spawn,                  SHCMD("maim -su -m 10 /mnt/archive/Images/Captures/$(date +%s).png") },
 	{ MODKEY|ControlMask,           XK_w,          spawn,                  SHCMD("sxiv -t /mnt/archive/Images/Wallpapers") },
-	{ MODKEY,                       XK_t,          spawn,                  SHCMD("librewolf /mnt/archive/Other/homepage/index.html") },
+	{ MODKEY,                       XK_t,          spawn,                  SHCMD("librewolf /home/toni/.fn/page/index.html") },
 	{ MODKEY,                       XK_space,      spawn,                  {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return,     spawn,                  {.v = termcmd } },
 	{ MODKEY,                       XK_r,          spawn,                  {.v = brwcmd } },
