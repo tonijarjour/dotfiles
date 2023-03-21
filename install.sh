@@ -29,10 +29,6 @@ cd "$HOME/dwm" || exit 1
 echo 'compile and install dwm'
 s make clean install
 
-git clone "https://aur.archlinux.org/nvim-packer-git.git" "$HOME/packer"
-cd "$HOME/packer" || exit 1
-makepkg -si
-
 git clone "https://aur.archlinux.org/nvm.git" "$HOME/nvm"
 cd "$HOME/nvm" || exit 1
 makepkg -si

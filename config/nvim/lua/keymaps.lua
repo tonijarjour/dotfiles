@@ -19,6 +19,7 @@ keymap('n', '<Leader>wl', '<C-w>l', {})
 keymap('n', '<Leader>wh', '<C-w>h', {})
 
 -- Navigate buffers
+keymap('n', '<Leader>bl', '<cmd>BufferLinePick<cr>', {})
 keymap('n', '<Leader>bn', '<cmd>BufferLineCycleNext<cr>', {})
 keymap('n', '<Leader>bp', '<cmd>BufferLineCyclePrev<cr>', {})
 keymap('n', '<Leader>bs', '<cmd>w<cr>', {})

@@ -1,4 +1,4 @@
 .netrwhist
-config/nvim/plugin
+config/nvim/lazy-lock.json
 config/mpv/scripts
 config/mpv/script-modules
