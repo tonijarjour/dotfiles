@@ -21,5 +21,6 @@ $if mode=emacs
 "\e[B": history-search-forward
 "\e[Z": menu-complete-backward
 "\C-w": backward-kill-word
-TAB: menu-complete
+"\C-l": menu-complete
+TAB: clear-screen
 $endif
