@@ -33,9 +33,6 @@ git clone "https://aur.archlinux.org/librewolf-bin.git" "$HOME/librewolf"
 cd "$HOME/librewolf" || exit 1
 makepkg -si
 
-git clone --depth 1 "https://github.com/doomemacs/doomemacs" "$HOME/.config/emacs"
-"$HOME/.config/emacs/bin/doom" install --no-config
-
 echo "Disable mouse acceleration"
 prompt "install -Dm 644 \"$here/system/50-mouse-acceleration.conf\" \"/etc/X11/xorg.conf.d/\""
 
@@ -49,6 +46,9 @@ ln -s "$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyze
 
 mkdir -p "$HOME/.config"
 ln -sf "$here/config/"* "$HOME/.config/"
+
+git clone --depth 1 "https://github.com/doomemacs/doomemacs" "$HOME/.config/emacs"
+"$HOME/.config/emacs/bin/doom" install --no-config --no-env
 
 for f in "$here/home/"*
 do
