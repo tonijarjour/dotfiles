@@ -41,7 +41,7 @@
        :checkers
        grammar             ; tasing grammar mistake every you make
        (syntax +childframe); tasing you for every semicolon you forget
-       (spell +flyspell +enchant +everywhere)
+       (spell +flyspell +enchant)
 
        :tools
        lookup              ; navigate your code and its documentation
