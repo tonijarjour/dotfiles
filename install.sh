@@ -6,23 +6,23 @@ here="$PWD"
 
 prompt() { printf "=> "; su -c bash -c "$@"; }
 
-echo 'Use DNC stub mode'
+echo "Use DNC stub mode"
 prompt 'ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"'
 
-echo 'Install programs with pacman'
+echo "Install programs with pacman"
 prompt \
- 'pacman -S fd ripgrep neovim alacritty mpv maim feh sxiv xclip dmenu which \
+ "pacman -S fd ripgrep neovim alacritty mpv maim feh sxiv xclip dmenu which \
   ttf-iosevka-nerd ttf-croscore noto-fonts noto-fonts-cjk noto-fonts-emoji \
   xorg-server xorg-xinit xorg-xsetroot zathura-pdf-mupdf zathura-cb redshift \
   pipewire-pulse pipewire-jack arc-solid-gtk-theme man-db texinfo fakeroot \
   gcc autoconf automake pkgconf make patch imagemagick yt-dlp bacon emacs \
-  texlive-core texlab enchant hunspell hunspell-en_us languagetool tidy'
+  texlive-core texlab enchant hunspell hunspell-en_us languagetool tidy"
 
 git clone "https://github.com/tonijarjour/dwm.git" "$HOME/dwm"
 ln -s "$here/system/dwm.h" "$HOME/dwm/config.h"
 cd "$HOME/dwm" || exit 1
-echo 'Compile and install dwm'
-prompt make clean install
+echo "Compile and install dwm"
+prompt "make clean install"
 
 git clone "https://aur.archlinux.org/nvm.git" "$HOME/nvm"
 cd "$HOME/nvm" || exit 1
@@ -34,16 +34,16 @@ cd "$HOME/librewolf" || exit 1
 makepkg -si
 
 git clone --depth 1 "https://github.com/doomemacs/doomemacs" "$HOME/.config/emacs"
-"$HOME/.config/emacs/bin/doom" install
+"$HOME/.config/emacs/bin/doom" install --no-config
 
-echo 'Disable mouse acceleration'
-prompt install -Dm 644 "$here/system/50-mouse-acceleration.conf" "/etc/X11/xorg.conf.d/"
+echo "Disable mouse acceleration"
+prompt "install -Dm 644 \"$here/system/50-mouse-acceleration.conf\" \"/etc/X11/xorg.conf.d/\""
 
-echo 'Reject Noto Nastaliq Urdu font'
-prompt install -Dm 644 "$here/system/arabic.conf" "/etc/fonts/conf.d/66-noto-reject-nastaliq.conf"
+echo "Reject Noto Nastaliq Urdu font"
+prompt "install -Dm 644 \"$here/system/arabic.conf\" \"/etc/fonts/conf.d/66-noto-reject-nastaliq.conf\""
 
-curl --proto '=https' --tlsv1.2 -sSf "https://sh.rustup.rs" | sh
-rustup component add rust-src rust-analyzer
+curl --proto "=https" --tlsv1.2 -sSf "https://sh.rustup.rs" | sh
+"$HOME/.cargo/bin/rustup" component add rust-src rust-analyzer
 ln -s "$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer" \
   "$HOME/.cargo/bin/"
 
