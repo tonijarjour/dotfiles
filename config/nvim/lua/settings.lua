@@ -14,7 +14,6 @@ local options = {
   cursorline = true,
   wildignorecase = true,
   wildmode = "longest:full",
-  completeopt = { "menuone", "noselect" },
   pumheight = 12,
   linebreak = true,
   signcolumn = "no",
