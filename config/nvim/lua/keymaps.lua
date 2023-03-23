@@ -29,6 +29,12 @@ keymap('n', '<Leader>bK', '<cmd>bd!<cr>', {})
 -- Open file
 keymap('n', '<Leader>f.', ':e ', {})
 keymap('n', '<Leader>f,', ':e ~/', {})
+keymap('n', '<Leader>ff', '<cmd>Telescope find_files<cr>', {})
+keymap('n', '<Leader>fg', '<cmd>Telescope live_grep<cr>', {})
+keymap('n', '<Leader>fo', '<cmd>Telescope oldfiles<cr>', {})
+
+-- Help
+keymap('n', '<Leader>hv', '<cmd>Telescope help_tags<cr>', {})
 
 -- Quit nvim, forcefully
 keymap('n', '<Leader>qq', '<cmd>qa<cr>', {})

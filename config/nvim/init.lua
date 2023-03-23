@@ -88,7 +88,6 @@ require("lazy").setup({
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       require("toni-telescope-theme")
-      require("toni-telescope-keymaps")
     end,
   },
 
