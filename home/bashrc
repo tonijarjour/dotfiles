@@ -19,6 +19,7 @@ alias ls='ls --color=auto'
 alias lsa='ls -A'
 alias imv='sxiv -a'
 alias hc='source $HOME/.bash_logout; history -c; history -r'
+all() { nvim $(fd -t f -e $1 . $2); }
 
 s() {
   C=''

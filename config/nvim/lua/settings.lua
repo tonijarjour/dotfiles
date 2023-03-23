@@ -17,6 +17,8 @@ local options = {
   completeopt = { "menuone", "noselect" },
   pumheight = 12,
   linebreak = true,
+  signcolumn = "no",
+  splitright = true
 }
 
 for k, v in pairs(options) do
