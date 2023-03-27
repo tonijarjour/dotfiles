@@ -17,24 +17,25 @@ keymap('n', '<Leader>wv', '<C-w>v', {})
 keymap('n', '<Leader>wq', '<C-w>q', {})
 keymap('n', '<Leader>wl', '<C-w>l', {})
 keymap('n', '<Leader>wh', '<C-w>h', {})
+keymap('n', '<Leader>wk', '<C-w>k', {})
+keymap('n', '<Leader>wj', '<C-w>j', {})
 
--- Navigate buffers
-keymap('n', '<Leader>bl', '<cmd>BufferLinePick<cr>', {})
-keymap('n', '<Leader>bn', '<cmd>BufferLineCycleNext<cr>', {})
-keymap('n', '<Leader>bp', '<cmd>BufferLineCyclePrev<cr>', {})
-keymap('n', '<Leader>bs', '<cmd>w<cr>', {})
-keymap('n', '<Leader>bk', '<cmd>bd<cr>', {})
-keymap('n', '<Leader>bK', '<cmd>bd!<cr>', {})
+-- Bufferline
+keymap('n', '<Leader>wn', '<cmd>BufferLineCycleNext<cr>', {})
+keymap('n', '<Leader>wp', '<cmd>BufferLineCyclePrev<cr>', {})
 
--- Open file
-keymap('n', '<Leader>f.', ':e ', {})
-keymap('n', '<Leader>f,', ':e ~/', {})
+-- Open/Save/Close buffer
+keymap('n', '<Leader>e.', ':e ', {})
+keymap('n', '<Leader>e,', ':e ~/', {})
+keymap('n', '<Leader>ew', '<cmd>w<cr>', {})
+keymap('n', '<Leader>ek', '<cmd>bd<cr>', {})
+keymap('n', '<Leader>eK', '<cmd>bd!<cr>', {})
+
+-- Telescope
 keymap('n', '<Leader>ff', '<cmd>Telescope find_files<cr>', {})
-keymap('n', '<Leader>fg', '<cmd>Telescope live_grep<cr>', {})
+keymap('n', '<Leader>fl', '<cmd>Telescope live_grep<cr>', {})
 keymap('n', '<Leader>fo', '<cmd>Telescope oldfiles<cr>', {})
-
--- Help
-keymap('n', '<Leader>hv', '<cmd>Telescope help_tags<cr>', {})
+keymap('n', '<Leader>fh', '<cmd>Telescope help_tags<cr>', {})
 
 -- Quit nvim, forcefully
 keymap('n', '<Leader>qq', '<cmd>qa<cr>', {})

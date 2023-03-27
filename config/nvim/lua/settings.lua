@@ -4,6 +4,7 @@ local options = {
   expandtab = true,
   number = true,
   wrap = false,
+  linebreak = true,
   hidden = true,
   showmode = false,
   ignorecase = true,
@@ -15,9 +16,9 @@ local options = {
   wildignorecase = true,
   wildmode = "longest:full",
   pumheight = 12,
-  linebreak = true,
   signcolumn = "no",
-  splitright = true
+  splitright = true,
+  splitbelow = true
 }
 
 for k, v in pairs(options) do

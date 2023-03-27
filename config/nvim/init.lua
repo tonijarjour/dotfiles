@@ -23,14 +23,6 @@ require("lazy").setup({
     end,
   },
 
-  {"goolord/alpha-nvim",
-    config = function()
-      local startify = require("alpha.themes.startify");
-      startify.nvim_web_devicons.enabled = false
-      require("alpha").setup(startify.config)
-    end
-  },
-
   {"nvim-lualine/lualine.nvim",
     opts = {
       options = {
@@ -51,11 +43,6 @@ require("lazy").setup({
     },
   },
 
-  {"folke/todo-comments.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    opts = { signs = false },
-  },
-
   {"windwp/nvim-autopairs",
     config = function()
       require("nvim-autopairs").setup()
@@ -68,14 +55,20 @@ require("lazy").setup({
     opts = {
       highlight = { enable = true },
       ensure_installed = {
+        "comment",
         "markdown",
         "markdown_inline",
         "latex",
         "bash",
         "lua",
-        "tsx",
+        "html",
+        "css",
+        "json",
+        "javascript",
         "typescript",
+        "tsx",
         "rust",
+        "toml",
       },
     },
     config = function(_, opts)
@@ -86,16 +79,5 @@ require("lazy").setup({
   {"nvim-telescope/telescope.nvim",
     branch = "0.1.x",
     dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("toni-telescope-theme")
-    end,
   },
-
-  {"phaazon/hop.nvim",
-    branch = "v2",
-    config = function()
-      require"hop".setup { keys = "etovxqpdygfblzhckisuran" }
-      vim.keymap.set({"n", "v"}, "F", "<cmd>HopWord<cr>", {})
-    end
-  }
 })
