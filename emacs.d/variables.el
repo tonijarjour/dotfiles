@@ -19,6 +19,7 @@
 ;; no making backup/lock files
 (setq-default make-backup-files nil)
 (setq-default create-lockfiles nil)
+(setq-default auto-save-default nil)
 
 ;; y and n instead of yes and no, no mouse menu
 (fset 'yes-or-no-p 'y-or-n-p)

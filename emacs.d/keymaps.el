@@ -27,7 +27,6 @@
 
 (evil-define-key 'normal 'global (kbd "<leader>:") 'eval-expression)
 (evil-define-key 'normal 'global (kbd "<leader>x") 'execute-extended-command)
-(evil-define-key 'normal 'global (kbd "<leader>p") 'projectile-commander)
 
 (evil-define-key 'normal 'global (kbd "<leader>hv") 'describe-variable)
 (evil-define-key 'normal 'global (kbd "<leader>hf") 'describe-function)
@@ -39,8 +38,11 @@
 (evil-define-key 'normal 'global (kbd "<leader>wh") 'evil-window-left)
 (evil-define-key 'normal 'global (kbd "<leader>wk") 'evil-window-up)
 (evil-define-key 'normal 'global (kbd "<leader>wj") 'evil-window-down)
-(evil-define-key 'normal 'global (kbd "<leader>wn") 'centaur-tabs-forward)
-(evil-define-key 'normal 'global (kbd "<leader>wp") 'centaur-tabs-backward)
+(evil-define-key 'normal 'global (kbd "<leader>wn") 'centaur-tabs-forward-tab)
+(evil-define-key 'normal 'global (kbd "<leader>wp") 'centaur-tabs-backward-tab)
+
+(evil-define-key 'normal 'global (kbd "<leader>pg") 'consult-ripgrep)
+(evil-define-key 'normal 'global (kbd "<leader>pp") 'project-switch-project)
 
 (evil-define-key 'normal 'global (kbd "<leader>e.") 'find-file)
 (evil-define-key 'normal 'global (kbd "<leader>e,")

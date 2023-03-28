@@ -21,7 +21,11 @@
   (load-theme 'doom-one t))
 
 (use-package doom-modeline
-  :init (doom-modeline-mode 1))
+  :init
+  (custom-set-faces
+  '(mode-line ((t (:family "Noto Sans" :height 1.0))))
+  '(mode-line-inactive ((t (:family "Noto Sans" :height 1.0)))))
+  (doom-modeline-mode 1))
 
 ;; M-x all-the-icons-install-fonts
 (use-package all-the-icons)
@@ -34,6 +38,10 @@
   (setq dashboard-center-content t)
   :config
   (dashboard-setup-startup-hook))
+
+(use-package savehist
+  :init
+  (savehist-mode))
 
 (use-package vertico
   :init
@@ -50,18 +58,7 @@
   :init
   (marginalia-mode))
 
-(use-package savehist
-  :init
-  (savehist-mode))
-
-(use-package projectile
-  :config
-  (projectile-mode +1)
-  (def-projectile-commander-method ?a
-    "Search with ripgrep."
-    (call-interactively 'projectile-ripgrep)))
-
-(use-package rg)
+(use-package consult)
 
 (use-package centaur-tabs
   :demand
