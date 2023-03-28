@@ -56,4 +56,29 @@
 
 (use-package projectile
   :config
-  (projectile-mode +1))
+  (projectile-mode +1)
+  (def-projectile-commander-method ?a
+    "Search with ripgrep"
+    (call-interactively 'projectile-ripgrep)))
+
+(use-package rg)
+
+(use-package centaur-tabs
+  :demand
+  :init
+  (setq centaur-tabs-set-icons t)
+  (setq centaur-tabs-set-close-button nil)
+  :config
+  (centaur-tabs-mode t)
+  (centaur-tabs-change-fonts "Noto Sans" 160)
+
+  (defun centaur-tabs-hide-tab (x)
+    (let ((name (format "%s" x))) (or
+    (window-dedicated-p (selected-window))
+    (string-prefix-p "*Compile-Log" name)
+    (string-prefix-p "*dashboard" name)
+    (string-prefix-p "*Help" name)
+    (string-prefix-p "*help" name)
+    (string-prefix-p "*scratch" name)
+    (string-prefix-p "*temp" name)
+    ))))

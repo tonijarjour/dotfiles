@@ -23,7 +23,7 @@
 (evil-define-key '(normal visual) 'global (kbd "\C-u") "12k")
 (evil-define-key '(normal visual) 'global (kbd "\C-d") "12j")
 
-(evil-set-leader '(normal) (kbd "<SPC>"))
+(evil-set-leader 'normal (kbd "<SPC>"))
 
 (evil-define-key 'normal 'global (kbd "<leader>:") 'eval-expression)
 (evil-define-key 'normal 'global (kbd "<leader>x") 'execute-extended-command)
