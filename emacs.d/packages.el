@@ -1,6 +1,5 @@
 ;;; packages.el --- -*- lexical-binding: t -*-
 
-
 ;; display line and column numbers
 (global-display-line-numbers-mode 1)
 (column-number-mode 1)
@@ -47,8 +46,9 @@
   '(mode-line-inactive ((t (:family "Noto Sans" :height 1.0)))))
   (doom-modeline-mode 1))
 
-(use-package rainbow-mode
-  :hook (prog-mode org-mode text-mode))
+(use-package rainbow-mode)
+(use-package emojify
+  :hook (after-init . global-emojify-mode))
 
 ;; M-x all-the-icons-install-fonts
 (use-package all-the-icons)
@@ -99,6 +99,7 @@
     (string-prefix-p "*dashboard" name)
     (string-prefix-p "*Help" name)
     (string-prefix-p "*help" name)
+    (string-prefix-p "*company" name)
     (string-prefix-p "*scratch" name)
     (string-prefix-p "*temp" name)
     ))))
