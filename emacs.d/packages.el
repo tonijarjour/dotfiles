@@ -1,5 +1,25 @@
 ;;; packages.el --- -*- lexical-binding: t -*-
 
+
+;; display line and column numbers
+(global-display-line-numbers-mode 1)
+(column-number-mode 1)
+
+;; highlight current line
+(global-hl-line-mode 1)
+
+(global-prettify-symbols-mode 1)
+(defun add-pretty-lambda ()
+  (setq prettify-symbols-alist
+        '(("lambda" . 955)
+          ("delta" . 120517)
+          ("epsilon" . 120518)
+          ("->" . 8594)
+          ("<=" . 8804)
+          (">=" . 8805))))
+(add-hook 'prog-mode-hook 'add-pretty-lambda)
+(add-hook 'org-mode-hook 'add-pretty-lambda)
+
 ;; melpa
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -26,6 +46,9 @@
   '(mode-line ((t (:family "Noto Sans" :height 1.0))))
   '(mode-line-inactive ((t (:family "Noto Sans" :height 1.0)))))
   (doom-modeline-mode 1))
+
+(use-package rainbow-mode
+  :hook (prog-mode org-mode text-mode))
 
 ;; M-x all-the-icons-install-fonts
 (use-package all-the-icons)

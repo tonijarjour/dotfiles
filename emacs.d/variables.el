@@ -24,3 +24,6 @@
 ;; y and n instead of yes and no, no mouse menu
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq use-dialog-box nil)
+
+;; shift with <> 2 spaces
+(setq evil-shift-width 2)
