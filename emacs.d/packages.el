@@ -58,7 +58,7 @@
   :config
   (projectile-mode +1)
   (def-projectile-commander-method ?a
-    "Search with ripgrep"
+    "Search with ripgrep."
     (call-interactively 'projectile-ripgrep)))
 
 (use-package rg)

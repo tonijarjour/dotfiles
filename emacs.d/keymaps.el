@@ -39,8 +39,8 @@
 (evil-define-key 'normal 'global (kbd "<leader>wh") 'evil-window-left)
 (evil-define-key 'normal 'global (kbd "<leader>wk") 'evil-window-up)
 (evil-define-key 'normal 'global (kbd "<leader>wj") 'evil-window-down)
-(evil-define-key 'normal 'global (kbd "<leader>wn") 'evil-next-buffer)
-(evil-define-key 'normal 'global (kbd "<leader>wp") 'evil-prev-buffer)
+(evil-define-key 'normal 'global (kbd "<leader>wn") 'centaur-tabs-forward)
+(evil-define-key 'normal 'global (kbd "<leader>wp") 'centaur-tabs-backward)
 
 (evil-define-key 'normal 'global (kbd "<leader>e.") 'find-file)
 (evil-define-key 'normal 'global (kbd "<leader>e,")
