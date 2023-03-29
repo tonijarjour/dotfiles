@@ -29,11 +29,16 @@
 (evil-define-key 'normal 'global (kbd "<leader>wp") 'centaur-tabs-backward-tab)
 
 (evil-define-key 'normal 'global (kbd "<leader>pp") 'project-switch-project)
+(evil-define-key 'normal 'global (kbd "<leader>pq") 'project-kill-buffers)
+
+(evil-define-key 'normal 'global (kbd "<leader>fl") 'consult-ripgrep)
+(evil-define-key 'normal 'global (kbd "<leader>fo") 'consult-recent-file)
+(evil-define-key 'normal 'global (kbd "<leader>ff") 'consult-find)
 
 (evil-define-key 'normal 'global (kbd "<leader>e.") 'find-file)
 (evil-define-key 'normal 'global (kbd "<leader>e,")
   (lambda () (interactive) (tj/find-file-at "~/")))
-(evil-define-key 'normal 'global (kbd "<leader>ep")
+(evil-define-key 'normal 'global (kbd "<leader>el")
   (lambda () (interactive) (tj/find-file-at "~/.fn/emacs.d/")))
 (evil-define-key 'normal 'global (kbd "<leader>ew") 'save-buffer)
 (evil-define-key 'normal 'global (kbd "<leader>ek") 'evil-delete-buffer)

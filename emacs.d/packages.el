@@ -1,4 +1,4 @@
-;;; prelude.el --- -*- lexical-binding: t -*-
+;;; packages.el --- -*- lexical-binding: t -*-
 
 (require 'package)
 (add-to-list 'package-archives
@@ -69,6 +69,9 @@
   completion-category-overrides
     '((file (styles partial-completion))))
 (require 'orderless)
+
+(tj/install-package 'consult)
+(require 'consult)
 
 (tj/install-package 'evil)
 (setq evil-want-keybinding nil)
