@@ -9,8 +9,8 @@
 
 (evil-set-leader 'normal (kbd "<SPC>"))
 
-(evil-define-key '(normal visual) 'global (kbd "\C-u") "12k")
-(evil-define-key '(normal visual) 'global (kbd "\C-d") "12j")
+(evil-define-key '(normal visual) 'global (kbd "\C-u") "6k")
+(evil-define-key '(normal visual) 'global (kbd "\C-d") "6j")
 
 (evil-define-key 'normal 'global (kbd "<leader>:") 'eval-expression)
 (evil-define-key 'normal 'global (kbd "<leader>x") 'execute-extended-command)
@@ -27,13 +27,20 @@
 (evil-define-key 'normal 'global (kbd "<leader>wj") 'evil-window-down)
 (evil-define-key 'normal 'global (kbd "<leader>wn") 'centaur-tabs-forward-tab)
 (evil-define-key 'normal 'global (kbd "<leader>wp") 'centaur-tabs-backward-tab)
+(evil-define-key 'normal 'global (kbd "<leader>wg")
+  '(lambda () (interactive) (switch-to-buffer "*dashboard*")))
+
+(evil-define-key 'normal 'global (kbd "<leader>kh")
+  '(lambda () (interactive) (kill-buffer "*Help*")))
 
 (evil-define-key 'normal 'global (kbd "<leader>ps") 'project-switch-project)
-(evil-define-key 'normal 'global (kbd "<leader>pq") 'project-kill-buffers)
+(evil-define-key 'normal 'global (kbd "<leader>pq")
+  '(lambda () (interactive) (delete-other-windows) (project-kill-buffers t)))
 
 (evil-define-key 'normal 'global (kbd "<leader>fl") 'consult-ripgrep)
 (evil-define-key 'normal 'global (kbd "<leader>fo") 'consult-recent-file)
 (evil-define-key 'normal 'global (kbd "<leader>ff") 'consult-find)
+(evil-define-key 'insert 'global (kbd "\M-SPC") 'corfu-insert-separator)
 
 (evil-define-key 'normal 'global (kbd "<leader>e.") 'find-file)
 (evil-define-key 'normal 'global (kbd "<leader>e,")

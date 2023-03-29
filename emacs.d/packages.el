@@ -33,7 +33,7 @@
 (tj/install-package 'dashboard)
 (setq dashboard-center-content t
   dashboard-items '((recents . 12))
-  dashboard-banner-logo-title "Dark Wizard"
+  dashboard-banner-logo-title nil
   dashboard-startup-banner
     "~/Images/Illustrations/small-alice.jpg")
 (dashboard-setup-startup-hook)
@@ -57,6 +57,11 @@
 (custom-set-variables
  '(corfu-auto t))
 (global-corfu-mode 1)
+
+(tj/install-package 'flycheck)
+(global-flycheck-mode)
+
+(tj/install-package 'markdown-mode)
 
 (tj/install-package 'evil)
 (setq evil-want-keybinding nil)

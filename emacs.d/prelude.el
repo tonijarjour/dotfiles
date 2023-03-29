@@ -26,7 +26,8 @@
 (global-display-line-numbers-mode 1)
 
 (add-hook 'text-mode-hook 'flyspell-mode)
-(add-hook 'prog-mode-hook 'flymake-mode)
+(add-to-list 'auto-mode-alist
+  '("\\.\\(?:ts\\|tsx\\)\\'" . js-jsx-mode))
 
 (provide 'prelude)
 
