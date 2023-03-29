@@ -1,6 +1,13 @@
 ;;; keymaps.el --- -*- lexical-binding: t -*-
 
+;;; Commentary:
+
+;; Personal keymaps for a comfortable experience.
+
+;;; Code:
+
 (defun tj/find-file-at (initial-path)
+  "Choose a file at INITIAL-PATH."
   (let ((default-directory (expand-file-name initial-path)))
   (call-interactively #'find-file)))
 

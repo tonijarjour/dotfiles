@@ -1,5 +1,11 @@
 ;;; packages.el --- -*- lexical-binding: t -*-
 
+;;; Commentary:
+
+;; Install and configure some nice packages.
+
+;;; Code:
+
 (require 'package)
 (add-to-list 'package-archives
   '("melpa" . "https://melpa.org/packages/") t)
@@ -8,6 +14,7 @@
   (package-refresh-contents))
 
 (defun tj/install-package (package)
+  "Install PACKAGE."
   (unless (package-installed-p package)
   (package-install package)))
 

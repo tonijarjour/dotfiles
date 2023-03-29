@@ -1,5 +1,11 @@
 ;;; prelude.el --- -*- lexical-binding: t -*-
 
+;;; Commentary:
+
+;; General configurations that do not rely on packages.
+
+;;; Code:
+
 (setq user-full-name "Toni Jarjour")
 (setq user-mail-address "tonijarjour@gmail.com")
 
