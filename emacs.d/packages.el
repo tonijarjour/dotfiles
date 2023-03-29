@@ -39,8 +39,8 @@
 
 (tj/install-package 'dashboard)
 (setq dashboard-center-content t
-  dashboard-items '((recents . 12))
-  dashboard-banner-logo-title nil
+  dashboard-items '((recents . 7))
+  dashboard-banner-logo-title "Dark Wizard"
   dashboard-startup-banner
     "~/Images/Illustrations/small-alice.jpg")
 (dashboard-setup-startup-hook)
