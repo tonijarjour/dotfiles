@@ -25,6 +25,9 @@
 (global-prettify-symbols-mode 1)
 (global-display-line-numbers-mode 1)
 
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'prog-mode-hook 'flymake-mode)
+
 (provide 'prelude)
 
 ;;; prelude.el ends here

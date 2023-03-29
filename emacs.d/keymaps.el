@@ -41,7 +41,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>el")
   (lambda () (interactive) (tj/find-file-at "~/.fn/emacs.d/")))
 (evil-define-key 'normal 'global (kbd "<leader>ew") 'save-buffer)
-(evil-define-key 'normal 'global (kbd "<leader>ek") 'evil-delete-buffer)
+(evil-define-key 'normal 'global (kbd "<leader>ek") 'kill-this-buffer)
 
 (evil-define-key 'normal 'global (kbd "<leader>qq") 'evil-quit-all)
 (evil-define-key 'normal 'global (kbd "<leader>qQ") 'kill-emacs)

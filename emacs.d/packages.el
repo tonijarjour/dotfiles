@@ -12,12 +12,11 @@
   (package-install package)))
 
 (tj/install-package 'all-the-icons)
-(tj/install-package 'rainbow-mode)
 
 (tj/install-package 'doom-themes)
 (setq doom-themes-enable-bold t
   doom-themes-enable-italic t)
-(load-theme 'doom-one t)
+(load-theme 'doom-dracula t)
 (doom-themes-org-config)
 
 (tj/install-package 'doom-modeline)
@@ -28,17 +27,6 @@
 (tj/install-package 'centaur-tabs)
 (setq centaur-tabs-set-icons t
   centaur-tabs-set-close-button nil)
-(defun centaur-tabs-hide-tab (x)
-  (let ((name (format "%s" x))) (or
-  (window-dedicated-p (selected-window))
-  (string-prefix-p "*Compile-Log" name)
-  (string-prefix-p "*dashboard" name)
-  (string-prefix-p "*Help" name)
-  (string-prefix-p "*help" name)
-  (string-prefix-p "*company" name)
-  (string-prefix-p "*scratch" name)
-  (string-prefix-p "*temp" name)
-  )))
 (centaur-tabs-mode t)
 (centaur-tabs-change-fonts "Noto Sans" 160)
 
