@@ -34,7 +34,6 @@
 (evil-define-key 'normal 'global (kbd "<leader>fl") 'consult-ripgrep)
 (evil-define-key 'normal 'global (kbd "<leader>fo") 'consult-recent-file)
 (evil-define-key 'normal 'global (kbd "<leader>ff") 'consult-find)
-(evil-define-key 'normal 'global (kbd "<leader>fd") 'consult-flymake)
 
 (evil-define-key 'normal 'global (kbd "<leader>e.") 'find-file)
 (evil-define-key 'normal 'global (kbd "<leader>e,")
