@@ -47,4 +47,5 @@
 (evil-define-key 'normal 'global (kbd "<leader>qQ") 'kill-emacs)
 
 (provide 'keymaps)
+
 ;;; keymaps.el ends here

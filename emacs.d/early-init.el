@@ -18,3 +18,7 @@
   (makunbound 'file-name-handler-alist-original)))
 
 (add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font-15"))
+
+(provide 'early-init)
+
+;;; early-init.el ends here

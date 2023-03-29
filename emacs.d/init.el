@@ -8,4 +8,5 @@
 (tj/load-config-file "keymaps")
 
 (provide 'init)
+
 ;;; init.el ends here

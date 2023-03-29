@@ -26,4 +26,5 @@
 (global-display-line-numbers-mode 1)
 
 (provide 'prelude)
+
 ;;; prelude.el ends here
