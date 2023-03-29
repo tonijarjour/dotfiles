@@ -85,3 +85,6 @@
 (with-eval-after-load 'evil
   (require 'evil-collection)
   (evil-collection-init))
+
+(provide 'packages)
+;;; packages.el ends here

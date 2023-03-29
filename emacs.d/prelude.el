@@ -18,10 +18,14 @@
 (setq use-dialog-box nil)
 (fset 'yes-or-no-p 'y-or-n-p)
 
+(savehist-mode 1)
 (electric-pair-mode 1)
 (column-number-mode 1)
 (global-hl-line-mode 1)
 (global-prettify-symbols-mode 1)
 (global-display-line-numbers-mode 1)
 
-(savehist-mode 1)
+(add-hook 'prog-mode-hook 'flymake-mode)
+
+(provide 'prelude)
+;;; prelude.el ends here

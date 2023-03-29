@@ -28,12 +28,13 @@
 (evil-define-key 'normal 'global (kbd "<leader>wn") 'centaur-tabs-forward-tab)
 (evil-define-key 'normal 'global (kbd "<leader>wp") 'centaur-tabs-backward-tab)
 
-(evil-define-key 'normal 'global (kbd "<leader>pp") 'project-switch-project)
+(evil-define-key 'normal 'global (kbd "<leader>ps") 'project-switch-project)
 (evil-define-key 'normal 'global (kbd "<leader>pq") 'project-kill-buffers)
 
 (evil-define-key 'normal 'global (kbd "<leader>fl") 'consult-ripgrep)
 (evil-define-key 'normal 'global (kbd "<leader>fo") 'consult-recent-file)
 (evil-define-key 'normal 'global (kbd "<leader>ff") 'consult-find)
+(evil-define-key 'normal 'global (kbd "<leader>fd") 'consult-flymake)
 
 (evil-define-key 'normal 'global (kbd "<leader>e.") 'find-file)
 (evil-define-key 'normal 'global (kbd "<leader>e,")
@@ -45,3 +46,6 @@
 
 (evil-define-key 'normal 'global (kbd "<leader>qq") 'evil-quit-all)
 (evil-define-key 'normal 'global (kbd "<leader>qQ") 'kill-emacs)
+
+(provide 'keymaps)
+;;; keymaps.el ends here
