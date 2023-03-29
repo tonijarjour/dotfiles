@@ -73,6 +73,12 @@
 (tj/install-package 'consult)
 (require 'consult)
 
+(tj/install-package 'corfu)
+(custom-set-variables
+ '(corfu-auto t))
+(require 'corfu)
+(global-corfu-mode 1)
+
 (tj/install-package 'evil)
 (setq evil-want-keybinding nil)
 (setq evil-want-C-u-scroll t)
