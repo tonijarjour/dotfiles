@@ -1,4 +1,4 @@
-;;; keymaps.el --- -*- lexical-binding: t -*-
+;;; keymaps.el --- -*- lexical-binding: t; eval: (flycheck-mode -1)  -*-
 
 ;;; Commentary:
 
@@ -9,12 +9,12 @@
 (defun tj/find-file-at (initial-path)
   "Choose a file at INITIAL-PATH."
   (let ((default-directory (expand-file-name initial-path)))
-  (call-interactively #'find-file)))
+    (call-interactively #'find-file)))
 
 (global-set-key (kbd "<ESC>") 'keyboard-escape-quit)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
-(evil-set-leader 'normal (kbd "<SPC>"))
+(evil-set-leader '(normal visual) (kbd "<SPC>"))
 
 (evil-define-key '(normal visual) 'global (kbd "\C-u") "6k")
 (evil-define-key '(normal visual) 'global (kbd "\C-d") "6j")

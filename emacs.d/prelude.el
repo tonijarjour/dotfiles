@@ -1,4 +1,4 @@
-;;; prelude.el --- -*- lexical-binding: t -*-
+;;; prelude.el --- -*- lexical-binding: t; eval: (flycheck-mode -1)  -*-
 
 ;;; Commentary:
 
@@ -24,14 +24,19 @@
 (setq use-dialog-box nil)
 (fset 'yes-or-no-p 'y-or-n-p)
 
+(set-face-attribute 'default nil :font "Iosevka Nerd Font-15")
+(set-face-attribute 'fixed-pitch nil :font "Iosevka Nerd Font-15")
+(set-face-attribute 'variable-pitch nil :font "Noto Sans-15")
+
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'text-mode-hook 'variable-pitch-mode)
+
 (savehist-mode 1)
 (electric-pair-mode 1)
 (column-number-mode 1)
-(global-hl-line-mode 1)
 (global-prettify-symbols-mode 1)
 (global-display-line-numbers-mode 1)
 
-(add-hook 'text-mode-hook 'flyspell-mode)
 (add-to-list 'auto-mode-alist
   '("\\.\\(?:ts\\|tsx\\)\\'" . js-jsx-mode))
 

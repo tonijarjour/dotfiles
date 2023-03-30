@@ -1,8 +1,8 @@
-;;; init.el --- -*- lexical-binding: t -*-
+;;; init.el --- -*- lexical-binding: t; eval: (flycheck-mode -1)  -*-
 
 ;;; Commentary:
 
-;; Load in configuration modules.
+;; Load configuration modules.
 
 ;;; Code:
 
