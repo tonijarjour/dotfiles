@@ -15,13 +15,12 @@
 (setq file-name-handler-alist nil)
 
 (add-hook 'emacs-startup-hook
-  (lambda ()
-  (setq file-name-handler-alist file-name-handler-alist-original)
-  (makunbound 'file-name-handler-alist-original)
-  (if (boundp 'after-focus-change-function)
-    (add-function :after after-focus-change-function
-      (lambda () (unless (frame-focus-state) (garbage-collect))))
-    (add-hook 'after-focus-change-function 'garbage-collect))))
+  (lambda () (setq file-name-handler-alist file-name-handler-alist-original)
+    (makunbound 'file-name-handler-alist-original)
+    (if (boundp 'after-focus-change-function)
+      (add-function :after after-focus-change-function
+	(lambda () (unless (frame-focus-state) (garbage-collect))))
+      (add-hook 'after-focus-change-function 'garbage-collect))))
 
 (tooltip-mode -1)
 (scroll-bar-mode -1)

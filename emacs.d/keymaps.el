@@ -20,6 +20,9 @@
 (evil-define-key 'normal 'global (kbd "<leader>:") 'eval-expression)
 (evil-define-key 'normal 'global (kbd "<leader>x") 'execute-extended-command)
 
+;; Toggle between dark and light theme
+(evil-define-key 'normal 'global (kbd "<leader>tt") 'ef-themes-toggle)
+
 ;; Open a file. Open an Emacs configuration file.
 (evil-define-key 'normal 'global (kbd "<leader>e.") 'find-file)
 (evil-define-key 'normal 'global (kbd "<leader>e,")

@@ -19,37 +19,38 @@
     (package-install package)))
 
 (tj/install-package 'ef-themes)
-(custom-set-variables '(ef-themes-mixed-fonts t)
-  '(ef-themes-variable-pitch-ui t))
+(setq ef-themes-to-toggle '(ef-winter ef-spring)
+  ef-themes-mixed-fonts t
+  ef-themes-variable-pitch-ui t)
 (load-theme 'ef-winter t)
 
 (tj/install-package 'nano-modeline)
-(custom-set-variables '(nano-modeline-position 'bottom)
-  '(nano-modeline-mode t))
+(setq nano-modeline-position 'bottom)
+(nano-modeline-mode t)
 
 (tj/install-package 'centaur-tabs)
-(custom-set-variables '(centaur-tabs-set-close-button nil)
-  '(centaur-tabs-mode t))
+(setq centaur-tabs-height 40
+  centaur-tabs-set-close-button nil)
+(centaur-tabs-mode t)
 
 (tj/install-package 'dashboard)
-(custom-set-variables
-  '(dashboard-center-content t)
-  '(dashboard-items '((recents . 7)))
-  '(dashboard-banner-logo-title "Dark Wizard")
-  '(dashboard-display-icons-p nil)
-  '(dashboard-startup-banner
-  "~/Images/Illustrations/small-alice.jpg"))
+(setq dashboard-center-content t
+  dashboard-items '((recents . 7))
+  dashboard-banner-logo-title "Dark Wizard"
+  dashboard-display-icons-p nil
+  dashboard-startup-banner
+  "~/Images/Illustrations/small-alice.jpg")
 (dashboard-setup-startup-hook)
 
 (tj/install-package 'flycheck)
-(custom-set-variables '(global-flycheck-mode t))
+(global-flycheck-mode t)
 
 (tj/install-package 'vertico)
 (setq vertico-count 12)
-(vertico-mode 1)
+(vertico-mode t)
 
 (tj/install-package 'marginalia)
-(marginalia-mode 1)
+(marginalia-mode t)
 
 (tj/install-package 'orderless)
 (setq completion-styles '(orderless basic)
@@ -60,36 +61,20 @@
 (tj/install-package 'consult)
 
 (tj/install-package 'corfu)
-(custom-set-variables
- '(corfu-auto t))
-(global-corfu-mode 1)
+(setq corfu-auto t)
+(global-corfu-mode t)
 
 (tj/install-package 'org-modern)
-(global-org-modern-mode)
+(global-org-modern-mode t)
 
 (tj/install-package 'markdown-mode)
-(require 'markdown-mode)
-
-(dolist (face
-'(markdown-code-face
-  markdown-html-attr-name-face
-  markdown-html-attr-value-face
-  markdown-html-entity-face
-  markdown-html-tag-delimiter-face
-  markdown-html-tag-name-face
-  markdown-inline-code-face
-  markdown-language-info-face
-  markdown-language-keyword-face
-  markdown-pre-face
-  markdown-table-face))
-  (set-face-attribute face nil :inherit 'fixed-pitch))
 
 (tj/install-package 'evil)
-(setq evil-want-keybinding nil)
-(setq evil-want-C-u-scroll t)
-(setq evil-shift-width 2)
-(evil-mode 1)
-(evil-set-undo-system 'undo-redo)
+(setq evil-want-keybinding nil
+  evil-want-C-u-scroll t
+  evil-shift-width 2
+  evil-undo-system 'undo-redo)
+(evil-mode t)
 
 (tj/install-package 'evil-collection)
 (with-eval-after-load 'evil
