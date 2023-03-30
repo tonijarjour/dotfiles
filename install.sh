@@ -6,7 +6,7 @@ here="$PWD"
 
 prompt() { printf "=> "; su -c bash -c "$@"; }
 
-echo "Use DNC stub mode"
+echo "Use DNS stub mode"
 prompt 'ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"'
 
 echo "Install programs with pacman"

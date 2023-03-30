@@ -42,9 +42,6 @@
   "~/Images/Illustrations/small-alice.jpg")
 (dashboard-setup-startup-hook)
 
-(tj/install-package 'flycheck)
-(global-flycheck-mode t)
-
 (tj/install-package 'vertico)
 (setq vertico-count 12)
 (vertico-mode t)
