@@ -19,30 +19,30 @@
     (package-install package)))
 
 (tj/install-package 'ef-themes)
-(load-theme 'ef-dark t)
+(custom-set-variables '(ef-themes-mixed-fonts t)
+  '(ef-themes-variable-pitch-ui t))
+(load-theme 'ef-winter t)
 
 (tj/install-package 'nano-modeline)
-(setq nano-modeline-position 'bottom)
-(nano-modeline-mode)
-(custom-set-faces '(nano-modeline-active ((t (:family "Noto Sans" :height 1.0))))
-  '(nano-modeline-inactive ((t (:family "Noto Sans" :height 1.0)))))
+(custom-set-variables '(nano-modeline-position 'bottom)
+  '(nano-modeline-mode t))
 
 (tj/install-package 'centaur-tabs)
-(setq centaur-tabs-set-close-button nil)
-(centaur-tabs-mode t)
-(centaur-tabs-change-fonts "Noto Sans" 160)
+(custom-set-variables '(centaur-tabs-set-close-button nil)
+  '(centaur-tabs-mode t))
 
 (tj/install-package 'dashboard)
-(setq dashboard-center-content t
-  dashboard-items '((recents . 7))
-  dashboard-banner-logo-title "Dark Wizard"
-  dashboard-display-icons-p nil
-  dashboard-startup-banner
-  "~/Images/Illustrations/small-alice.jpg")
+(custom-set-variables
+  '(dashboard-center-content t)
+  '(dashboard-items '((recents . 7)))
+  '(dashboard-banner-logo-title "Dark Wizard")
+  '(dashboard-display-icons-p nil)
+  '(dashboard-startup-banner
+  "~/Images/Illustrations/small-alice.jpg"))
 (dashboard-setup-startup-hook)
 
 (tj/install-package 'flycheck)
-(global-flycheck-mode)
+(custom-set-variables '(global-flycheck-mode t))
 
 (tj/install-package 'vertico)
 (setq vertico-count 12)
@@ -71,15 +71,7 @@
 (require 'markdown-mode)
 
 (dolist (face
-'(org-block
-  org-block-begin-line
-  org-block-end-line
-  org-code
-  org-document-info-keyword
-  org-meta-line
-  org-table
-  org-verbatim
-  markdown-code-face
+'(markdown-code-face
   markdown-html-attr-name-face
   markdown-html-attr-value-face
   markdown-html-entity-face

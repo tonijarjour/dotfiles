@@ -34,8 +34,8 @@
 (savehist-mode 1)
 (electric-pair-mode 1)
 (column-number-mode 1)
-(global-prettify-symbols-mode 1)
 (global-display-line-numbers-mode 1)
+(global-prettify-symbols-mode 1)
 
 (add-to-list 'auto-mode-alist
   '("\\.\\(?:ts\\|tsx\\)\\'" . js-jsx-mode))

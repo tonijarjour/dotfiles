@@ -11,9 +11,6 @@
   (let ((default-directory (expand-file-name initial-path)))
     (call-interactively #'find-file)))
 
-(global-set-key (kbd "<ESC>") 'keyboard-escape-quit)
-(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-
 (evil-set-leader '(normal visual) (kbd "<SPC>"))
 
 (evil-define-key '(normal visual) 'global (kbd "\C-u") "6k")
