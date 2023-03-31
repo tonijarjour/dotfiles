@@ -20,10 +20,15 @@
 (setq create-lockfiles nil)
 (setq auto-save-default nil)
 (setq custom-file "~/.emacs.d/custom-file.el")
-(setq js-indent-level 2)
 
 (setq use-dialog-box nil)
 (fset 'yes-or-no-p 'y-or-n-p)
+
+(setq js-indent-level 2)
+(add-to-list 'auto-mode-alist
+  '("\\.ts\\'" . js-mode))
+(add-to-list 'auto-mode-alist
+  '("\\.tsx\\'" . js-jsx-mode))
 
 (set-face-attribute 'default nil :font "Iosevka Nerd Font-15")
 (set-face-attribute 'fixed-pitch nil :font "Iosevka Nerd Font-15")
@@ -38,9 +43,6 @@
 (column-number-mode 1)
 (global-display-line-numbers-mode 1)
 (global-prettify-symbols-mode 1)
-
-(add-to-list 'auto-mode-alist
-  '("\\.\\(?:ts\\|tsx\\)\\'" . js-jsx-mode))
 
 (provide 'prelude)
 
