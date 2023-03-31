@@ -1,4 +1,4 @@
-;;; init.el --- -*- lexical-binding: t; eval: (flycheck-mode -1)  -*-
+;;; init.el --- -*- lexical-binding: t -*-
 
 ;;; Commentary:
 

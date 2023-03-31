@@ -1,4 +1,4 @@
-;;; prelude.el --- -*- lexical-binding: t; eval: (flycheck-mode -1)  -*-
+;;; prelude.el --- -*- lexical-binding: t -*-
 
 ;;; Commentary:
 
@@ -30,6 +30,7 @@
 
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'text-mode-hook 'variable-pitch-mode)
+(add-hook 'prog-mode-hook 'toggle-truncate-lines)
 
 (savehist-mode 1)
 (electric-pair-mode 1)

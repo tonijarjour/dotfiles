@@ -1,4 +1,4 @@
-;;; packages.el --- -*- lexical-binding: t; eval: (flycheck-mode -1) -*-
+;;; packages.el --- -*- lexical-binding: t -*-
 
 ;;; Commentary:
 
