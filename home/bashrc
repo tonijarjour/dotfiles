@@ -57,6 +57,36 @@ g() {
   esac
 }
 
+bulkrename() {
+    trap 'rm -f $RENAMETMP' EXIT
+
+    local OLDFILENAMES=( *$@ )
+    local RENAMETMP=$(mktemp)
+
+    printf '%s\n' "${OLDFILENAMES[@]}" > $RENAMETMP && nvim $RENAMETMP
+    local exitcode=$?; [[ $exitcode = 0 ]] || return $exitcode
+
+    local IFS=$'\n'
+    local NEWFILENAMES=( $( command cat $RENAMETMP ) )
+
+    if [[ ${#OLDFILENAMES[@]} -ne ${#NEWFILENAMES[@]} ]]; then
+        echo "Lines Mismatch" && return 1
+    fi
+
+    for ((old = 1; old <= ${#OLDFILENAMES[@]}; old++)); do
+        for ((new = 1; new < $old; new++)); do
+            if [[ ${NEWFILENAMES[old]} = ${NEWFILENAMES[new]} ]] || \
+            [[ ${OLDFILENAMES[old]} = ${NEWFILENAMES[new]} ]]; then
+                echo "File Naming Confict" && return 1
+            fi
+        done
+    done
+
+    for ((name = 1; name <= ${#NEWFILENAMES[@]}; name++)); do
+        command mv -Tnv "${OLDFILENAMES[name]}" "${NEWFILENAMES[name]}"
+    done
+}
+
 [[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 [[ -f "/usr/share/nvm/init-nvm.sh" ]] && source "/usr/share/nvm/init-nvm.sh"
 [[ -f "$HOME/.bash_logout" ]] && source "$HOME/.bash_logout"
