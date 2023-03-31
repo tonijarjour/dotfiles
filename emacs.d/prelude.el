@@ -20,6 +20,7 @@
 (setq create-lockfiles nil)
 (setq auto-save-default nil)
 (setq custom-file "~/.emacs.d/custom-file.el")
+(setq js-indent-level 2)
 
 (setq use-dialog-box nil)
 (fset 'yes-or-no-p 'y-or-n-p)

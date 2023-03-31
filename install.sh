@@ -11,7 +11,7 @@ prompt 'ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"'
 
 echo "Install programs with pacman"
 prompt \
- "pacman -S fd ripgrep neovim alacritty mpv maim feh sxiv xclip dmenu which \
+ "pacman -S fd ripgrep neovim alacritty mpv maim feh xclip dmenu which \
   ttf-iosevka-nerd ttf-croscore noto-fonts noto-fonts-cjk noto-fonts-emoji \
   xorg-server xorg-xinit xorg-xsetroot zathura-pdf-mupdf zathura-cb redshift \
   pipewire-pulse pipewire-jack arc-solid-gtk-theme man-db texinfo fakeroot \
@@ -26,6 +26,10 @@ prompt "make clean install"
 
 git clone "https://aur.archlinux.org/nvm.git" "$HOME/nvm"
 cd "$HOME/nvm" || exit 1
+makepkg -si
+
+git clone "https://aur.archlinux.org/nsxiv.git" "$HOME/nsxiv"
+cd "$HOME/nsxiv" || exit 1
 makepkg -si
 
 gpg --keyserver "hkp://keyserver.ubuntu.com" --search-keys "031F7104E932F7BD7416E7F6D2845E1305D6E801"
