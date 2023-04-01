@@ -17,10 +17,16 @@
 (setq mouse-wheel-progressive-speed nil)
 (setq scroll-conservatively 101)
 
+(setq inhibit-startup-message t)
 (setq frame-title-format '("%b · Emacs"))
 (setq use-short-answers t)
 (setq message-log-max nil)
 (kill-buffer "*Messages*")
+
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(prefer-coding-system       'utf-8)
 
 (set-face-attribute 'default nil :font "Iosevka Nerd Font-15")
 (set-face-attribute 'fixed-pitch nil :font "Iosevka Nerd Font-15")

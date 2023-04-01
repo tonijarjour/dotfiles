@@ -12,7 +12,6 @@
 
 (setq gc-cons-threshold 134217728)
 (setq package-enable-at-startup nil)
-(setq inhibit-startup-message t)
 (setq use-dialog-box nil)
 
 (tooltip-mode -1)
