@@ -13,7 +13,6 @@
 (tj/load-config-file "prelude")
 (tj/load-config-file "packages")
 (tj/load-config-file "keymaps")
-
-(provide 'init)
+(tj/load-config-file "org")
 
 ;;; init.el ends here

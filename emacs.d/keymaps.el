@@ -55,7 +55,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>ps") 'project-switch-project)
 (evil-define-key 'normal 'global (kbd "<leader>pq")
   (lambda () (interactive) (delete-other-windows) (project-kill-buffers t)))
-(evil-define-key 'normal 'global (kbd "<leader>pg")
+(evil-define-key 'normal 'global (kbd "<leader>gg")
   (lambda () (interactive) (switch-to-buffer "*dashboard*")))
 
 ;; Traverse windows and buffers.
@@ -68,15 +68,8 @@
 (evil-define-key 'normal 'global (kbd "<leader>wn") 'centaur-tabs-forward-tab)
 (evil-define-key 'normal 'global (kbd "<leader>wp") 'centaur-tabs-backward-tab)
 
-;; Org Mode
-(evil-define-key 'normal 'global (kbd "<leader>ocb") 'org-toggle-checkbox)
-(evil-define-key 'normal 'global (kbd "<leader>oil") 'org-insert-link)
-(evil-define-key 'normal 'global (kbd "<leader>ool") 'org-open-at-point)
-
 ;; Quit Emacs.
 (evil-define-key 'normal 'global (kbd "<leader>qQ") 'kill-emacs)
 (evil-define-key 'normal 'global (kbd "<leader>qq") 'evil-quit-all)
-
-(provide 'keymaps)
 
 ;;; keymaps.el ends here

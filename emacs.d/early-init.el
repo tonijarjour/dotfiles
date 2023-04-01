@@ -7,21 +7,12 @@
 
 ;;; Code:
 
-(setq gc-cons-threshold 134217728)
-(setq package-enable-at-startup nil)
-
 (defvar file-name-handler-alist-original file-name-handler-alist)
 (setq file-name-handler-alist nil)
 
-(add-hook 'emacs-startup-hook
-  (lambda () (setq file-name-handler-alist file-name-handler-alist-original)
-    (makunbound 'file-name-handler-alist-original)
-    (if (boundp 'after-focus-change-function)
-      (add-function :after after-focus-change-function
-	(lambda () (unless (frame-focus-state) (garbage-collect))))
-      (add-hook 'after-focus-change-function 'garbage-collect))))
-
-
+(setq gc-cons-threshold 134217728)
+(setq package-enable-at-startup nil)
+(setq inhibit-startup-message t)
 (setq use-dialog-box nil)
 
 (tooltip-mode -1)
@@ -31,6 +22,12 @@
 
 (add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font-15"))
 
-(provide 'early-init)
+(add-hook 'emacs-startup-hook
+  (lambda () (setq file-name-handler-alist file-name-handler-alist-original)
+    (makunbound 'file-name-handler-alist-original)
+    (if (boundp 'after-focus-change-function)
+      (add-function :after after-focus-change-function
+	(lambda () (unless (frame-focus-state) (garbage-collect))))
+      (add-hook 'after-focus-change-function 'garbage-collect))))
 
 ;;; early-init.el ends here

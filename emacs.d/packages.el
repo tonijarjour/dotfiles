@@ -77,6 +77,4 @@
 (with-eval-after-load 'evil
   (evil-collection-init))
 
-(provide 'packages)
-
 ;;; packages.el ends here
