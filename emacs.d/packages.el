@@ -56,10 +56,14 @@
   '((file (styles partial-completion))))
 
 (tj/install-package 'consult)
+(setq consult-preview-key nil)
 
 (tj/install-package 'corfu)
 (setq corfu-auto t)
 (global-corfu-mode t)
+
+(tj/install-package 'tempel)
+(tj/install-package 'tempel-collection)
 
 (tj/install-package 'org-modern)
 (global-org-modern-mode t)

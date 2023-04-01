@@ -16,21 +16,30 @@
 
 (setq mouse-wheel-progressive-speed nil)
 (setq scroll-conservatively 101)
+(setq recenter-positions '(middle))
 
 (setq inhibit-startup-message t)
+(setq initial-scratch-message "")
 (setq frame-title-format '("%b · Emacs"))
+(setq initial-major-mode 'fundamental-mode)
 (setq use-short-answers t)
 (setq message-log-max nil)
 (kill-buffer "*Messages*")
 
-(set-default-coding-systems 'utf-8)
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-(prefer-coding-system       'utf-8)
+(set-default-coding-systems  'utf-8)
+(set-selection-coding-system 'utf-8)
+(set-terminal-coding-system  'utf-8)
+(set-keyboard-coding-system  'utf-8)
+(prefer-coding-system        'utf-8)
 
 (set-face-attribute 'default nil :font "Iosevka Nerd Font-15")
 (set-face-attribute 'fixed-pitch nil :font "Iosevka Nerd Font-15")
 (set-face-attribute 'variable-pitch nil :font "Noto Sans-15")
+
+(setq-default fill-column 80)
+(setq-default tab-width 2)
+(setq-default indent-tabs-mode nil)
+(setq-default indent-line-function 'insert-tab)
 
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'text-mode-hook 'variable-pitch-mode)

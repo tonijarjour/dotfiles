@@ -15,4 +15,7 @@
 (tj/load-config-file "keymaps")
 (tj/load-config-file "org")
 
+(message "Terram novam et caelum a Deo")
+(setq inhibit-startup-echo-area-message "toni")
+
 ;;; init.el ends here

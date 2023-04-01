@@ -11,6 +11,10 @@
   (let ((default-directory (expand-file-name initial-path)))
     (call-interactively #'find-file)))
 
+(global-set-key (kbd "C-=") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+(global-set-key (kbd "C-0") (lambda () (interactive) (text-scale-set 0)))
+
 (evil-set-leader '(normal visual) (kbd "<SPC>"))
 
 (evil-define-key '(normal visual) 'global (kbd "\C-u") "6k")
@@ -19,10 +23,9 @@
 (evil-define-key 'normal 'global (kbd "<leader>:") 'eval-expression)
 (evil-define-key 'normal 'global (kbd "<leader>x") 'execute-extended-command)
 
-;; Orderless completetion in corfu.
+;; Orderless Corfu. Tempel. Toggle Themes.
 (evil-define-key 'insert 'global (kbd "\M-SPC") 'corfu-insert-separator)
-
-;; Toggle between dark and light theme.
+(evil-define-key 'normal 'global (kbd "<leader>lx") 'tempel-expand)
 (evil-define-key 'normal 'global (kbd "<leader>tt") 'ef-themes-toggle)
 
 ;; Open/reload a file. Open an Emacs configuration file.
@@ -38,10 +41,11 @@
 (evil-define-key 'normal 'global (kbd "<leader>ew") 'save-buffer)
 (evil-define-key 'normal 'global (kbd "<leader>ek") 'kill-this-buffer)
 
-;; Search for a file.
+;; Search for a file. Search and jump to a location.
 (evil-define-key 'normal 'global (kbd "<leader>ff") 'project-find-file)
 (evil-define-key 'normal 'global (kbd "<leader>fl") 'consult-ripgrep)
 (evil-define-key 'normal 'global (kbd "<leader>fo") 'consult-recent-file)
+(evil-define-key 'normal 'global (kbd "<leader>fj") 'consult-outline)
 
 ;; Access help documentation. Kill the help buffer.
 (evil-define-key 'normal 'global (kbd "<leader>hf") 'describe-function)
@@ -51,8 +55,8 @@
   (lambda () (interactive) (kill-buffer "*Help*")))
 
 ;; Go to buffer/project. Close project. Go to the dashboard.
-(evil-define-key 'normal 'global (kbd "<leader>bs") 'switch-to-buffer)
-(evil-define-key 'normal 'global (kbd "<leader>ps") 'project-switch-project)
+(evil-define-key 'normal 'global (kbd "<leader>bs") 'consult-buffer)
+(evil-define-key 'normal 'global (kbd "<leader>ps") 'consult-project-buffer)
 (evil-define-key 'normal 'global (kbd "<leader>pq")
   (lambda () (interactive) (delete-other-windows) (project-kill-buffers t)))
 (evil-define-key 'normal 'global (kbd "<leader>gg")
