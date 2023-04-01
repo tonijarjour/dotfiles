@@ -9,7 +9,6 @@
 
 (setq gc-cons-threshold 134217728)
 (setq package-enable-at-startup nil)
-(setq site-run-file nil)
 
 (defvar file-name-handler-alist-original file-name-handler-alist)
 (setq file-name-handler-alist nil)
@@ -21,6 +20,9 @@
       (add-function :after after-focus-change-function
 	(lambda () (unless (frame-focus-state) (garbage-collect))))
       (add-hook 'after-focus-change-function 'garbage-collect))))
+
+
+(setq use-dialog-box nil)
 
 (tooltip-mode -1)
 (scroll-bar-mode -1)

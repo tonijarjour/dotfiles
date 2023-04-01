@@ -13,6 +13,9 @@
 (setq message-log-max nil)
 (kill-buffer "*Messages*")
 
+(setq frame-title-format '("%b · Emacs"))
+(setq use-short-answers t)
+
 (setq mouse-wheel-progressive-speed nil)
 (setq scroll-conservatively 101)
 
@@ -20,9 +23,6 @@
 (setq create-lockfiles nil)
 (setq auto-save-default nil)
 (setq custom-file "~/.emacs.d/custom-file.el")
-
-(setq use-dialog-box nil)
-(fset 'yes-or-no-p 'y-or-n-p)
 
 (setq js-indent-level 2)
 (add-to-list 'auto-mode-alist
