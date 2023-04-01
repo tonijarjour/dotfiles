@@ -68,6 +68,11 @@
 (evil-define-key 'normal 'global (kbd "<leader>wn") 'centaur-tabs-forward-tab)
 (evil-define-key 'normal 'global (kbd "<leader>wp") 'centaur-tabs-backward-tab)
 
+;; Org Mode
+(evil-define-key 'normal 'global (kbd "<leader>ocb") 'org-toggle-checkbox)
+(evil-define-key 'normal 'global (kbd "<leader>oil") 'org-insert-link)
+(evil-define-key 'normal 'global (kbd "<leader>ool") 'org-open-at-point)
+
 ;; Quit Emacs.
 (evil-define-key 'normal 'global (kbd "<leader>qQ") 'kill-emacs)
 (evil-define-key 'normal 'global (kbd "<leader>qq") 'evil-quit-all)

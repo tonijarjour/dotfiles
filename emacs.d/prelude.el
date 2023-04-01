@@ -30,9 +30,22 @@
 (add-to-list 'auto-mode-alist
   '("\\.tsx\\'" . js-jsx-mode))
 
+(setq browse-url-generic-program
+  (executable-find "/usr/bin/librewolf")
+    browse-url-browser-function 'browse-url-generic)
+
 (set-face-attribute 'default nil :font "Iosevka Nerd Font-15")
 (set-face-attribute 'fixed-pitch nil :font "Iosevka Nerd Font-15")
 (set-face-attribute 'variable-pitch nil :font "Noto Sans-15")
+
+(custom-set-faces '(org-level-1 ((t (:inherit outline-1 :height 1.3))))
+  '(org-level-2 ((t (:inherit outline-2 :height 1.2))))
+  '(org-level-3 ((t (:inherit outline-3 :height 1.1))))
+  '(org-level-4 ((t (:inherit outline-4 :height 1.05))))
+  '(org-level-5 ((t (:inherit outline-5 :height 1.0)))))
+
+(setq org-ellipsis " ›"
+      org-hide-emphasis-markers t)
 
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'text-mode-hook 'variable-pitch-mode)

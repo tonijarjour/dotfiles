@@ -138,7 +138,7 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
 	RULE(.title = "spterm", .tags = SPTAG(0), .isfloating = 1)
 	RULE(.class = "Thunar", .isfloating = 1)
-	RULE(.class = "Sxiv", .isfloating = 1)
+	RULE(.class = "Nsxiv", .isfloating = 1)
 	RULE(.class = "Steam", .isfloating = 1)
 	RULE(.class = "obs", .isfloating = 1)
 };
