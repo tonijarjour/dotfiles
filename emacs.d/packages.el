@@ -75,7 +75,8 @@
 (setq evil-want-keybinding nil
   evil-want-C-u-scroll t
   evil-shift-width 2
-  evil-undo-system 'undo-redo)
+  evil-undo-system 'undo-redo
+  evil-vsplit-window-right t)
 (evil-mode t)
 
 (tj/install-package 'evil-collection)
