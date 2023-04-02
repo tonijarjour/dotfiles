@@ -12,11 +12,9 @@
   '(org-level-4 ((t (:inherit outline-4 :height 1.05))))
   '(org-level-5 ((t (:inherit outline-5 :height 1.0)))))
 
-(setq org-ellipsis " ›"
-      org-hide-emphasis-markers t)
-
-(evil-define-key 'normal 'global (kbd "<leader>ocb") 'org-toggle-checkbox)
-(evil-define-key 'normal 'global (kbd "<leader>oil") 'org-insert-link)
-(evil-define-key 'normal 'global (kbd "<leader>ool") 'org-open-at-point)
+(setq org-directory "~/Projects/org"
+  org-ellipsis " ›"
+  org-hide-emphasis-markers t
+  org-tags-column 1)
 
 ;;; org.el ends here

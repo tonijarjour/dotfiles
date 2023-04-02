@@ -25,7 +25,8 @@
 
 ;; Orderless Corfu. Tempel. Toggle Themes.
 (evil-define-key 'insert 'global (kbd "\M-SPC") 'corfu-insert-separator)
-(evil-define-key 'normal 'global (kbd "<leader>lx") 'tempel-expand)
+(evil-define-key 'normal 'global (kbd "<leader>lx") 'tempel-complete)
+(evil-define-key 'normal 'global (kbd "<leader>li") 'tempel-insert)
 (evil-define-key 'normal 'global (kbd "<leader>tt") 'ef-themes-toggle)
 
 ;; Open/reload a file. Open an Emacs configuration file.
