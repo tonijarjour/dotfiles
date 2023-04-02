@@ -37,7 +37,7 @@
 
 ;; Go to buffer/project. Close project. Go to the dashboard.
 (evil-define-key 'normal 'global (kbd "<leader>bs") 'consult-buffer)
-(evil-define-key 'normal 'global (kbd "<leader>ps") 'consult-project-buffer)
+(evil-define-key 'normal 'global (kbd "<leader>ps") 'project-switch-project)
 (evil-define-key 'normal 'global (kbd "<leader>pq")
   (lambda () (interactive) (delete-other-windows) (project-kill-buffers t)))
 (evil-define-key 'normal 'global (kbd "<leader>gg")
