@@ -26,6 +26,18 @@
 (setq message-log-max nil)
 (kill-buffer "*Messages*")
 
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'text-mode-hook 'variable-pitch-mode)
+(add-hook 'text-mode-hook 'hl-line-mode)
+(add-hook 'prog-mode-hook 'hl-line-mode)
+(add-hook 'prog-mode-hook 'toggle-truncate-lines)
+
+(savehist-mode 1)
+(electric-pair-mode 1)
+(column-number-mode 1)
+(global-display-line-numbers-mode 1)
+(global-prettify-symbols-mode 1)
+
 (set-default-coding-systems  'utf-8)
 (set-selection-coding-system 'utf-8)
 (set-terminal-coding-system  'utf-8)
@@ -41,15 +53,16 @@
 (setq-default indent-tabs-mode nil)
 (setq-default indent-line-function 'insert-tab)
 
-(add-hook 'text-mode-hook 'flyspell-mode)
-(add-hook 'text-mode-hook 'variable-pitch-mode)
-(add-hook 'prog-mode-hook 'toggle-truncate-lines)
+(custom-set-faces '(org-level-1 ((t (:inherit outline-1 :height 1.3))))
+  '(org-level-2 ((t (:inherit outline-2 :height 1.2))))
+  '(org-level-3 ((t (:inherit outline-3 :height 1.1))))
+  '(org-level-4 ((t (:inherit outline-4 :height 1.05))))
+  '(org-level-5 ((t (:inherit outline-5 :height 1.0)))))
 
-(savehist-mode 1)
-(electric-pair-mode 1)
-(column-number-mode 1)
-(global-display-line-numbers-mode 1)
-(global-prettify-symbols-mode 1)
+(setq org-directory "~/Projects/org"
+  org-ellipsis " ›"
+  org-hide-emphasis-markers t
+  org-tags-column 1)
 
 (setq browse-url-generic-program
   (executable-find "/usr/bin/librewolf")

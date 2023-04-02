@@ -23,11 +23,29 @@
 (evil-define-key 'normal 'global (kbd "<leader>:") 'eval-expression)
 (evil-define-key 'normal 'global (kbd "<leader>x") 'execute-extended-command)
 
-;; Orderless Corfu. Tempel. Toggle Themes.
+;; Orderless Corfu. Toggle Themes. Tempel.
 (evil-define-key 'insert 'global (kbd "\M-SPC") 'corfu-insert-separator)
+(evil-define-key 'normal 'global (kbd "<leader>tt") 'ef-themes-toggle)
 (evil-define-key 'normal 'global (kbd "<leader>lx") 'tempel-complete)
 (evil-define-key 'normal 'global (kbd "<leader>li") 'tempel-insert)
-(evil-define-key 'normal 'global (kbd "<leader>tt") 'ef-themes-toggle)
+
+;; Search for a file. Search and jump to a location.
+(evil-define-key 'normal 'global (kbd "<leader>ff") 'project-find-file)
+(evil-define-key 'normal 'global (kbd "<leader>fl") 'consult-ripgrep)
+(evil-define-key 'normal 'global (kbd "<leader>fo") 'consult-recent-file)
+(evil-define-key 'normal 'global (kbd "<leader>fj") 'consult-outline)
+
+;; Go to buffer/project. Close project. Go to the dashboard.
+(evil-define-key 'normal 'global (kbd "<leader>bs") 'consult-buffer)
+(evil-define-key 'normal 'global (kbd "<leader>ps") 'consult-project-buffer)
+(evil-define-key 'normal 'global (kbd "<leader>pq")
+  (lambda () (interactive) (delete-other-windows) (project-kill-buffers t)))
+(evil-define-key 'normal 'global (kbd "<leader>gg")
+  (lambda () (interactive) (switch-to-buffer "*dashboard*")))
+
+;; Save or kill a buffer.
+(evil-define-key 'normal 'global (kbd "<leader>ew") 'save-buffer)
+(evil-define-key 'normal 'global (kbd "<leader>ek") 'kill-this-buffer)
 
 ;; Open/reload a file. Open an Emacs configuration file.
 (evil-define-key 'normal 'global (kbd "<leader>e.") 'find-file)
@@ -38,30 +56,12 @@
 (evil-define-key 'normal 'global (kbd "<leader>el")
   (lambda () (interactive) (tj/find-file-at "~/.fn/emacs.d/")))
 
-;; Save or kill a buffer.
-(evil-define-key 'normal 'global (kbd "<leader>ew") 'save-buffer)
-(evil-define-key 'normal 'global (kbd "<leader>ek") 'kill-this-buffer)
-
-;; Search for a file. Search and jump to a location.
-(evil-define-key 'normal 'global (kbd "<leader>ff") 'project-find-file)
-(evil-define-key 'normal 'global (kbd "<leader>fl") 'consult-ripgrep)
-(evil-define-key 'normal 'global (kbd "<leader>fo") 'consult-recent-file)
-(evil-define-key 'normal 'global (kbd "<leader>fj") 'consult-outline)
-
 ;; Access help documentation. Kill the help buffer.
 (evil-define-key 'normal 'global (kbd "<leader>hf") 'describe-function)
 (evil-define-key 'normal 'global (kbd "<leader>hk") 'describe-key)
 (evil-define-key 'normal 'global (kbd "<leader>hv") 'describe-variable)
 (evil-define-key 'normal 'global (kbd "<leader>kh")
   (lambda () (interactive) (kill-buffer "*Help*")))
-
-;; Go to buffer/project. Close project. Go to the dashboard.
-(evil-define-key 'normal 'global (kbd "<leader>bs") 'consult-buffer)
-(evil-define-key 'normal 'global (kbd "<leader>ps") 'consult-project-buffer)
-(evil-define-key 'normal 'global (kbd "<leader>pq")
-  (lambda () (interactive) (delete-other-windows) (project-kill-buffers t)))
-(evil-define-key 'normal 'global (kbd "<leader>gg")
-  (lambda () (interactive) (switch-to-buffer "*dashboard*")))
 
 ;; Traverse windows and buffers.
 (evil-define-key 'normal 'global (kbd "<leader>wq") 'evil-quit)

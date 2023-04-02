@@ -19,10 +19,10 @@
     (package-install package)))
 
 (tj/install-package 'ef-themes)
-(setq ef-themes-to-toggle '(ef-winter ef-spring)
+(setq ef-themes-to-toggle '(ef-winter ef-cyprus)
   ef-themes-mixed-fonts t
   ef-themes-variable-pitch-ui t)
-(load-theme 'ef-winter t)
+(load-theme 'ef-cyprus t)
 
 (tj/install-package 'nano-modeline)
 (setq nano-modeline-position 'bottom)
@@ -30,7 +30,8 @@
 
 (tj/install-package 'centaur-tabs)
 (setq centaur-tabs-height 40
-  centaur-tabs-set-close-button nil)
+  centaur-tabs-set-close-button nil
+  centaur-tabs-show-new-tab-button nil)
 (centaur-tabs-mode t)
 
 (tj/install-package 'dashboard)
