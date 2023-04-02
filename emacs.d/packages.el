@@ -22,7 +22,7 @@
 (setq ef-themes-to-toggle '(ef-winter ef-cyprus)
   ef-themes-mixed-fonts t
   ef-themes-variable-pitch-ui t)
-(load-theme 'ef-cyprus t)
+(load-theme 'ef-winter t)
 
 (tj/install-package 'nano-modeline)
 (setq nano-modeline-position 'bottom)

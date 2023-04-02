@@ -15,6 +15,9 @@
 (global-set-key (kbd "C--") 'text-scale-decrease)
 (global-set-key (kbd "C-0") (lambda () (interactive) (text-scale-set 0)))
 
+(define-key org-agenda-mode-map (kbd "j") 'org-agenda-next-item)
+(define-key org-agenda-mode-map (kbd "k") 'org-agenda-previous-item)
+
 (evil-set-leader '(normal visual) (kbd "<SPC>"))
 
 (evil-define-key '(normal visual) 'global (kbd "\C-u") "6k")
@@ -72,6 +75,9 @@
 (evil-define-key 'normal 'global (kbd "<leader>wl") 'evil-window-right)
 (evil-define-key 'normal 'global (kbd "<leader>wn") 'centaur-tabs-forward-tab)
 (evil-define-key 'normal 'global (kbd "<leader>wp") 'centaur-tabs-backward-tab)
+
+;; Org Mode
+(evil-define-key 'normal 'global (kbd "<leader>otl") 'org-agenda-list)
 
 ;; Quit Emacs.
 (evil-define-key 'normal 'global (kbd "<leader>qQ") 'kill-emacs)

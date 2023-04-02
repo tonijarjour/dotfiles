@@ -19,7 +19,7 @@
 (setq recenter-positions '(middle))
 
 (setq inhibit-startup-message t)
-(setq initial-scratch-message "")
+(setq initial-scratch-message "~~**~~**~~")
 (setq frame-title-format '("%b · Emacs"))
 (setq initial-major-mode 'fundamental-mode)
 (setq use-short-answers t)
@@ -60,6 +60,7 @@
   '(org-level-5 ((t (:inherit outline-5 :height 1.0)))))
 
 (setq org-directory "~/Projects/org"
+  org-agenda-files '("~/Projects/org/agenda")
   org-ellipsis " ›"
   org-hide-emphasis-markers t
   org-tags-column 1)
@@ -67,5 +68,9 @@
 (setq browse-url-generic-program
   (executable-find "/usr/bin/librewolf")
     browse-url-browser-function 'browse-url-generic)
+
+(require 'org)
+(require 'org-habit)
+(add-to-list 'org-modules 'habit)
 
 ;;; prelude.el ends here
