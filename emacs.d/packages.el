@@ -19,10 +19,10 @@
     (package-install package)))
 
 (tj/install-package 'ef-themes)
-(setq ef-themes-to-toggle '(ef-winter ef-cyprus)
+(setq ef-themes-to-toggle '(ef-dark ef-cyprus)
   ef-themes-mixed-fonts t
   ef-themes-variable-pitch-ui t)
-(load-theme 'ef-winter t)
+(load-theme 'ef-dark t)
 
 (tj/install-package 'nano-modeline)
 (setq nano-modeline-position 'bottom)

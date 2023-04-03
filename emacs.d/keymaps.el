@@ -40,8 +40,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>ps") 'project-switch-project)
 (evil-define-key 'normal 'global (kbd "<leader>pq")
   (lambda () (interactive) (delete-other-windows) (project-kill-buffers t)))
-(evil-define-key 'normal 'global (kbd "<leader>gg")
-  (lambda () (interactive) (switch-to-buffer "*dashboard*")))
+(evil-define-key 'normal 'global (kbd "<leader>gg") 'dashboard-open)
 
 ;; Save or kill a buffer.
 (evil-define-key 'normal 'global (kbd "<leader>ew") 'save-buffer)
@@ -56,12 +55,14 @@
 (evil-define-key 'normal 'global (kbd "<leader>el")
   (lambda () (interactive) (tj/find-file-at "~/.fn/emacs.d/")))
 
-;; Access help documentation. Kill the help buffer.
+;; Access help documentation. Kill the help buffer. Kill all star buffers.
 (evil-define-key 'normal 'global (kbd "<leader>hf") 'describe-function)
 (evil-define-key 'normal 'global (kbd "<leader>hk") 'describe-key)
 (evil-define-key 'normal 'global (kbd "<leader>hv") 'describe-variable)
 (evil-define-key 'normal 'global (kbd "<leader>kh")
   (lambda () (interactive) (kill-buffer "*Help*")))
+(evil-define-key 'normal 'global (kbd "<leader>ka")
+  (lambda () (interactive) (kill-matching-buffers "\*.*" nil t)))
 
 ;; Traverse windows and buffers.
 (evil-define-key 'normal 'global (kbd "<leader>wq") 'evil-quit)

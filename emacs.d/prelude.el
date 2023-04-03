@@ -19,7 +19,7 @@
 (setq recenter-positions '(middle))
 
 (setq inhibit-startup-message t)
-(setq initial-scratch-message "~~**~~**~~")
+(setq initial-scratch-message "What happens here?")
 (setq frame-title-format '("%b · Emacs"))
 (setq initial-major-mode 'fundamental-mode)
 (setq use-short-answers t)
