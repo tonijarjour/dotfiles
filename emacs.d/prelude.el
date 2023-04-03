@@ -69,8 +69,4 @@
   (executable-find "/usr/bin/librewolf")
     browse-url-browser-function 'browse-url-generic)
 
-(require 'org)
-(require 'org-habit)
-(add-to-list 'org-modules 'habit)
-
 ;;; prelude.el ends here

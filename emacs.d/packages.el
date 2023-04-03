@@ -68,6 +68,7 @@
 
 (tj/install-package 'org-modern)
 (global-org-modern-mode t)
+(require 'org-agenda)
 
 (tj/install-package 'markdown-mode)
 

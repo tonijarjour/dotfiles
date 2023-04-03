@@ -17,6 +17,7 @@
 
 (define-key org-agenda-mode-map (kbd "j") 'org-agenda-next-item)
 (define-key org-agenda-mode-map (kbd "k") 'org-agenda-previous-item)
+(define-key org-agenda-mode-map (kbd "d") 'org-agenda-goto-date)
 
 (evil-set-leader '(normal visual) (kbd "<SPC>"))
 
