@@ -212,6 +212,7 @@ static const char *dovol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5
 static const char *muvol[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *pdfcmd[] = { "zathura", NULL };
+static const char *emccmd[] = { "emacs", NULL };
 static const char *brwcmd[] = { "librewolf", NULL };
 
 
@@ -224,6 +225,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Print,      spawn,                  SHCMD("maim -su -m 10 /mnt/archive/Images/Captures/$(date +%s).png") },
 	{ MODKEY|ControlMask,           XK_w,          spawn,                  SHCMD("nsxiv -t /mnt/archive/Images/Wallpapers") },
 	{ MODKEY,                       XK_t,          spawn,                  SHCMD("librewolf /home/toni/.fn/page/index.html") },
+	{ MODKEY,                       XK_e,          spawn,                  {.v = emccmd } },
 	{ MODKEY,                       XK_space,      spawn,                  {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return,     spawn,                  {.v = termcmd } },
 	{ MODKEY,                       XK_r,          spawn,                  {.v = brwcmd } },
