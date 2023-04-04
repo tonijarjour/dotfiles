@@ -59,6 +59,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>hf") 'describe-function)
 (evil-define-key 'normal 'global (kbd "<leader>hk") 'describe-key)
 (evil-define-key 'normal 'global (kbd "<leader>hv") 'describe-variable)
+(evil-define-key 'normal 'global (kbd "<leader>hm") 'describe-mode)
 (evil-define-key 'normal 'global (kbd "<leader>kh")
   (lambda () (interactive) (kill-buffer "*Help*")))
 (evil-define-key 'normal 'global (kbd "<leader>ka")

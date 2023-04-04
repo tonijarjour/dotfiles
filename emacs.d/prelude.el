@@ -31,6 +31,7 @@
 (add-hook 'prog-mode-hook 'toggle-truncate-lines)
 (add-hook 'prog-mode-hook 'hl-line-mode)
 
+(recentf-mode 1)
 (savehist-mode 1)
 (electric-pair-mode 1)
 (column-number-mode 1)
