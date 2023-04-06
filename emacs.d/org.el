@@ -20,11 +20,6 @@
 
 (require 'org-agenda)
 
-(define-key org-agenda-mode-map (kbd "j") 'org-agenda-next-item)
-(define-key org-agenda-mode-map (kbd "k") 'org-agenda-previous-item)
-(define-key org-agenda-mode-map (kbd "d") 'org-agenda-goto-date)
-
-(evil-define-key 'normal 'global (kbd "<leader>otl") 'org-agenda-list)
 (evil-define-key 'normal 'global (kbd "<leader>ocb") 'org-toggle-checkbox)
 (evil-define-key 'normal 'global (kbd "<leader>oop") 'org-open-at-point)
 
