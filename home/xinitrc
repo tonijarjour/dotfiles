@@ -12,6 +12,8 @@ fi
 
 xrandr --rate 144.00
 feh --bg-fill --no-fehbg -z "/mnt/archive/Images/Wallpapers"
+xsetwacom --set 15 Rotate half
+xsetwacom --set 18 Rotate half
 
 dt() { echo -e "$(date +"%b %d")"; }
 tm() { echo -e "^c#11111b^^b#f5e0dc^  $(date +"%a, %I:%M %p")  ^d^"; }
