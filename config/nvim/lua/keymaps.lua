@@ -9,8 +9,8 @@ keymap('n', 'Q', 'q', {noremap=true})
 -- Yank to clipboard
 keymap('v', '<Leader>y', '"+y<cr>', {})
 
-keymap({'n', 'v'}, '<C-u>', '6k', {})
-keymap({'n', 'v'}, '<C-d>', '6j', {})
+keymap({'n', 'v'}, '<C-k>', '6k', {})
+keymap({'n', 'v'}, '<C-j>', '6j', {})
 
 -- Navigate window
 keymap('n', '<Leader>wv', '<C-w>v', {})

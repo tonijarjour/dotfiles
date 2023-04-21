@@ -15,8 +15,7 @@ prompt \
   ttf-iosevka-nerd ttf-croscore noto-fonts noto-fonts-cjk noto-fonts-emoji \
   xorg-server xorg-xinit xorg-xsetroot zathura-pdf-mupdf zathura-cb redshift \
   pipewire-pulse pipewire-jack arc-solid-gtk-theme man-db texinfo fakeroot \
-  gcc autoconf automake pkgconf make patch imagemagick bacon emacs hunspell \
-  hunspell-en_us texlive-core"
+  gcc autoconf automake pkgconf make patch bacon texlive-core"
 
 git clone "https://github.com/tonijarjour/dwm.git" "$HOME/dwm"
 ln -s "$here/system/dwm.h" "$HOME/dwm/config.h"
@@ -47,9 +46,6 @@ curl --proto "=https" --tlsv1.2 -sSf "https://sh.rustup.rs" | sh
 
 mkdir -p "$HOME/.config"
 ln -sf "$here/config/"* "$HOME/.config/"
-
-mkdir -p "$HOME/.emacs.d"
-ln -sf "$here/emacs.d/"* "$HOME/.emacs.d/"
 
 for f in "$here/home/"*
 do
