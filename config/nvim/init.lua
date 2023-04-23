@@ -80,4 +80,52 @@ require("lazy").setup({
     branch = "0.1.x",
     dependencies = { "nvim-lua/plenary.nvim" },
   },
+
+  {'hrsh7th/cmp-nvim-lsp'},
+  {'hrsh7th/cmp-buffer'},
+  {'hrsh7th/cmp-path'},
+  {'hrsh7th/cmp-cmdline'},
+  {'hrsh7th/cmp-vsnip'},
+  {'hrsh7th/vim-vsnip'},
+  {'hrsh7th/nvim-cmp',
+    opts = {
+      snippet = {
+        expand = function(args)
+          vim.fn["vsnip#anonymous"](args.body)
+        end,
+      },
+    },
+    config = function()
+      require("cmp").setup({
+        sources = require('cmp').config.sources({
+          { name = 'nvim_lsp' },
+          { name = 'vsnip' },
+          { name = 'buffer' },
+        })
+      })
+      require("cmp").setup.cmdline({ '/', '?' }, {
+        mapping = require("cmp").mapping.preset.cmdline(),
+        sources = {
+          { name = 'buffer' }
+        }
+      })
+      require("cmp").setup.cmdline(':', {
+        mapping = require("cmp").mapping.preset.cmdline(),
+        sources = require("cmp").config.sources({
+          { name = 'path' }
+        }, {
+          { name = 'cmdline' }
+        })
+      })
+    end
+  },
+
+  {"neovim/nvim-lspconfig",
+    config = function()
+      require("lspconfig").rust_analyzer.setup {
+        capabilities = require('cmp_nvim_lsp').default_capabilities()
+      }
+    end
+  },
+
 })
