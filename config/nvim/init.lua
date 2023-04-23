@@ -88,30 +88,32 @@ require("lazy").setup({
   {'hrsh7th/cmp-vsnip'},
   {'hrsh7th/vim-vsnip'},
   {'hrsh7th/nvim-cmp',
-    opts = {
-      snippet = {
-        expand = function(args)
-          vim.fn["vsnip#anonymous"](args.body)
-        end,
-      },
-    },
     config = function()
-      require("cmp").setup({
-        sources = require('cmp').config.sources({
+      local cmp = require("cmp")
+      cmp.setup({
+        snippet = {
+          expand = function(args)
+            vim.fn["vsnip#anonymous"](args.body)
+          end,
+        },
+        sources = cmp.config.sources({
           { name = 'nvim_lsp' },
           { name = 'vsnip' },
           { name = 'buffer' },
-        })
+        }),
+        mapping = cmp.mapping.preset.insert({
+          ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        }),
       })
-      require("cmp").setup.cmdline({ '/', '?' }, {
-        mapping = require("cmp").mapping.preset.cmdline(),
+      cmp.setup.cmdline({ '/', '?' }, {
+        mapping = cmp.mapping.preset.cmdline(),
         sources = {
           { name = 'buffer' }
         }
       })
-      require("cmp").setup.cmdline(':', {
-        mapping = require("cmp").mapping.preset.cmdline(),
-        sources = require("cmp").config.sources({
+      cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
           { name = 'path' }
         }, {
           { name = 'cmdline' }
