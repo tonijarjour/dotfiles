@@ -124,8 +124,12 @@ require("lazy").setup({
 
   {"neovim/nvim-lspconfig",
     config = function()
+      local defaults = require('cmp_nvim_lsp').default_capabilities()
       require("lspconfig").rust_analyzer.setup {
-        capabilities = require('cmp_nvim_lsp').default_capabilities()
+        capabilities = defaults
+      }
+      require("lspconfig").tsserver.setup {
+        capabilities = defaults
       }
     end
   },
