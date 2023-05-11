@@ -14,11 +14,10 @@
 (global-set-key (kbd "C-=") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 (global-set-key (kbd "C-0") (lambda () (interactive) (text-scale-set 0)))
+(global-set-key (kbd "C-k") (lambda () (interactive) (evil-previous-line 6)))
+(global-set-key (kbd "C-j") (lambda () (interactive) (evil-next-line 6)))
 
 (evil-set-leader '(normal visual) (kbd "<SPC>"))
-
-(evil-define-key '(normal visual) 'global (kbd "\C-u") "6k")
-(evil-define-key '(normal visual) 'global (kbd "\C-d") "6j")
 
 (evil-define-key 'normal 'global (kbd "<leader>:") 'eval-expression)
 (evil-define-key 'normal 'global (kbd "<leader>x") 'execute-extended-command)

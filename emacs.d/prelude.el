@@ -57,4 +57,17 @@
   (executable-find "/usr/bin/librewolf")
     browse-url-browser-function 'browse-url-generic)
 
+(setq treesit-language-source-alist '(
+  (bash . ("https://github.com/tree-sitter/tree-sitter-bash"))
+  (markdown . ("https://github.com/tree-sitter/tree-sitter-markdown"))
+  (html . ("https://github.com/tree-sitter/tree-sitter-html"))
+  (css . ("https://github.com/tree-sitter/tree-sitter-css"))
+  (json . ("https://github.com/tree-sitter/tree-sitter-json/"))
+  (javascript . ("https://github.com/tree-sitter/tree-sitter-javascript"))
+  (typescript . ("https://github.com/tree-sitter/tree-sitter-typescript" nil "typescript/src"))
+  (tsx . ("https://github.com/tree-sitter/tree-sitter-typescript" nil "tsx/src"))
+  (rust . ("https://github.com/tree-sitter/tree-sitter-rust/"))
+  (toml . ("https://github.com/tree-sitter/tree-sitter-toml/"))
+))
+
 ;;; prelude.el ends here

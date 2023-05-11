@@ -15,7 +15,7 @@ prompt \
   ttf-iosevka-nerd ttf-croscore noto-fonts noto-fonts-cjk noto-fonts-emoji \
   xorg-server xorg-xinit xorg-xsetroot zathura-pdf-mupdf zathura-cb redshift \
   pipewire-pulse pipewire-jack arc-solid-gtk-theme man-db texinfo fakeroot \
-  gcc autoconf automake pkgconf make patch bacon texlive-core"
+  gcc autoconf automake pkgconf make patch bacon"
 
 git clone "https://github.com/tonijarjour/dwm.git" "$HOME/dwm"
 ln -s "$here/system/dwm.h" "$HOME/dwm/config.h"
@@ -31,7 +31,7 @@ git clone "https://aur.archlinux.org/nsxiv.git" "$HOME/nsxiv"
 cd "$HOME/nsxiv" || exit 1
 makepkg -si
 
-gpg --keyserver "hkp://keyserver.ubuntu.com" --search-keys "031F7104E932F7BD7416E7F6D2845E1305D6E801"
+gpg --keyserver "hkp://keyserver.ubuntu.com" --search-keys "662E3CDD6FE329002D0CA5BB40339DD82B12EF16"
 git clone "https://aur.archlinux.org/librewolf-bin.git" "$HOME/librewolf"
 cd "$HOME/librewolf" || exit 1
 makepkg -si
