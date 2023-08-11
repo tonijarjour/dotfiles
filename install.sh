@@ -15,7 +15,7 @@ prompt \
   ttf-iosevka-nerd ttf-croscore noto-fonts noto-fonts-cjk noto-fonts-emoji \
   xorg-server xorg-xinit xorg-xsetroot zathura-pdf-mupdf zathura-cb redshift \
   pipewire-pulse pipewire-jack arc-solid-gtk-theme man-db texinfo fakeroot \
-  gcc autoconf automake pkgconf make patch bacon"
+  gcc autoconf automake pkgconf make patch bacon nsxiv"
 
 git clone "https://github.com/tonijarjour/dwm.git" "$HOME/dwm"
 ln -s "$here/system/dwm.h" "$HOME/dwm/config.h"
@@ -25,10 +25,6 @@ prompt "make clean install"
 
 git clone "https://aur.archlinux.org/nvm.git" "$HOME/nvm"
 cd "$HOME/nvm" || exit 1
-makepkg -si
-
-git clone "https://aur.archlinux.org/nsxiv.git" "$HOME/nsxiv"
-cd "$HOME/nsxiv" || exit 1
 makepkg -si
 
 gpg --keyserver "hkp://keyserver.ubuntu.com" --search-keys "662E3CDD6FE329002D0CA5BB40339DD82B12EF16"
