@@ -7,9 +7,6 @@
 
 ;;; Code:
 
-(defvar file-name-handler-alist-original file-name-handler-alist)
-(setq file-name-handler-alist nil)
-
 (setq gc-cons-threshold 134217728)
 (setq package-enable-at-startup nil)
 (setq site-run-file nil)
@@ -23,6 +20,8 @@
 
 (add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font-15"))
 
+(defvar file-name-handler-alist-original file-name-handler-alist)
+(setq file-name-handler-alist nil)
 (add-hook 'emacs-startup-hook
   (lambda () (setq file-name-handler-alist file-name-handler-alist-original)
     (makunbound 'file-name-handler-alist-original)

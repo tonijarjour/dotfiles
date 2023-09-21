@@ -15,7 +15,8 @@ prompt \
   ttf-iosevka-nerd ttf-croscore noto-fonts noto-fonts-cjk noto-fonts-emoji \
   xorg-server xorg-xinit xorg-xsetroot zathura-pdf-mupdf zathura-cb redshift \
   pipewire-pulse pipewire-jack arc-solid-gtk-theme man-db texinfo fakeroot \
-  gcc autoconf automake pkgconf make patch bacon nsxiv xorg-xrandr"
+  gcc autoconf automake pkgconf make patch bacon nsxiv xorg-xrandr emacs \
+  hunspell hunspell-en_us"
 
 git clone "https://github.com/tonijarjour/dwm.git" "$HOME/dwm"
 ln -s "$here/system/dwm.h" "$HOME/dwm/config.h"

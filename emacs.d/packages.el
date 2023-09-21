@@ -24,10 +24,6 @@
   ef-themes-variable-pitch-ui t)
 (load-theme 'ef-dark t)
 
-(tj/install-package 'nano-modeline)
-(setq nano-modeline-position 'bottom)
-(nano-modeline-mode t)
-
 (tj/install-package 'centaur-tabs)
 (setq centaur-tabs-height 40
   centaur-tabs-set-close-button nil
