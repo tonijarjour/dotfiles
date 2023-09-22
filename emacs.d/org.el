@@ -13,12 +13,9 @@
   '(org-level-5 ((t (:inherit outline-5 :height 1.0)))))
 
 (setq org-directory "~/Projects/org"
-  org-agenda-files '("~/Projects/org/agenda")
   org-ellipsis " ›"
   org-hide-emphasis-markers t
   org-tags-column 1)
-
-(require 'org-agenda)
 
 (evil-define-key 'normal 'global (kbd "<leader>ocb") 'org-toggle-checkbox)
 (evil-define-key 'normal 'global (kbd "<leader>oop") 'org-open-at-point)
