@@ -11,22 +11,17 @@ prompt 'ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"'
 
 echo "Install programs with pacman"
 prompt \
- "pacman -S fd ripgrep neovim alacritty mpv maim feh xclip dmenu which \
+ "pacman -S fd ripgrep neovim alacritty mpv maim feh xclip dmenu which nsxiv \
   ttf-iosevka-nerd ttf-croscore noto-fonts noto-fonts-cjk noto-fonts-emoji \
-  xorg-server xorg-xinit xorg-xsetroot zathura-pdf-mupdf zathura-cb redshift \
-  pipewire-pulse pipewire-jack arc-solid-gtk-theme man-db texinfo fakeroot \
-  gcc autoconf automake pkgconf make patch bacon nsxiv xorg-xrandr emacs \
-  hunspell hunspell-en_us"
+  man-db texinfo fakeroot gcc autoconf automake pkgconf make patch bacon \
+  zathura-pdf-mupdf zathura-cb pipewire-pulse pipewire-jack wireplumber \
+  xorg-server xorg-xinit xorg-xsetroot xorg-xrandr redshift npm "
 
 git clone "https://github.com/tonijarjour/dwm.git" "$HOME/dwm"
 ln -s "$here/system/dwm.h" "$HOME/dwm/config.h"
 cd "$HOME/dwm" || exit 1
 echo "Compile and install dwm"
 prompt "make clean install"
-
-git clone "https://aur.archlinux.org/nvm.git" "$HOME/nvm"
-cd "$HOME/nvm" || exit 1
-makepkg -si
 
 gpg --keyserver "hkp://keyserver.ubuntu.com" --search-keys "662E3CDD6FE329002D0CA5BB40339DD82B12EF16"
 git clone "https://aur.archlinux.org/librewolf-bin.git" "$HOME/librewolf"
@@ -40,7 +35,9 @@ echo "Reject Noto Nastaliq Urdu font"
 prompt "install -Dm 644 \"$here/system/arabic.conf\" \"/etc/fonts/conf.d/66-noto-reject-nastaliq.conf\""
 
 curl --proto "=https" --tlsv1.2 -sSf "https://sh.rustup.rs" | sh
-rustup component add rust-src
+rustup component add rust-analyzer rust-src
+
+npm install -g typescript-language-server typescript
 
 mkdir -p "$HOME/.config"
 ln -sf "$here/config/"* "$HOME/.config/"

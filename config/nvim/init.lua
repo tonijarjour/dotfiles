@@ -44,9 +44,8 @@ require("lazy").setup({
   },
 
   {"windwp/nvim-autopairs",
-    config = function()
-      require("nvim-autopairs").setup()
-    end
+    event = "InsertEnter",
+    opts = {}
   },
 
   {"nvim-treesitter/nvim-treesitter",
@@ -96,13 +95,16 @@ require("lazy").setup({
             vim.fn["vsnip#anonymous"](args.body)
           end,
         },
+        window = {},
+        mapping = cmp.mapping.preset.insert({
+          ['<C-Space>'] = cmp.mapping.complete(),
+          ['<C-e>'] = cmp.mapping.abort(),
+          ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        }),
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
           { name = 'vsnip' },
           { name = 'buffer' },
-        }),
-        mapping = cmp.mapping.preset.insert({
-          ['<CR>'] = cmp.mapping.confirm({ select = true }),
         }),
       })
       cmp.setup.cmdline({ '/', '?' }, {
