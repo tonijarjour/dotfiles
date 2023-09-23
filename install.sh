@@ -12,10 +12,10 @@ prompt 'ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"'
 echo "Install programs with pacman"
 prompt \
  "pacman -S fd ripgrep neovim alacritty mpv maim feh xclip dmenu which nsxiv \
-  ttf-iosevka-nerd ttf-croscore noto-fonts noto-fonts-cjk noto-fonts-emoji \
+  ttf-iosevka-nerd ttf-croscore noto-fonts noto-fonts-cjk noto-fonts-emoji npm \
   man-db texinfo fakeroot gcc autoconf automake pkgconf make patch bacon \
   zathura-pdf-mupdf zathura-cb pipewire-pulse pipewire-jack wireplumber \
-  xorg-server xorg-xinit xorg-xsetroot xorg-xrandr redshift npm"
+  xorg-server xorg-xinit xorg-xsetroot xorg-xrandr redshift xf86-input-wacom"
 
 git clone "https://github.com/tonijarjour/dwm.git" "$HOME/dwm"
 ln -s "$here/system/dwm.h" "$HOME/dwm/config.h"
