@@ -15,7 +15,7 @@ prompt \
   ttf-iosevka-nerd ttf-croscore noto-fonts noto-fonts-cjk noto-fonts-emoji \
   man-db texinfo fakeroot gcc autoconf automake pkgconf make patch bacon \
   zathura-pdf-mupdf zathura-cb pipewire-pulse pipewire-jack wireplumber \
-  xorg-server xorg-xinit xorg-xsetroot xorg-xrandr redshift npm "
+  xorg-server xorg-xinit xorg-xsetroot xorg-xrandr redshift npm"
 
 git clone "https://github.com/tonijarjour/dwm.git" "$HOME/dwm"
 ln -s "$here/system/dwm.h" "$HOME/dwm/config.h"
@@ -35,9 +35,7 @@ echo "Reject Noto Nastaliq Urdu font"
 prompt "install -Dm 644 \"$here/system/arabic.conf\" \"/etc/fonts/conf.d/66-noto-reject-nastaliq.conf\""
 
 curl --proto "=https" --tlsv1.2 -sSf "https://sh.rustup.rs" | sh
-rustup component add rust-analyzer rust-src
-
-npm install -g typescript-language-server typescript
+"$HOME/.cargo/bin/rustup" component add rust-analyzer rust-src
 
 mkdir -p "$HOME/.config"
 ln -sf "$here/config/"* "$HOME/.config/"

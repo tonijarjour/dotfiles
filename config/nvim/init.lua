@@ -134,6 +134,7 @@ require("lazy").setup({
         capabilities = defaults
       }
       require("lspconfig").tsserver.setup {
+        cmd = { 'npx', 'typescript-language-server', '--stdio' },
         capabilities = defaults
       }
     end
