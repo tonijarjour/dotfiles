@@ -54,20 +54,21 @@ require("lazy").setup({
     opts = {
       highlight = { enable = true },
       ensure_installed = {
+        "astro",
+        "bash",
         "comment",
+        "css",
+        "html",
+        "javascript",
+        "json",
+        "latex",
+        "lua",
         "markdown",
         "markdown_inline",
-        "latex",
-        "bash",
-        "lua",
-        "html",
-        "css",
-        "json",
-        "javascript",
-        "typescript",
-        "tsx",
         "rust",
         "toml",
+        "tsx",
+        "typescript",
       },
     },
     config = function(_, opts)
@@ -134,7 +135,10 @@ require("lazy").setup({
         capabilities = defaults
       }
       require("lspconfig").tsserver.setup {
-        cmd = { 'npx', 'typescript-language-server', '--stdio' },
+        cmd = {
+          './node_modules/typescript-language-server/lib/cli.mjs',
+          '--stdio'
+        },
         capabilities = defaults
       }
     end
