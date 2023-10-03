@@ -19,16 +19,17 @@
 (setq recenter-positions '(middle))
 
 (setq inhibit-startup-message t)
-(setq initial-scratch-message "What happens here?")
+(setq initial-scratch-message nil)
 (setq frame-title-format '("%b · Emacs"))
 (setq initial-major-mode 'fundamental-mode)
 (setq use-short-answers t)
+(setq use-dialog-box nil)
 (setq message-log-max nil)
 (kill-buffer "*Messages*")
 
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'text-mode-hook 'variable-pitch-mode)
-(add-hook 'prog-mode-hook 'toggle-truncate-lines)
+(add-hook 'prog-mode-hook 'toggle-truncate-lines 1)
 (add-hook 'prog-mode-hook 'hl-line-mode)
 
 (recentf-mode 1)
@@ -44,7 +45,6 @@
 (set-keyboard-coding-system  'utf-8)
 (prefer-coding-system        'utf-8)
 
-(set-face-attribute 'default nil :font "Iosevka Nerd Font-15")
 (set-face-attribute 'fixed-pitch nil :font "Iosevka Nerd Font-15")
 (set-face-attribute 'variable-pitch nil :font "Noto Sans-15")
 

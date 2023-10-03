@@ -18,8 +18,8 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-(tj/install-package 'ef-themes)
 (tj/install-package 'doom-themes)
+(tj/install-package 'ef-themes)
 (setq ef-themes-mixed-fonts t
   ef-themes-variable-pitch-ui t)
 (load-theme 'ef-dark t)
@@ -34,10 +34,9 @@
 (tj/install-package 'dashboard)
 (setq dashboard-center-content t
   dashboard-items nil
-  dashboard-banner-logo-title "Dark Wizard"
   dashboard-display-icons-p nil
   dashboard-startup-banner
-  "~/Images/Illustrations/small-alice.jpg")
+  "~/Images/Illustrations/small-emacs-girl.jpg")
 (dashboard-setup-startup-hook)
 
 (tj/install-package 'vertico)
@@ -64,6 +63,12 @@
 (tj/install-package 'tempel-collection)
 
 (tj/install-package 'org-modern)
+(custom-set-faces '(org-level-1 ((t (:inherit outline-1 :height 1.728))))
+  '(org-level-2 ((t (:inherit outline-2 :height 1.44))))
+  '(org-level-3 ((t (:inherit outline-3 :height 1.2)))))
+(setq org-ellipsis "…"
+  org-hide-emphasis-markers t
+  org-tags-column 0)
 (global-org-modern-mode t)
 
 (tj/install-package 'markdown-mode)
@@ -77,6 +82,7 @@
 (evil-mode t)
 
 (tj/install-package 'evil-collection)
+(setq evil-collection-key-blacklist '("SPC"))
 (with-eval-after-load 'evil
   (evil-collection-init))
 

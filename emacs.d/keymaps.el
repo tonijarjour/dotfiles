@@ -47,6 +47,9 @@
   (lambda () (interactive) (delete-other-windows) (project-kill-buffers t)))
 (evil-define-key 'normal 'global (kbd "<leader>gg") 'dashboard-open)
 
+;; Org Mode
+(evil-define-key 'normal 'global (kbd "<leader>op") 'org-open-at-point)
+
 ;; Emacs. Open a config file.
 (evil-define-key 'normal 'global (kbd "<leader>:") 'eval-expression)
 (evil-define-key 'normal 'global (kbd "<leader>x") 'execute-extended-command)
