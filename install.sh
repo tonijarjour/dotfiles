@@ -13,9 +13,10 @@ echo "Install programs with pacman"
 prompt \
  "pacman -S fd ripgrep neovim alacritty mpv maim feh xclip dmenu which nsxiv \
   ttf-iosevka-nerd ttf-croscore noto-fonts noto-fonts-cjk noto-fonts-emoji npm \
-  man-db texinfo fakeroot gcc autoconf automake pkgconf make patch bacon \
+  man-db texinfo fakeroot gcc autoconf automake pkgconf make patch bacon emacs \
+  xorg-server xorg-xinit xorg-xsetroot xorg-xrandr redshift xf86-input-wacom \
   zathura-pdf-mupdf zathura-cb pipewire-pulse pipewire-jack wireplumber \
-  xorg-server xorg-xinit xorg-xsetroot xorg-xrandr redshift xf86-input-wacom"
+  hunspell hunspell-en_us"
 
 git clone "https://github.com/tonijarjour/dwm.git" "$HOME/dwm"
 ln -s "$here/system/dwm.h" "$HOME/dwm/config.h"
@@ -37,8 +38,9 @@ prompt "install -Dm 644 \"$here/system/arabic.conf\" \"/etc/fonts/conf.d/66-noto
 curl --proto "=https" --tlsv1.2 -sSf "https://sh.rustup.rs" | sh
 "$HOME/.cargo/bin/rustup" component add rust-analyzer rust-src
 
-mkdir -p "$HOME/.config"
+mkdir -p "$HOME/.config" "$HOME/.emacs.d"
 ln -sf "$here/config/"* "$HOME/.config/"
+ln -sf "$here/emacs.d/"* "$HOME/.emacs.d/"
 
 for f in "$here/home/"*
 do
