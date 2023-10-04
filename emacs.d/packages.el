@@ -25,6 +25,10 @@
 (load-theme 'ef-dark t)
 (load-theme 'doom-one t)
 
+;; M-x nerd-icons-install-fonts
+(tj/install-package 'doom-modeline)
+(doom-modeline-mode t)
+
 (tj/install-package 'centaur-tabs)
 (setq centaur-tabs-height 40
   centaur-tabs-set-close-button nil
