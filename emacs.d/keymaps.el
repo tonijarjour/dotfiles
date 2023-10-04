@@ -19,19 +19,19 @@
 (evil-define-key 'normal 'global (kbd "C-0") (lambda () (interactive) (text-scale-set 0)))
 
 ;; C-j and C-k traverse 6 lines
-(evil-define-motion visual-down-six-lines ()
+(evil-define-motion evil/visual-down-six-lines ()
   (evil-next-visual-line 6))
-(evil-define-motion visual-up-six-lines ()
+(evil-define-motion evil/visual-up-six-lines ()
   (evil-previous-visual-line 6))
-(evil-define-motion normal-down-six-lines ()
+(evil-define-motion evil/normal-down-six-lines ()
   (evil-next-line 6))
-(evil-define-motion normal-up-six-lines ()
+(evil-define-motion evil/normal-up-six-lines ()
   (evil-previous-line 6))
 
-(evil-define-key 'normal 'global (kbd "C-j") 'normal-down-six-lines)
-(evil-define-key 'normal 'global (kbd "C-k") 'normal-up-six-lines)
-(evil-define-key 'visual 'global (kbd "C-j") 'visual-down-six-lines)
-(evil-define-key 'visual 'global (kbd "C-k") 'visual-up-six-lines)
+(evil-define-key 'normal 'global (kbd "C-j") 'evil/normal-down-six-lines)
+(evil-define-key 'normal 'global (kbd "C-k") 'evil/normal-up-six-lines)
+(evil-define-key 'visual 'global (kbd "C-j") 'evil/visual-down-six-lines)
+(evil-define-key 'visual 'global (kbd "C-k") 'evil/visual-up-six-lines)
 
 ;; Corfu. Consult. Tempel. Go to dashboard. Toggle theme.
 (evil-define-key 'insert 'global (kbd "\M-SPC") 'corfu-insert-separator)

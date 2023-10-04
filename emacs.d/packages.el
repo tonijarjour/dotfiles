@@ -18,12 +18,10 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-(tj/install-package 'doom-themes)
 (tj/install-package 'ef-themes)
 (setq ef-themes-mixed-fonts t
   ef-themes-variable-pitch-ui t)
-(load-theme 'ef-dark t)
-(load-theme 'doom-one t)
+(load-theme 'ef-maris-dark t)
 
 ;; M-x nerd-icons-install-fonts
 (tj/install-package 'doom-modeline)
