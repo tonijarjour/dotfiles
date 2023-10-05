@@ -10,7 +10,7 @@
   "Load elisp FILE."
   (load (expand-file-name file "~/.emacs.d/")))
 
-(tj/load-config-file "prelude")
+(tj/load-config-file "settings")
 (tj/load-config-file "packages")
 (tj/load-config-file "keymaps")
 
