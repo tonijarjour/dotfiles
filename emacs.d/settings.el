@@ -1,4 +1,4 @@
-;;; prelude.el --- -*- lexical-binding: t -*-
+;;; settings.el --- -*- lexical-binding: t -*-
 
 ;;; Commentary:
 
@@ -57,4 +57,4 @@
   (executable-find "/usr/bin/librewolf")
     browse-url-browser-function 'browse-url-generic)
 
-;;; prelude.el ends here
+;;; settings.el ends here
