@@ -21,7 +21,7 @@
 (tj/install-package 'ef-themes)
 (setq ef-themes-mixed-fonts t
   ef-themes-variable-pitch-ui t)
-(load-theme 'ef-elea-dark t)
+(load-theme 'ef-symbiosis t)
 
 ;; M-x nerd-icons-install-fonts
 (tj/install-package 'doom-modeline)

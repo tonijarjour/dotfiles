@@ -23,6 +23,7 @@ keymap('n', '<Leader>wj', '<C-w>j', {})
 -- Bufferline
 keymap('n', '<Leader>en', '<cmd>BufferLineCycleNext<cr>', {})
 keymap('n', '<Leader>ep', '<cmd>BufferLineCyclePrev<cr>', {})
+keymap('n', '<Leader>el', '<cmd>BufferLinePick<cr>', {})
 
 -- Open/Save/Close buffer
 keymap('n', '<Leader>e.', ':e ', {})
