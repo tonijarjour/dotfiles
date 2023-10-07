@@ -29,8 +29,10 @@
 
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'text-mode-hook 'variable-pitch-mode)
-(add-hook 'prog-mode-hook 'toggle-truncate-lines 1)
 (add-hook 'prog-mode-hook 'hl-line-mode)
+(add-hook 'prog-mode-hook (lambda () (toggle-truncate-lines 1)))
+(add-hook 'mhtml-mode-hook (lambda () (buffer-face-mode -1)))
+(add-to-list 'auto-mode-alist '("\\.astro\\'" . mhtml-mode))
 
 (recentf-mode 1)
 (savehist-mode 1)
