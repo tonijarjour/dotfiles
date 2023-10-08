@@ -54,16 +54,13 @@
 (evil-define-key 'normal 'global (kbd "<leader>ec")
   (lambda () (interactive) (tj/find-file-at "~/.fn/emacs.d/")))
 
-;; Open/reload a file. Move between buffer tabs. Save/kill a buffer.
+;; Open/reload a file. Save/kill a buffer.
 (evil-define-key 'normal 'global (kbd "<leader>e.") 'find-file)
 (evil-define-key 'normal 'global (kbd "<leader>e,")
   (lambda () (interactive) (tj/find-file-at "~/")))
 (evil-define-key 'normal 'global (kbd "<leader>er") 
   (lambda () (interactive) (revert-buffer t t)))
-(evil-define-key 'normal 'global (kbd "<leader>en") 'centaur-tabs-forward-tab)
-(evil-define-key 'normal 'global (kbd "<leader>ep") 'centaur-tabs-backward-tab)
 (evil-define-key 'normal 'global (kbd "<leader>es") 'consult-buffer)
-(evil-define-key 'normal 'global (kbd "<leader>el") 'centaur-tabs-ace-jump)
 (evil-define-key 'normal 'global (kbd "<leader>ew") 'save-buffer)
 (evil-define-key 'normal 'global (kbd "<leader>ek") 'kill-buffer)
 

@@ -27,12 +27,6 @@
 (tj/install-package 'doom-modeline)
 (doom-modeline-mode t)
 
-(tj/install-package 'centaur-tabs)
-(setq centaur-tabs-height 40
-      centaur-tabs-set-close-button nil
-      centaur-tabs-show-new-tab-button nil)
-(centaur-tabs-mode t)
-
 (tj/install-package 'dashboard)
 (setq dashboard-center-content t
       dashboard-items nil
