@@ -39,8 +39,6 @@
 (evil-define-key 'normal 'global (kbd "<leader>fl") 'consult-ripgrep)
 (evil-define-key 'normal 'global (kbd "<leader>fo") 'consult-recent-file)
 (evil-define-key 'normal 'global (kbd "<leader>fj") 'consult-outline)
-(evil-define-key 'normal 'global (kbd "<leader>lx") 'tempel-complete)
-(evil-define-key 'normal 'global (kbd "<leader>li") 'tempel-insert)
 (evil-define-key 'normal 'global (kbd "<leader>bs") 'project-switch-to-buffer)
 (evil-define-key 'normal 'global (kbd "<leader>ps") 'project-switch-project)
 (evil-define-key 'normal 'global (kbd "<leader>pq")

@@ -16,7 +16,6 @@
 
 (setq mouse-wheel-progressive-speed nil)
 (setq scroll-conservatively 101)
-(setq recenter-positions '(middle))
 
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
@@ -31,7 +30,7 @@
 (add-hook 'text-mode-hook 'variable-pitch-mode)
 (add-hook 'prog-mode-hook 'hl-line-mode)
 (add-hook 'prog-mode-hook (lambda () (toggle-truncate-lines 1)))
-(add-hook 'mhtml-mode-hook (lambda () (buffer-face-mode -1)))
+(add-hook 'mhtml-mode-hook (lambda () (variable-pitch-mode -1)))
 
 (recentf-mode 1)
 (savehist-mode 1)
@@ -39,12 +38,7 @@
 (column-number-mode 1)
 (global-display-line-numbers-mode 1)
 (global-prettify-symbols-mode 1)
-
-(set-default-coding-systems  'utf-8)
-(set-selection-coding-system 'utf-8)
-(set-terminal-coding-system  'utf-8)
-(set-keyboard-coding-system  'utf-8)
-(prefer-coding-system        'utf-8)
+(set-language-environment "UTF-8")
 
 (set-face-attribute 'fixed-pitch nil :font "Iosevka Nerd Font-15")
 (set-face-attribute 'variable-pitch nil :font "Noto Sans-15")
