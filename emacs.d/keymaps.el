@@ -64,7 +64,7 @@
   (lambda () (interactive) (revert-buffer t t)))
 (evil-define-key 'normal 'global (kbd "<leader>en") 'centaur-tabs-forward-tab)
 (evil-define-key 'normal 'global (kbd "<leader>ep") 'centaur-tabs-backward-tab)
-(evil-define-key 'normal 'global (kbd "<leader>es") 'switch-to-buffer)
+(evil-define-key 'normal 'global (kbd "<leader>es") 'consult-buffer)
 (evil-define-key 'normal 'global (kbd "<leader>el") 'centaur-tabs-ace-jump)
 (evil-define-key 'normal 'global (kbd "<leader>ew") 'save-buffer)
 (evil-define-key 'normal 'global (kbd "<leader>ek") 'kill-buffer)
