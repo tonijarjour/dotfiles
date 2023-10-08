@@ -9,9 +9,6 @@
 (require 'package)
 (add-to-list 'package-archives
   '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
-(unless package-archive-contents
-  (package-refresh-contents))
 
 (defun tj/install-package (package)
   "Install PACKAGE."
@@ -63,15 +60,6 @@
 
 (tj/install-package 'tempel)
 (tj/install-package 'tempel-collection)
-
-(tj/install-package 'org-modern)
-(custom-set-faces '(org-level-1 ((t (:inherit outline-1 :height 1.728))))
-  '(org-level-2 ((t (:inherit outline-2 :height 1.44))))
-  '(org-level-3 ((t (:inherit outline-3 :height 1.2)))))
-(setq org-ellipsis "…"
-  org-hide-emphasis-markers t
-  org-tags-column 0)
-(global-org-modern-mode t)
 
 (tj/install-package 'markdown-mode)
 

@@ -32,7 +32,6 @@
 (add-hook 'prog-mode-hook 'hl-line-mode)
 (add-hook 'prog-mode-hook (lambda () (toggle-truncate-lines 1)))
 (add-hook 'mhtml-mode-hook (lambda () (buffer-face-mode -1)))
-(add-to-list 'auto-mode-alist '("\\.astro\\'" . mhtml-mode))
 
 (recentf-mode 1)
 (savehist-mode 1)
@@ -55,8 +54,12 @@
 (setq-default indent-tabs-mode nil)
 (setq-default indent-line-function 'insert-tab)
 
-(setq browse-url-generic-program
-  (executable-find "/usr/bin/librewolf")
-    browse-url-browser-function 'browse-url-generic)
+(setq browse-url-generic-program (executable-find "/usr/bin/librewolf")
+      browse-url-browser-function 'browse-url-generic)
+
+(if (boundp 'after-focus-change-function)
+    (add-function :after after-focus-change-function
+                  (lambda () (unless (frame-focus-state) (garbage-collect))))
+  (add-hook 'after-focus-change-function 'garbage-collect))
 
 ;;; settings.el ends here
