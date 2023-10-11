@@ -13,6 +13,7 @@
 (setq backup-directory-alist '(("." . "~/.saves")))
 (setq backup-by-copying t)
 (setq delete-old-versions t)
+(setq version-control t)
 (setq create-lockfiles nil)
 
 (setq mouse-wheel-progressive-speed nil)
