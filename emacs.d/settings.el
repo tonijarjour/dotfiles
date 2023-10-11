@@ -9,10 +9,11 @@
 (setq user-full-name "Toni Jarjour")
 (setq user-mail-address "tonijarjour@gmail.com")
 
-(setq make-backup-files nil)
-(setq create-lockfiles nil)
-(setq auto-save-default nil)
 (setq custom-file "~/.emacs.d/custom-file.el")
+(setq backup-directory-alist '(("." . "~/.saves")))
+(setq backup-by-copying t)
+(setq delete-old-versions t)
+(setq create-lockfiles nil)
 
 (setq mouse-wheel-progressive-speed nil)
 (setq scroll-conservatively 101)

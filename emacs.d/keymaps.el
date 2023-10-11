@@ -61,6 +61,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>er") 
   (lambda () (interactive) (revert-buffer t t)))
 (evil-define-key 'normal 'global (kbd "<leader>es") 'consult-buffer)
+(evil-define-key 'normal 'global (kbd "<leader>en") 'evil-buffer-new)
 (evil-define-key 'normal 'global (kbd "<leader>ew") 'save-buffer)
 (evil-define-key 'normal 'global (kbd "<leader>ek") 'kill-buffer)
 
