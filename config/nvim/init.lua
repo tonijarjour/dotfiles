@@ -65,7 +65,6 @@ require("lazy").setup({
         "lua",
         "markdown",
         "markdown_inline",
-        "rust",
         "toml",
         "tsx",
         "typescript",

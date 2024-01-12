@@ -12,8 +12,8 @@ prompt 'ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"'
 echo "Install programs with pacman"
 prompt \
  "pacman -S fd ripgrep neovim alacritty mpv maim feh xclip dmenu which nsxiv \
-  ttf-iosevka-nerd ttf-croscore noto-fonts noto-fonts-cjk noto-fonts-emoji npm \
-  man-db texinfo fakeroot gcc autoconf automake pkgconf make patch bacon emacs \
+  ttf-iosevka-nerd ttf-croscore noto-fonts noto-fonts-cjk noto-fonts-emoji \
+  man-db texinfo fakeroot gcc autoconf automake pkgconf make patch emacs npm \
   xorg-server xorg-xinit xorg-xsetroot xorg-xrandr redshift xf86-input-wacom \
   zathura-pdf-mupdf zathura-cb pipewire-pulse pipewire-jack wireplumber \
   hunspell hunspell-en_us"
@@ -34,9 +34,6 @@ prompt "install -Dm 644 \"$here/system/50-mouse-acceleration.conf\" \"/etc/X11/x
 
 echo "Reject Noto Nastaliq Urdu font"
 prompt "install -Dm 644 \"$here/system/arabic.conf\" \"/etc/fonts/conf.d/66-noto-reject-nastaliq.conf\""
-
-curl --proto "=https" --tlsv1.2 -sSf "https://sh.rustup.rs" | sh
-"$HOME/.cargo/bin/rustup" component add rust-analyzer rust-src
 
 mkdir -p "$HOME/.config" "$HOME/.emacs.d"
 ln -sf "$here/config/"* "$HOME/.config/"

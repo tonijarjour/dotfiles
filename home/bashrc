@@ -56,5 +56,4 @@ g() {
   esac
 }
 
-[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 [[ -f "$HOME/.bash_logout" ]] && source "$HOME/.bash_logout"
