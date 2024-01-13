@@ -13,77 +13,34 @@ bold_italic = { family = "Iosevka NFM", style = "Bold Italic" }
 size = 15
 
 [colors.primary]
-background = "#1E1E2E"
-foreground = "#CDD6F4"
-dim_foreground = "#CDD6F4"
-bright_foreground = "#CDD6F4"
-
-[colors.cursor]
-text = "#1E1E2E"
-cursor = "#F5E0DC"
-
-[colors.vi_mode_cursor]
-text = "#1E1E2E"
-cursor = "#B4BEFE"
-
-[colors.search.matches]
-foreground = "#1E1E2E"
-background = "#A6ADC8"
-
-[colors.search.focused_match]
-foreground = "#1E1E2E"
-background = "#A6E3A1"
-
-[colors.footer_bar]
-foreground = "#1E1E2E"
-background = "#A6ADC8"
-
-[colors.hints.start]
-foreground = "#1E1E2E"
-background = "#F9E2AF"
-
-[colors.hints.end]
-foreground = "#1E1E2E"
-background = "#A6ADC8"
-
-[colors.selection]
-text = "#1E1E2E"
-background = "#F5E0DC"
+background = '#0d1117'
+foreground = '#b3b1ad'
 
 [colors.normal]
-black = "#45475A"
-red = "#F38BA8"
-green = "#A6E3A1"
-yellow = "#F9E2AF"
-blue = "#89B4FA"
-magenta = "#F5C2E7"
-cyan = "#94E2D5"
-white = "#BAC2DE"
+black   = '#484f58'
+red     = '#ff7b72'
+green   = '#3fb950'
+yellow  = '#d29922'
+blue    = '#58a6ff'
+magenta = '#bc8cff'
+cyan    = '#39c5cf'
+white   = '#b1bac4'
 
 [colors.bright]
-black = "#585B70"
-red = "#F38BA8"
-green = "#A6E3A1"
-yellow = "#F9E2AF"
-blue = "#89B4FA"
-magenta = "#F5C2E7"
-cyan = "#94E2D5"
-white = "#A6ADC8"
-
-[colors.dim]
-black = "#45475A"
-red = "#F38BA8"
-green = "#A6E3A1"
-yellow = "#F9E2AF"
-blue = "#89B4FA"
-magenta = "#F5C2E7"
-cyan = "#94E2D5"
-white = "#BAC2DE"
+black   = '#6e7681'
+red     = '#ffa198'
+green   = '#56d364'
+yellow  = '#e3b341'
+blue    = '#79c0ff'
+magenta = '#d2a8ff'
+cyan    = '#56d4dd'
+white   = '#f0f6fc'
 
 [[colors.indexed_colors]]
 index = 16
-color = "#FAB387"
+color = '#d18616'
 
 [[colors.indexed_colors]]
 index = 17
-color = "#F5E0DC"
+color = '#ffa198'
+

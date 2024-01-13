@@ -15,32 +15,33 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 
-  {"catppuccin/nvim",
-    name = "catppuccin",
+  {"projekt0n/github-nvim-theme",
+    lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd([[colorscheme catppuccin-mocha]])
+      require('github-theme').setup({})
+      vim.cmd([[colorscheme github_dark_default]])
     end,
   },
 
   {"nvim-lualine/lualine.nvim",
     opts = {
       options = {
-        icons_enabled = false,
         component_separators = "|",
         section_separators = "",
       },
     },
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
 
   {"akinsho/bufferline.nvim",
     opts = {
       options = {
-        show_buffer_icons = false,
         show_buffer_close_icons  = false,
         show_close_icon  = false,
       },
     },
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
 
   {"windwp/nvim-autopairs",

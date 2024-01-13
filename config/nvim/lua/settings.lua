@@ -12,7 +12,6 @@ local options = {
   lazyredraw = true,
   title = true,
   mouse = "a",
-  cursorline = true,
   wildignorecase = true,
   wildmode = "longest:full",
   pumheight = 12,

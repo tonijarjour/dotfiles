@@ -20,38 +20,38 @@ static const char dmenufont[]            =  "Noto Sans:size=13";
 
 static char c000000[]                    = "#000000"; // placeholder value
 
-static char normfgcolor[]                = "#cdd6f4";
-static char normbgcolor[]                = "#1e1e2e";
-static char normbordercolor[]            = "#1e1e2e";
+static char normfgcolor[]                = "#b3b1ad";
+static char normbgcolor[]                = "#0d1117";
+static char normbordercolor[]            = "#0d1117";
 
-static char selfgcolor[]                 = "#cdd6f4";
-static char selbgcolor[]                 = "#313244";
-static char selbordercolor[]             = "#1e1e2e";
+static char selfgcolor[]                 = "#b3b1ad";
+static char selbgcolor[]                 = "#262630";
+static char selbordercolor[]             = "#0d1117";
 
-static char titlenormfgcolor[]           = "#cdd6f4";
-static char titlenormbgcolor[]           = "#1e1e2e";
-static char titlenormbordercolor[]       = "#1e1e2e";
+static char titlenormfgcolor[]           = "#b3b1ad";
+static char titlenormbgcolor[]           = "#0d1117";
+static char titlenormbordercolor[]       = "#0d1117";
 
-static char titleselfgcolor[]            = "#cdd6f4";
-static char titleselbgcolor[]            = "#313244";
-static char titleselbordercolor[]        = "#313244";
+static char titleselfgcolor[]            = "#b3b1ad";
+static char titleselbgcolor[]            = "#262630";
+static char titleselbordercolor[]        = "#262630";
 
-static char tagsnormfgcolor[]            = "#cdd6f4";
-static char tagsnormbgcolor[]            = "#1e1e2e";
-static char tagsnormbordercolor[]        = "#1e1e2e";
+static char tagsnormfgcolor[]            = "#b3b1ad";
+static char tagsnormbgcolor[]            = "#0d1117";
+static char tagsnormbordercolor[]        = "#0d1117";
 
-static char tagsselfgcolor[]             = "#cdd6f4";
-static char tagsselbgcolor[]             = "#313244";
-static char tagsselbordercolor[]         = "#313244";
+static char tagsselfgcolor[]             = "#b3b1ad";
+static char tagsselbgcolor[]             = "#262630";
+static char tagsselbordercolor[]         = "#262630";
 
-static char hidnormfgcolor[]             = "#6c7086";
-static char hidselfgcolor[]              = "#b4befe";
-static char hidnormbgcolor[]             = "#1e1e2e";
-static char hidselbgcolor[]              = "#1e1e2e";
+static char hidnormfgcolor[]             = "#b3b1ad";
+static char hidselfgcolor[]              = "#b3b1ad";
+static char hidnormbgcolor[]             = "#0d1117";
+static char hidselbgcolor[]              = "#262630";
 
-static char urgfgcolor[]                 = "#11111b";
-static char urgbgcolor[]                 = "#fab387";
-static char urgbordercolor[]             = "#fab387";
+static char urgfgcolor[]                 = "#0d1117";
+static char urgbgcolor[]                 = "#ff7b72";
+static char urgbordercolor[]             = "#ff7b72";
 
 static char *colors[][ColCount] = {
 	/*                       fg                bg                border                float */
