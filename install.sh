@@ -16,7 +16,7 @@ prompt \
   man-db texinfo fakeroot gcc autoconf automake pkgconf make patch emacs npm \
   xorg-server xorg-xinit xorg-xsetroot xorg-xrandr redshift xf86-input-wacom \
   zathura-pdf-poppler zathura-cb pipewire-pulse pipewire-jack wireplumber \
-  hunspell hunspell-en_us"
+  hunspell hunspell-en_us imagemagick yt-dlp renameutils"
 
 git clone "https://github.com/tonijarjour/dwm.git" "$HOME/dwm"
 ln -s "$here/system/dwm.h" "$HOME/dwm/config.h"
