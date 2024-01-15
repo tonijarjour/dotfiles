@@ -15,7 +15,7 @@ prompt \
   ttf-iosevka-nerd ttf-croscore noto-fonts noto-fonts-cjk noto-fonts-emoji \
   man-db texinfo fakeroot gcc autoconf automake pkgconf make patch emacs npm \
   xorg-server xorg-xinit xorg-xsetroot xorg-xrandr redshift xf86-input-wacom \
-  zathura-pdf-mupdf zathura-cb pipewire-pulse pipewire-jack wireplumber \
+  zathura-pdf-poppler zathura-cb pipewire-pulse pipewire-jack wireplumber \
   hunspell hunspell-en_us"
 
 git clone "https://github.com/tonijarjour/dwm.git" "$HOME/dwm"
