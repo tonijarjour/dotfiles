@@ -13,7 +13,6 @@
 (tj/load-config-file "settings")
 (tj/load-config-file "packages")
 (tj/load-config-file "keymaps")
-(tj/load-config-file "ephemeral")
 
 (message "Terram novam et caelum a Deo")
 (setq inhibit-startup-echo-area-message "toni")

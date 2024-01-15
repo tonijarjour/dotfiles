@@ -70,4 +70,13 @@
 (with-eval-after-load 'evil
   (evil-collection-init))
 
+(tj/install-package 'pdf-tools)
+(require 'pdf-tools)
+(add-to-list 'auto-mode-alist '("\\.pdf\\'" . pdf-view-mode))
+(add-hook 'pdf-view-mode-hook
+          (lambda () (pdf-view-midnight-minor-mode 1)
+            (display-line-numbers-mode -1)
+            (blink-cursor-mode -1)))
+(setq pdf-view-midnight-colors '("#b3b1ad" . "#0d1117"))
+
 ;;; packages.el ends here
