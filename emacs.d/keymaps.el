@@ -43,13 +43,13 @@
   (kbd "<leader>bs") 'project-switch-to-buffer
   (kbd "<leader>ps") 'project-switch-project
   (kbd "<leader>pq") (lambda () (interactive) (delete-other-windows) (project-kill-buffers t))
-  (kbd "<leader>gg") 'dashboard-open)
+  (kbd "<leader>gg") 'dashboard-open
 
 ;; Org Mode
-(evil-define-key 'normal 'global (kbd "<leader>op") 'org-open-at-point)
+  (kbd "<leader>op") 'org-open-at-point
 
 ;; Emacs. Open a config file.
-(evil-define-key 'normal 'global (kbd "<leader>:") 'eval-expression
+  (kbd "<leader>:") 'eval-expression
   (kbd "<leader>x") 'execute-extended-command
   (kbd "<leader>ec") (lambda () (interactive) (tj/find-file-at "~/.fn/emacs.d/"))
 
