@@ -35,7 +35,7 @@
   (kbd "<leader>fl") 'consult-ripgrep
   (kbd "<leader>fo") 'consult-recent-file
   (kbd "<leader>fj") 'consult-outline
-  (kbd "<leader>bs") 'project-switch-to-buffer
+  (kbd "<leader>bs") 'consult-buffer
   (kbd "<leader>ps") 'project-switch-project
   (kbd "<leader>pq") (lambda () (interactive) (delete-other-windows) (project-kill-buffers t))
   (kbd "<leader>gg") 'dashboard-open
@@ -45,7 +45,7 @@
   (kbd "<leader>e.") 'find-file
   (kbd "<leader>e,") (lambda () (interactive) (tj/find-file-at "~/"))
   (kbd "<leader>er") (lambda () (interactive) (revert-buffer t t))
-  (kbd "<leader>es") 'consult-buffer
+  (kbd "<leader>es") 'project-switch-to-buffer
   (kbd "<leader>en") 'evil-buffer-new
   (kbd "<leader>ew") 'save-buffer
   (kbd "<leader>ek") 'kill-buffer
