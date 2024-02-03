@@ -3,3 +3,4 @@
 
 export VISUAL="/usr/bin/nvim"
 export EDITOR="/usr/bin/nvim"
+export NNN_PREVIEWDIR="$HOME/.nnn/previews"

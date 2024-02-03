@@ -10,7 +10,6 @@ HISTCONTROL='erasedups'
 HISTIGNORE=' *:..:~:ls:history:exit:clear:fg:fg *:s reboot:s poweroff'
 PROMPT_COMMAND='history -a'
 NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-NNN_PREVIEWDIR="$HOME/.nnn/previews"
 
 shopt -s histappend
 shopt -s autocd
