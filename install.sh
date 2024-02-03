@@ -16,7 +16,8 @@ prompt \
   xorg-server xorg-xinit xorg-xsetroot xorg-xrandr redshift xf86-input-wacom \
   zathura-pdf-poppler zathura-cb pipewire-pulse pipewire-jack wireplumber \
   ttf-iosevka-nerd ttf-croscore noto-fonts noto-fonts-cjk noto-fonts-emoji \
-  tex-gyre-fonts gsfonts hunspell hunspell-en_us imagemagick yt-dlp renameutils"
+  tex-gyre-fonts gsfonts hunspell hunspell-en_us imagemagick yt-dlp nnn \
+  renameutils ffmpegthumbnailer"
 
 git clone "https://github.com/tonijarjour/dwm.git" "$HOME/dwm"
 ln -s "$here/system/dwm.h" "$HOME/dwm/config.h"
@@ -35,9 +36,11 @@ prompt "install -Dm 644 \"$here/system/50-mouse-acceleration.conf\" \"/etc/X11/x
 echo "Reject Noto Nastaliq Urdu font"
 prompt "install -Dm 644 \"$here/system/arabic.conf\" \"/etc/fonts/conf.d/66-noto-reject-nastaliq.conf\""
 
-mkdir -p "$HOME/.config" "$HOME/.emacs.d"
+mkdir -p "$HOME/.config/nnn/plugins" "$HOME/.emacs.d"
 ln -sf "$here/config/"* "$HOME/.config/"
 ln -sf "$here/emacs.d/"* "$HOME/.emacs.d/"
+
+sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"
 
 for f in "$here/home/"*
 do
