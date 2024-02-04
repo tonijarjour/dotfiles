@@ -17,7 +17,7 @@ prompt \
   zathura-pdf-poppler zathura-cb pipewire-pulse pipewire-jack wireplumber \
   ttf-iosevka-nerd ttf-croscore noto-fonts noto-fonts-cjk noto-fonts-emoji \
   tex-gyre-fonts gsfonts hunspell hunspell-en_us imagemagick yt-dlp nnn \
-  renameutils ffmpegthumbnailer"
+  renameutils ffmpegthumbnailer xdg-utils"
 
 git clone "https://github.com/tonijarjour/dwm.git" "$HOME/dwm"
 ln -s "$here/system/dwm.h" "$HOME/dwm/config.h"
