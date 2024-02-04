@@ -17,7 +17,6 @@ shopt -s autocd
 alias vi='nvim'
 alias bat='nvim -R'
 alias ls='n -e'
-alias lsa='ls -A'
 alias imv='nsxiv -a'
 alias hc='source $HOME/.bash_logout; history -c; history -r'
 
