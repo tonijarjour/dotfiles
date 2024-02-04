@@ -17,8 +17,12 @@ shopt -s autocd
 alias vi='nvim'
 alias bat='nvim -R'
 alias ls='n -e'
-alias imv='nsxiv -a'
 alias hc='source $HOME/.bash_logout; history -c; history -r'
+alias imv='nsxiv -a'
+
+imr() {
+  sh "$HOME/.config/nsxiv/nsxiv-rifle" "$(fd -1t f . $1)"
+}
 
 s() {
   C=''

@@ -16,6 +16,6 @@ do
   "C-h") mv -n "$file" "$HOME/Images/Wallpapers";;
   "C-m") mv -n "$file" "$HOME/Images/Memes";;
   "C-n") mv -n "$file" "$(dirname $file)/$(dmenu < /dev/null)";;
-  "C-j") mpv "$(sed 's/\/home\/toni\/\.nnn\/previews//; s/\.jpg$//' <(echo $file))";;
+  "C-j") mpv "$(sed 's/\/home\/toni\/\.nnn\/previews//; s/\.jpg$//' <(echo "$file"))";;
   esac
 done
