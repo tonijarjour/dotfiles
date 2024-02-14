@@ -33,6 +33,15 @@ s() {
   su -c bash -c "$C"
 }
 
+copy() {
+  C=''
+  for i in "$@"; do 
+      i="${i//\\/\\\\}"
+      C="$C \"${i//\"/\\\"}\""
+  done
+  bash -c "$C" | xclip -se c
+}
+
 g() {
   case "$1" in 
     a) git add "${@:2}" ;;
