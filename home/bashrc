@@ -19,6 +19,7 @@ alias bat='nvim -R'
 alias ls='n -e'
 alias hc='source $HOME/.bash_logout; history -c; history -r'
 alias imv='nsxiv -a'
+alias copy='xclip -se c'
 
 imr() {
   sh "$HOME/.config/nsxiv/nsxiv-rifle" "$(fd -1t f --regex '(\.png|\.jpg|\.jpeg)' $1)"
@@ -31,15 +32,6 @@ s() {
       C="$C \"${i//\"/\\\"}\""
   done
   su -c bash -c "$C"
-}
-
-copy() {
-  C=''
-  for i in "$@"; do 
-      i="${i//\\/\\\\}"
-      C="$C \"${i//\"/\\\"}\""
-  done
-  bash -c "$C" | xclip -se c
 }
 
 g() {
