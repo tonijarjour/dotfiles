@@ -2,7 +2,7 @@ IMAPStore posteo-remote
 Host posteo.de
 Port 993
 User tonijarjour@posteo.com
-PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.mbsyncpass.gpg"
+PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/Other/.mbsyncpass.gpg"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 

@@ -35,6 +35,7 @@
   (kbd "<leader>:") 'eval-expression
   (kbd "<leader>x") 'execute-extended-command
   (kbd "<leader>gg") 'dashboard-open
+  (kbd "<leader>mu") 'mu4e
   (kbd "<leader>wq") 'evil-quit
   (kbd "<leader>wv") 'evil-window-vsplit
   (kbd "<leader>wh") 'evil-window-left

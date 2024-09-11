@@ -61,6 +61,7 @@
 ;;      mu4e-trash-folder "/Trash"
 ;;      mu4e-refile-folder "/Archive"
 ;;
+;;      auth-sources '("~/Other/.authinfo.gpg")
 ;;      smtpmail-smtp-server "posteo.de"
 ;;      smtpmail-smtp-service 465
 ;;      smtpmail-stream-type 'ssl
