@@ -54,3 +54,8 @@ noto-fonts-cjk
 noto-fonts-emoji
 ttf-croscore
 ttf-iosevka-nerd
+
+texlive-bibtexextra
+texlive-binextra
+texlive-latexextra
+texlive-mathscience

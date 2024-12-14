@@ -39,6 +39,6 @@ mbsync -a
 Initialize and index the `mu` database.
 
 ```
-mu init --maildir=~/.local/mail --my-address=tonijarjour@posteo.com
+mu init --maildir=/home/toni/.local/mail --my-address=tonijarjour@posteo.com
 mu index
 ```

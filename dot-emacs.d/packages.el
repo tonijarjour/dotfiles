@@ -52,6 +52,10 @@
 (setq corfu-auto t)
 (global-corfu-mode t)
 
+(tj/install-package 'auctex)
+(setq TeX-auto-save t
+      TeX-parse-self t)
+
 ;;(require 'mu4e)
 ;;(setq mu4e-change-filenames-when-moving t
 ;;      mu4e-get-mail-command "mbsync -a"
