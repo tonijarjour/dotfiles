@@ -39,8 +39,8 @@
  indent-tabs-mode nil
  indent-line-function 'insert-tab)
 
-(set-face-attribute 'fixed-pitch nil :font "Iosevka Nerd Font-15")
-(set-face-attribute 'variable-pitch nil :font "Nimbus Sans-15")
+(set-face-attribute 'fixed-pitch nil :font "Iosevka Nerd Font-20")
+(set-face-attribute 'variable-pitch nil :font "Nimbus Sans-20")
 
 (add-hook 'text-mode-hook 'variable-pitch-mode)
 (add-hook 'prog-mode-hook (lambda () (toggle-truncate-lines 1)))

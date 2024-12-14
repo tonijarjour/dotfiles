@@ -12,7 +12,7 @@
 (tool-bar-mode -1)
 (tooltip-mode -1)
 
-(add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font-15"))
+(add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font-20"))
 
 (setq frame-resize-pixelwise t)
 (setq gc-cons-threshold 134217728)
