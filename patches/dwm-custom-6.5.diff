@@ -1,5 +1,5 @@
 diff --git a/config.h b/config.h
-index 9efa774..ae41fb7 100644
+index 9efa774..d73d170 100644
 --- a/config.h
 +++ b/config.h
 @@ -1,21 +1,21 @@
@@ -22,8 +22,8 @@ index 9efa774..ae41fb7 100644
 -static const char col_gray4[]       = "#eeeeee";
 -static const char col_cyan[]        = "#005577";
 +static const int focusonwheel       = 0;
-+static const char *fonts[]          = { "Noto Sans:size=13" };
-+static const char dmenufont[]       =   "Noto Sans:size=13";
++static const char *fonts[]          = { "Noto Sans:size=15" };
++static const char dmenufont[]       =   "Noto Sans:size=15";
 +static const char col_bgs[]         = "#262630";
 +static const char col_bgn[]         = "#0d1117";
 +static const char col_fg[]          = "#b3b1ad";
@@ -75,9 +75,6 @@ index 9efa774..ae41fb7 100644
 -	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 -	{ MODKEY,                       XK_Return, zoom,           {0} },
 -	{ MODKEY,                       XK_Tab,    view,           {0} },
--	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
--	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
--	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 +static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bgn, "-nf", col_fg, "-sb", col_bgs, "-sf", col_fg, NULL };
 +static const char scratchpadname[] = "spterm";
 +static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, NULL };
@@ -102,7 +99,9 @@ index 9efa774..ae41fb7 100644
 +	{ MODKEY,                       XK_comma,  setmfact,       {.f = -0.05} },
 +	{ MODKEY,                       XK_period, setmfact,       {.f = +0.05} },
 +	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
-+	{ MODKEY|ShiftMask,             XK_w,      killclient,     {0} },
+ 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
+-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 +	{ MODKEY,                       XK_a,      setlayout,      {.v = &layouts[0]} },
 +	{ MODKEY,                       XK_s,      setlayout,      {.v = &layouts[1]} },
  	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },

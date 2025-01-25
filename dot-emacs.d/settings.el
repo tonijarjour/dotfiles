@@ -26,6 +26,7 @@
  initial-scratch-message nil
  initial-major-mode 'fundamental-mode
  frame-title-format '("%b – Emacs")
+ visible-bell 1
 
  browse-url-generic-program (executable-find "/usr/bin/firefox")
  browse-url-browser-function 'browse-url-generic)
