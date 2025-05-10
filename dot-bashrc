@@ -18,12 +18,20 @@ alias ls='ls --color=auto'
 alias lsa='ls -A'
 alias imv='nsxiv -a'
 alias copy='xclip -se c'
-alias wttr='curl wttr.in/Boston?m0'
-alias wf='setxkbmap -layout us'
-alias we='setxkbmap -variant colemak'
+alias wu='setxkbmap -layout us'
+alias wc='setxkbmap -variant colemak'
+alias lw='latexmk -pvc -pdf'
+alias lc='latexmk -C'
 
 s(){ su -c "${*@Q}"; }
 unlock(){ gpg2 -q --for-your-eyes-only --no-tty -d "${1}"; }
+bl() { su -c 'echo 0 > /sys/class/backlight/amdgpu_bl1/brightness'; }
+bh() { su -c 'echo 100 > /sys/class/backlight/amdgpu_bl1/brightness'; }
+bs() { su -c 'echo ${0} > /sys/class/backlight/amdgpu_bl1/brightness' root ${1}; }
+lo() { su -c 'echo none > /sys/class/leds/platform::micmute/trigger'; }
+wf() { su -c 'iwctl device wlan0 set-property Powered off'; }
+wn() { su -c 'iwctl device wlan0 set-property Powered on'; }
+li() { latexindent -w ${1}; }
 
 bash_history_file=$(mktemp "${USER}"_bash_historyXXXXXX)
 tac "${HOME}/.bash_history" | awk '!x[$0]++' | tac > "${bash_history_file}"

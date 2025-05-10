@@ -22,8 +22,8 @@ index 9efa774..d73d170 100644
 -static const char col_gray4[]       = "#eeeeee";
 -static const char col_cyan[]        = "#005577";
 +static const int focusonwheel       = 0;
-+static const char *fonts[]          = { "Noto Sans:size=15" };
-+static const char dmenufont[]       =   "Noto Sans:size=15";
++static const char *fonts[]          = { "Noto Sans:size=17" };
++static const char dmenufont[]       =   "Noto Sans:size=17";
 +static const char col_bgs[]         = "#262630";
 +static const char col_bgn[]         = "#0d1117";
 +static const char col_fg[]          = "#b3b1ad";

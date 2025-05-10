@@ -30,7 +30,7 @@
 (setq dashboard-center-content t
       dashboard-items nil
       dashboard-display-icons-p nil
-      dashboard-startup-banner "~/Images/.emacs.png")
+      dashboard-startup-banner "~/Images/.emacs.jpg")
 (dashboard-setup-startup-hook)
 
 (tj/install-package 'vertico)
@@ -49,7 +49,8 @@
 (setq consult-preview-key nil)
 
 (tj/install-package 'corfu)
-(setq corfu-auto t)
+(setq corfu-auto t
+      text-mode-ispell-word-completion nil)
 (global-corfu-mode t)
 
 (tj/install-package 'auctex)

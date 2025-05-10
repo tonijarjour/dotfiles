@@ -17,8 +17,9 @@ alacritty
 emacs
 feh
 firefox
+gnome-themes-extra
 imagemagick
-lilypond
+krita
 maim
 mpv
 nsxiv
@@ -42,7 +43,6 @@ wireplumber
 
 hunspell
 hunspell-en_us
-hunspell-es_any
 
 xorg-server
 xorg-xinit

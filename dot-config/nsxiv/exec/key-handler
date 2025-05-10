@@ -6,12 +6,6 @@ do
   "C-x") echo -n "${file}" | xclip -se c ;;
   "C-w") feh --bg-fill --no-fehbg "${file}" ;;
   "C-D") rm "${file}" ; echo "deleted ${file}" ;;
-  "C-p") mv -n "${file}" "${HOME}/Images/Photographs";;
-  "C-P") mv -n "${file}" "${HOME}/Images/Photographs/hx";;
-  "C-i") mv -n "${file}" "${HOME}/Images/Illustrations";;
-  "C-I") mv -n "${file}" "${HOME}/Images/Illustrations/hx";;
-  "C-h") mv -n "${file}" "${HOME}/Images/Wallpapers";;
-  "C-m") mv -n "${file}" "${HOME}/Images/Memes";;
   "C-n") mv -n "${file}" "$(dirname "${file}")/$(dmenu < /dev/null)";;
   esac
 done

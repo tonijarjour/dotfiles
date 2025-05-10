@@ -43,14 +43,6 @@ mu init --maildir=/home/toni/.local/mail --my-address=tonijarjour@posteo.com
 mu index
 ```
 
-### Thinkpad Mic Control LED
-
-Disable with this command.
-
-```
-su -c 'echo none > /sys/class/leds/platform\:\:micmute/trigger'
-```
-
 ### Vis Unreadable Highlight Fix
 
 Edit `/usr/share/vis/themes/base-16.lua` as root and change these options.
@@ -58,4 +50,10 @@ Edit `/usr/share/vis/themes/base-16.lua` as root and change these options.
 ```
 lexers.STYLE_EMBEDDED = ''
 lexers.STYLE_SELECTION = 'back:black,bold'
+```
+
+### Thunar/GTK3 theme not applied
+
+```
+gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
 ```
