@@ -20,7 +20,7 @@ alias imv='nsxiv -a'
 alias copy='xclip -se c'
 alias wu='setxkbmap -layout us'
 alias wc='setxkbmap -variant colemak'
-alias lw='latexmk -pvc -pdf'
+alias lw='latexmk -pvc -pdf -view=none'
 alias lc='latexmk -C'
 
 s(){ su -c "${*@Q}"; }
@@ -31,7 +31,6 @@ bs() { su -c 'echo ${0} > /sys/class/backlight/amdgpu_bl1/brightness' root ${1};
 lo() { su -c 'echo none > /sys/class/leds/platform::micmute/trigger'; }
 wf() { su -c 'iwctl device wlan0 set-property Powered off'; }
 wn() { su -c 'iwctl device wlan0 set-property Powered on'; }
-li() { latexindent -w ${1}; }
 
 bash_history_file=$(mktemp "${USER}"_bash_historyXXXXXX)
 tac "${HOME}/.bash_history" | awk '!x[$0]++' | tac > "${bash_history_file}"

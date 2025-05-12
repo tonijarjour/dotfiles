@@ -29,6 +29,7 @@ xf86-video-amdgpu
 yt-dlp
 
 ffmpegthumbnailer
+gvfs
 thunar
 tumbler
 
@@ -55,6 +56,7 @@ noto-fonts-emoji
 ttf-croscore
 ttf-iosevka-nerd
 
+biber
 texlive-bibtexextra
 texlive-binextra
 texlive-latexextra

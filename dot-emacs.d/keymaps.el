@@ -51,6 +51,7 @@
   (kbd "<leader>en") 'evil-buffer-new
   (kbd "<leader>ew") 'save-buffer
   (kbd "<leader>ek") 'kill-buffer
+  (kbd "<leader>ex") 'server-edit
   (kbd "<leader>er") (lambda () (interactive) (revert-buffer t t))
   (kbd "<leader>eo") 'consult-recent-file
   (kbd "<leader>ef") 'project-find-file
