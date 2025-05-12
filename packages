@@ -50,6 +50,7 @@ xorg-xinit
 xorg-xrandr
 xorg-xsetroot
 
+gsfonts
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji

@@ -19,9 +19,10 @@ alias lsa='ls -A'
 alias imv='nsxiv -a'
 alias copy='xclip -se c'
 alias wu='setxkbmap -layout us'
-alias wc='setxkbmap -variant colemak'
+alias wc='setxkbmap -variant colemak -option caps:super'
 alias lw='latexmk -pvc -pdf -view=none'
 alias lc='latexmk -C'
+alias bp='makepkg -si --rmdeps --clean'
 
 s(){ su -c "${*@Q}"; }
 unlock(){ gpg2 -q --for-your-eyes-only --no-tty -d "${1}"; }
@@ -31,6 +32,7 @@ bs() { su -c 'echo ${0} > /sys/class/backlight/amdgpu_bl1/brightness' root ${1};
 lo() { su -c 'echo none > /sys/class/leds/platform::micmute/trigger'; }
 wf() { su -c 'iwctl device wlan0 set-property Powered off'; }
 wn() { su -c 'iwctl device wlan0 set-property Powered on'; }
+eduroam() { su -c 'iwctl station wlan0 disconnect && sleep 1 && iwctl station wlan0 connect eduroam'; }
 
 bash_history_file=$(mktemp "${USER}"_bash_historyXXXXXX)
 tac "${HOME}/.bash_history" | awk '!x[$0]++' | tac > "${bash_history_file}"
