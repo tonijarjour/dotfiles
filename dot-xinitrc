@@ -26,14 +26,13 @@ batt() {
   echo "   $icon $capacity%"
 }
 wifi() {
-    interface="wlan0"
-
-    operstate=$(cat /sys/class/net/"$interface"/operstate)
-    has_ip=$(ip addr show "$interface" | grep -q "inet")
-
-    if [[ "$operstate" != "down" && "$has_ip" -eq 0 ]]; then
-        echo "    🌐 Wi-Fi"
-    fi
+  interface="wlan0"
+  ip addr show "$interface" | awk '/inet / {
+    ip = $2
+    if (ip ~ /^192\.168\.0\.169/) {
+      print "   🌐 Kumiko"
+    }
+  }'
 }
 
 while true; do
