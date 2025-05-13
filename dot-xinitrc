@@ -14,7 +14,7 @@ feh --bg-fill --no-fehbg "/mnt/phoebus/Images/Wallpapers/sky.jpg"
 
 dt() { echo "   $(date +"%a, %b %d")"; }
 tm() { echo "   $(date +"%I:%M %p")"; }
-batt() { 
+batt() {
   status=$(cat /sys/class/power_supply/AC*/online 2>/dev/null)
   capacity=$(cat "/sys/class/power_supply/BAT0/capacity")
 
@@ -23,11 +23,21 @@ batt() {
     * ) icon="⚡" ;;
   esac
 
-  echo "   $icon  $capacity%"
+  echo "   $icon $capacity%"
+}
+wifi() {
+    interface="wlan0"
+
+    operstate=$(cat /sys/class/net/"$interface"/operstate)
+    has_ip=$(ip addr show "$interface" | grep -q "inet")
+
+    if [[ "$operstate" != "down" && "$has_ip" -eq 0 ]]; then
+        echo "    🌐 Wi-Fi"
+    fi
 }
 
 while true; do
-    xsetroot -name "$(batt)$(dt)$(tm)   "
+    xsetroot -name "$(wifi)$(batt)$(dt)$(tm)   "
     sleep 1
 done &
 

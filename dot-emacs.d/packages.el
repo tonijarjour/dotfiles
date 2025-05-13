@@ -30,7 +30,7 @@
 (setq dashboard-center-content t
       dashboard-items nil
       dashboard-display-icons-p nil
-      dashboard-startup-banner "~/Images/.emacs.jpg")
+      dashboard-startup-banner "~/Images/.emacs.png")
 (dashboard-setup-startup-hook)
 
 (tj/install-package 'vertico)
@@ -57,20 +57,21 @@
 (setq TeX-auto-save t
       TeX-parse-self t)
 
-;;(require 'mu4e)
-;;(setq mu4e-change-filenames-when-moving t
-;;      mu4e-get-mail-command "mbsync -a"
-;;      mu4e-update-interval (* 10 59)
-;;      mu4e-drafts-folder "/Drafts"
-;;      mu4e-sent-folder "/Sent"
-;;      mu4e-trash-folder "/Trash"
-;;      mu4e-refile-folder "/Archive"
-;;
-;;      auth-sources '("~/Other/.authinfo.gpg")
-;;      smtpmail-smtp-server "posteo.de"
-;;      smtpmail-smtp-service 465
-;;      smtpmail-stream-type 'ssl
-;;      message-send-mail-function 'smtpmail-send-it)
+(autoload 'mu4e "mu4e" "Launch mu4e email client." t)
+(with-eval-after-load 'mu4e
+  (setq mu4e-change-filenames-when-moving t
+        mu4e-get-mail-command "mbsync -a"
+        mu4e-update-interval (* 10 59)
+        mu4e-drafts-folder "/Drafts"
+        mu4e-sent-folder "/Sent"
+        mu4e-trash-folder "/Trash"
+        mu4e-refile-folder "/Archive"
+
+        auth-sources '("~/Other/.authinfo.gpg")
+        smtpmail-smtp-server "posteo.de"
+        smtpmail-smtp-service 465
+        smtpmail-stream-type 'ssl
+        message-send-mail-function 'smtpmail-send-it))
 
 (tj/install-package 'evil)
 (setq evil-want-keybinding nil
