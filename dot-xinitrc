@@ -25,19 +25,10 @@ batt() {
 
   echo "   $icon $capacity%"
 }
-wifi() {
-  interface="wlan0"
-  ip addr show "$interface" | awk '/inet / {
-    ip = $2
-    if (ip ~ /^192\.168\.0\.169/) {
-      print "   🌐 Kumiko"
-    }
-  }'
-}
 
 while true; do
-    xsetroot -name "$(wifi)$(batt)$(dt)$(tm)   "
-    sleep 1
+    xsetroot -name "$(batt)$(dt)$(tm)   "
+    sleep 12
 done &
 
 redshift -l 42.5:-71 -b 1.0:0.6 &
