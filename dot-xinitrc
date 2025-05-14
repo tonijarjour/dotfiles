@@ -15,8 +15,8 @@ feh --bg-fill --no-fehbg "/mnt/phoebus/Images/Wallpapers/sky.jpg"
 dt() { echo "   $(date +"%a, %b %d")"; }
 tm() { echo "   $(date +"%I:%M %p")"; }
 batt() {
-  status=$(cat /sys/class/power_supply/AC*/online 2>/dev/null)
-  capacity=$(cat "/sys/class/power_supply/BAT0/capacity")
+  status=$(< "/sys/class/power_supply/AC/online")
+  capacity=$(< "/sys/class/power_supply/BAT0/capacity")
 
   case "$status" in
     1 ) icon="🔌" ;;
