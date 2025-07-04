@@ -22,6 +22,7 @@ alias wu='setxkbmap -layout us'
 alias wc='setxkbmap -variant colemak -option caps:super'
 alias lw='latexmk -pvc -pdf -view=none'
 alias lc='latexmk -C'
+alias li='latexindent -w'
 alias bp='makepkg -si --rmdeps --clean'
 
 s(){ su -c "${*@Q}"; }
@@ -32,12 +33,11 @@ bs() { su -c 'echo ${0} > /sys/class/backlight/amdgpu_bl1/brightness' root ${1};
 lo() { su -c 'echo none > /sys/class/leds/platform::micmute/trigger'; }
 wf() { su -c 'iwctl device wlan0 set-property Powered off'; }
 wn() { su -c 'iwctl device wlan0 set-property Powered on'; }
-
 eduroam() { su -c 'iwctl station wlan0 disconnect && sleep 1 && iwctl station wlan0 connect eduroam'; }
 
 wifi() {
-    if [[ "$(< /proc/net/fib_trie)" =~ [[:space:]]192\.168\.0\.169[[:space:]]+/32\ host\ LOCAL ]]; then
-        echo "🌐 Kumiko"
+    if [[ "$(< /sys/class/net/wlan0/operstate)" == "up" ]]; then
+        echo "🌐 WiFi On"
     else
         echo "Not Connected"
     fi

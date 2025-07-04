@@ -11,6 +11,8 @@ openssh
 renameutils
 ripgrep
 stow
+uv
+python-black
 vis
 
 alacritty
@@ -62,3 +64,5 @@ texlive-bibtexextra
 texlive-binextra
 texlive-latexextra
 texlive-mathscience
+perl-yaml-tiny
+perl-file-homedir
