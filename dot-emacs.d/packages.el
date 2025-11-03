@@ -30,7 +30,8 @@
 (setq dashboard-center-content t
       dashboard-items nil
       dashboard-display-icons-p nil
-      dashboard-startup-banner "~/Images/.emacs.png")
+      dashboard-startup-banner "~/Images/.emacs.png"
+      dashboard-image-banner-max-width 800)
 (dashboard-setup-startup-hook)
 
 (tj/install-package 'vertico)

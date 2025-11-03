@@ -27,8 +27,11 @@ alias bp='makepkg -si --rmdeps --clean'
 
 s(){ su -c "${*@Q}"; }
 unlock(){ gpg2 -q --for-your-eyes-only --no-tty -d "${1}"; }
-bl() { su -c 'echo 0 > /sys/class/backlight/amdgpu_bl1/brightness'; }
-bh() { su -c 'echo 100 > /sys/class/backlight/amdgpu_bl1/brightness'; }
+b0() { su -c 'echo 0 > /sys/class/backlight/amdgpu_bl1/brightness'; }
+bl() { su -c 'echo 10000 > /sys/class/backlight/amdgpu_bl1/brightness'; }
+bm() { su -c 'echo 25000 > /sys/class/backlight/amdgpu_bl1/brightness'; }
+bh() { su -c 'echo 40000 > /sys/class/backlight/amdgpu_bl1/brightness'; }
+bx() { su -c 'echo 64764 > /sys/class/backlight/amdgpu_bl1/brightness'; }
 bs() { su -c 'echo ${0} > /sys/class/backlight/amdgpu_bl1/brightness' root ${1}; }
 lo() { su -c 'echo none > /sys/class/leds/platform::micmute/trigger'; }
 wf() { su -c 'iwctl device wlan0 set-property Powered off'; }
