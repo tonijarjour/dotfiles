@@ -33,3 +33,10 @@ lexers.STYLE_SELECTION = 'back:black,bold'
 ```
 gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
 ```
+
+### Wacom Tablet 
+
+Place this in `.xinitrc`
+```
+xsetwacom set "Wacom One by Wacom S Pen stylus" Rotate half
+```
