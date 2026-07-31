@@ -31,7 +31,8 @@
       dashboard-items nil
       dashboard-display-icons-p nil
       dashboard-startup-banner "~/Images/.emacs.png"
-      dashboard-image-banner-max-width 800)
+      dashboard-image-banner-max-width 500
+      dashboard-footer-messages '("They herald the coming of the lightning and perish as heralds."))
 (dashboard-setup-startup-hook)
 
 (tj/install-package 'vertico)
